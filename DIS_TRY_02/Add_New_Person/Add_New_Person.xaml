@@ -1,0 +1,12 @@
+﻿<Window x:Class="DIS_TRY_02.Add_New_Person.Add_New_Person"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DIS_TRY_02.Add_New_Person"
+        mc:Ignorable="d"
+        Title="Add_New_Person" Height="300" Width="300">
+    <Grid>
+        
+    </Grid>
+</Window>

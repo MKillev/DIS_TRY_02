@@ -1,0 +1,808 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="disModelStoreContainer" CdmEntityContainer="DIS_Entities">
+    <EntitySetMapping Name="ph_assignments">
+      <EntityTypeMapping TypeName="disModel.ph_assignments">
+        <MappingFragment StoreEntitySet="ph_assignments">
+          <ScalarProperty Name="id_phdAssignment" ColumnName="id_phdAssignment" />
+          <ScalarProperty Name="id_person" ColumnName="id_person" />
+          <ScalarProperty Name="id_speciality" ColumnName="id_speciality" />
+          <ScalarProperty Name="PhdCode" ColumnName="PhdCode" />
+          <ScalarProperty Name="StartOrderNumber" ColumnName="StartOrderNumber" />
+          <ScalarProperty Name="StartOrderDate" ColumnName="StartOrderDate" />
+          <ScalarProperty Name="EndOrderNumber" ColumnName="EndOrderNumber" />
+          <ScalarProperty Name="EndOrderDate" ColumnName="EndOrderDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="UseDormitory" ColumnName="UseDormitory" />
+          <ScalarProperty Name="UseScholarship" ColumnName="UseScholarship" />
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="id_userEdit" ColumnName="id_userEdit" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="id_module" ColumnName="id_module" />
+          <ScalarProperty Name="id_studyType" ColumnName="id_studyType" />
+          <ScalarProperty Name="id_basicClass" ColumnName="id_basicClass" />
+          <ScalarProperty Name="id_nsiCode" ColumnName="id_nsiCode" />
+          <ScalarProperty Name="id_acceptanceReason" ColumnName="id_acceptanceReason" />
+          <ScalarProperty Name="id_educationDuration" ColumnName="id_educationDuration" />
+          <ScalarProperty Name="id_educationForm" ColumnName="id_educationForm" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+          <ScalarProperty Name="id_department" ColumnName="id_department" />
+          <ScalarProperty Name="id_mastertype" ColumnName="id_mastertype" />
+          <ScalarProperty Name="UseHolidayFacilities" ColumnName="UseHolidayFacilities" />
+          <ScalarProperty Name="ParticipatedIntProgs" ColumnName="ParticipatedIntProgs" />
+          <ScalarProperty Name="TuProvidesHI" ColumnName="TuProvidesHI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ph_assignmentshistory">
+      <EntityTypeMapping TypeName="disModel.ph_assignmentshistory">
+        <MappingFragment StoreEntitySet="ph_assignmentshistory">
+          <ScalarProperty Name="id_phdAssignment" ColumnName="id_phdAssignment" />
+          <ScalarProperty Name="id_person" ColumnName="id_person" />
+          <ScalarProperty Name="id_department" ColumnName="id_department" />
+          <ScalarProperty Name="id_professionalGroup" ColumnName="id_professionalGroup" />
+          <ScalarProperty Name="PhdCode" ColumnName="PhdCode" />
+          <ScalarProperty Name="StartOrderNumber" ColumnName="StartOrderNumber" />
+          <ScalarProperty Name="StartOrderDate" ColumnName="StartOrderDate" />
+          <ScalarProperty Name="EndOrderDate" ColumnName="EndOrderDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="UseDormitory" ColumnName="UseDormitory" />
+          <ScalarProperty Name="UseScholarship" ColumnName="UseScholarship" />
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="id_userEdit" ColumnName="id_userEdit" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="id_module" ColumnName="id_module" />
+          <ScalarProperty Name="id_studyType" ColumnName="id_studyType" />
+          <ScalarProperty Name="id_basicClass" ColumnName="id_basicClass" />
+          <ScalarProperty Name="id_nsiCode" ColumnName="id_nsiCode" />
+          <ScalarProperty Name="id_acceptanceReason" ColumnName="id_acceptanceReason" />
+          <ScalarProperty Name="id_educationDuration" ColumnName="id_educationDuration" />
+          <ScalarProperty Name="id_educationForm" ColumnName="id_educationForm" />
+          <ScalarProperty Name="id_phdAssignmentParent" ColumnName="id_phdAssignmentParent" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ph_attestations">
+      <EntityTypeMapping TypeName="disModel.ph_attestations">
+        <MappingFragment StoreEntitySet="ph_attestations">
+          <ScalarProperty Name="id_attestation" ColumnName="id_attestation" />
+          <ScalarProperty Name="id_phdAssignment" ColumnName="id_phdAssignment" />
+          <ScalarProperty Name="id_binaryFile" ColumnName="id_binaryFile" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ph_diplomdata">
+      <EntityTypeMapping TypeName="disModel.ph_diplomdata">
+        <MappingFragment StoreEntitySet="ph_diplomdata">
+          <ScalarProperty Name="id_diplomData" ColumnName="id_diplomData" />
+          <ScalarProperty Name="LastEducationUniversity" ColumnName="LastEducationUniversity" />
+          <ScalarProperty Name="LastEducationSubject" ColumnName="LastEducationSubject" />
+          <ScalarProperty Name="LastEducationEndYear" ColumnName="LastEducationEndYear" />
+          <ScalarProperty Name="LastDiplomNumber" ColumnName="LastDiplomNumber" />
+          <ScalarProperty Name="LastDiplomDate" ColumnName="LastDiplomDate" />
+          <ScalarProperty Name="id_citiesLastEducation" ColumnName="id_citiesLastEducation" />
+          <ScalarProperty Name="id_educationLast" ColumnName="id_educationLast" />
+          <ScalarProperty Name="id_pdhAssignment" ColumnName="id_pdhAssignment" />
+          <ScalarProperty Name="id_countryLastEducation" ColumnName="id_countryLastEducation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ph_events">
+      <EntityTypeMapping TypeName="disModel.ph_events">
+        <MappingFragment StoreEntitySet="ph_events">
+          <ScalarProperty Name="id_event" ColumnName="id_event" />
+          <ScalarProperty Name="id_eventType" ColumnName="id_eventType" />
+          <ScalarProperty Name="id_phdAssignment" ColumnName="id_phdAssignment" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ph_eventtypes">
+      <EntityTypeMapping TypeName="disModel.ph_eventtypes">
+        <MappingFragment StoreEntitySet="ph_eventtypes">
+          <ScalarProperty Name="id_eventType" ColumnName="id_eventType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameLatin" ColumnName="NameLatin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ph_exams">
+      <EntityTypeMapping TypeName="disModel.ph_exams">
+        <MappingFragment StoreEntitySet="ph_exams">
+          <ScalarProperty Name="id_exam" ColumnName="id_exam" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id_examType" ColumnName="id_examType" />
+          <ScalarProperty Name="id_phAssignment" ColumnName="id_phAssignment" />
+          <ScalarProperty Name="Mark" ColumnName="Mark" />
+          <ScalarProperty Name="id_examinator1" ColumnName="id_examinator1" />
+          <ScalarProperty Name="id_examinator2" ColumnName="id_examinator2" />
+          <ScalarProperty Name="id_examinator3" ColumnName="id_examinator3" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="MarkName" ColumnName="MarkName" />
+          <ScalarProperty Name="id_userEdit" ColumnName="id_userEdit" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ph_examtypes">
+      <EntityTypeMapping TypeName="disModel.ph_examtypes">
+        <MappingFragment StoreEntitySet="ph_examtypes">
+          <ScalarProperty Name="id_examType" ColumnName="id_examType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameLatin" ColumnName="NameLatin" />
+          <ScalarProperty Name="id_binaryFile" ColumnName="id_binaryFile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ph_individualplans">
+      <EntityTypeMapping TypeName="disModel.ph_individualplans">
+        <MappingFragment StoreEntitySet="ph_individualplans">
+          <ScalarProperty Name="id_individualPlan" ColumnName="id_individualPlan" />
+          <ScalarProperty Name="id_phdAssignment" ColumnName="id_phdAssignment" />
+          <ScalarProperty Name="id_binaryFile" ColumnName="id_binaryFile" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ph_reports">
+      <EntityTypeMapping TypeName="disModel.ph_reports">
+        <MappingFragment StoreEntitySet="ph_reports">
+          <ScalarProperty Name="id_phdReport" ColumnName="id_phdReport" />
+          <ScalarProperty Name="id_phdAssignment" ColumnName="id_phdAssignment" />
+          <ScalarProperty Name="id_binaryFile" ColumnName="id_binaryFile" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ph_topics">
+      <EntityTypeMapping TypeName="disModel.ph_topics">
+        <MappingFragment StoreEntitySet="ph_topics">
+          <ScalarProperty Name="id_phdTopic" ColumnName="id_phdTopic" />
+          <ScalarProperty Name="id_phdAssignment" ColumnName="id_phdAssignment" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameLatin" ColumnName="NameLatin" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ph_topicshistory">
+      <EntityTypeMapping TypeName="disModel.ph_topicshistory">
+        <MappingFragment StoreEntitySet="ph_topicshistory">
+          <ScalarProperty Name="id_phdTopicHistory" ColumnName="id_phdTopicHistory" />
+          <ScalarProperty Name="id_phdAssignment" ColumnName="id_phdAssignment" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameLatin" ColumnName="NameLatin" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+          <ScalarProperty Name="id_phdTopicParent" ColumnName="id_phdTopicParent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ph_tutornames">
+      <EntityTypeMapping TypeName="disModel.ph_tutornames">
+        <MappingFragment StoreEntitySet="ph_tutornames">
+          <ScalarProperty Name="id_tutorName" ColumnName="id_tutorName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ph_tutors">
+      <EntityTypeMapping TypeName="disModel.ph_tutors">
+        <MappingFragment StoreEntitySet="ph_tutors">
+          <ScalarProperty Name="id_tutor" ColumnName="id_tutor" />
+          <ScalarProperty Name="id_tutorName" ColumnName="id_tutorName" />
+          <ScalarProperty Name="id_phdAssignment" ColumnName="id_phdAssignment" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_acceptancereasons">
+      <EntityTypeMapping TypeName="disModel.un_acceptancereasons">
+        <MappingFragment StoreEntitySet="un_acceptancereasons">
+          <ScalarProperty Name="id_acceptanceReason" ColumnName="id_acceptanceReason" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_assignments">
+      <EntityTypeMapping TypeName="disModel.un_assignments">
+        <MappingFragment StoreEntitySet="un_assignments">
+          <ScalarProperty Name="id_assignment" ColumnName="id_assignment" />
+          <ScalarProperty Name="id_person" ColumnName="id_person" />
+          <ScalarProperty Name="id_department" ColumnName="id_department" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="id_userEdit" ColumnName="id_userEdit" />
+          <ScalarProperty Name="id_position" ColumnName="id_position" />
+          <ScalarProperty Name="id_positionType" ColumnName="id_positionType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_assignmentspermanent">
+      <EntityTypeMapping TypeName="disModel.un_assignmentspermanent">
+        <MappingFragment StoreEntitySet="un_assignmentspermanent">
+          <ScalarProperty Name="id_assignmentPermanent" ColumnName="id_assignmentPermanent" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameLatin" ColumnName="NameLatin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_assignmentstemporary">
+      <EntityTypeMapping TypeName="disModel.un_assignmentstemporary">
+        <MappingFragment StoreEntitySet="un_assignmentstemporary">
+          <ScalarProperty Name="id_assignmentTemporary" ColumnName="id_assignmentTemporary" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameLatin" ColumnName="NameLatin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_basicclasses">
+      <EntityTypeMapping TypeName="disModel.un_basicclasses">
+        <MappingFragment StoreEntitySet="un_basicclasses">
+          <ScalarProperty Name="id_basicClass" ColumnName="id_basicClass" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Recode" ColumnName="Recode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_binaryfiles">
+      <EntityTypeMapping TypeName="disModel.un_binaryfiles">
+        <MappingFragment StoreEntitySet="un_binaryfiles">
+          <ScalarProperty Name="id_binaryFile" ColumnName="id_binaryFile" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id_fileType" ColumnName="id_fileType" />
+          <ScalarProperty Name="Binary" ColumnName="Binary" />
+          <ScalarProperty Name="id_userEdit" ColumnName="id_userEdit" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_cities">
+      <EntityTypeMapping TypeName="disModel.un_cities">
+        <MappingFragment StoreEntitySet="un_cities">
+          <ScalarProperty Name="id_city" ColumnName="id_city" />
+          <ScalarProperty Name="id_ekatte" ColumnName="id_ekatte" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Municipality" ColumnName="Municipality" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="id_country" ColumnName="id_country" />
+          <ScalarProperty Name="id_municipality" ColumnName="id_municipality" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_citizenship">
+      <EntityTypeMapping TypeName="disModel.un_citizenship">
+        <MappingFragment StoreEntitySet="un_citizenship">
+          <ScalarProperty Name="id_citizenship" ColumnName="id_citizenship" />
+          <ScalarProperty Name="id_country" ColumnName="id_country" />
+          <ScalarProperty Name="id_person" ColumnName="id_person" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_contactdata">
+      <EntityTypeMapping TypeName="disModel.un_contactdata">
+        <MappingFragment StoreEntitySet="un_contactdata">
+          <ScalarProperty Name="id_contactdata" ColumnName="id_contactdata" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="id_city" ColumnName="id_city" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="id_person" ColumnName="id_person" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Room" ColumnName="Room" />
+          <ScalarProperty Name="id_userEdit" ColumnName="id_userEdit" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="id_module" ColumnName="id_module" />
+          <ScalarProperty Name="id_contactType" ColumnName="id_contactType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_contacttypes">
+      <EntityTypeMapping TypeName="disModel.un_contacttypes">
+        <MappingFragment StoreEntitySet="un_contacttypes">
+          <ScalarProperty Name="id_contactType" ColumnName="id_contactType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_countries">
+      <EntityTypeMapping TypeName="disModel.un_countries">
+        <MappingFragment StoreEntitySet="un_countries">
+          <ScalarProperty Name="id_country" ColumnName="id_country" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameLatin" ColumnName="NameLatin" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="TelCode" ColumnName="TelCode" />
+          <ScalarProperty Name="IsCity" ColumnName="IsCity" />
+          <ScalarProperty Name="ISO_3166Code" ColumnName="ISO_3166Code" />
+          <ScalarProperty Name="ISO_A3" ColumnName="ISO_A3" />
+          <ScalarProperty Name="ISO_Number" ColumnName="ISO_Number" />
+          <ScalarProperty Name="IsEUMember" ColumnName="IsEUMember" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_departments">
+      <EntityTypeMapping TypeName="disModel.un_departments">
+        <MappingFragment StoreEntitySet="un_departments">
+          <ScalarProperty Name="id_department" ColumnName="id_department" />
+          <ScalarProperty Name="id_city" ColumnName="id_city" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="BULSTAT" ColumnName="BULSTAT" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Phone3" ColumnName="Phone3" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameLatin" ColumnName="NameLatin" />
+          <ScalarProperty Name="NameShort" ColumnName="NameShort" />
+          <ScalarProperty Name="id_departmentType" ColumnName="id_departmentType" />
+          <ScalarProperty Name="id_userEdit" ColumnName="id_userEdit" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="id_module" ColumnName="id_module" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_departmentshistory">
+      <EntityTypeMapping TypeName="disModel.un_departmentshistory">
+        <MappingFragment StoreEntitySet="un_departmentshistory">
+          <ScalarProperty Name="id_department" ColumnName="id_department" />
+          <ScalarProperty Name="id_EKATTE" ColumnName="id_EKATTE" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="BULSTAT" ColumnName="BULSTAT" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameLatin" ColumnName="NameLatin" />
+          <ScalarProperty Name="NameShort" ColumnName="NameShort" />
+          <ScalarProperty Name="id_departmentType" ColumnName="id_departmentType" />
+          <ScalarProperty Name="id_userEdit" ColumnName="id_userEdit" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="id_module" ColumnName="id_module" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+          <ScalarProperty Name="id_departmentParent" ColumnName="id_departmentParent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_departmenttree">
+      <EntityTypeMapping TypeName="disModel.un_departmenttree">
+        <MappingFragment StoreEntitySet="un_departmenttree">
+          <ScalarProperty Name="id_departmentTree" ColumnName="id_departmentTree" />
+          <ScalarProperty Name="id_departmentParent" ColumnName="id_departmentParent" />
+          <ScalarProperty Name="id_treeRevision" ColumnName="id_treeRevision" />
+          <ScalarProperty Name="id_department" ColumnName="id_department" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_departmenttypes">
+      <EntityTypeMapping TypeName="disModel.un_departmenttypes">
+        <MappingFragment StoreEntitySet="un_departmenttypes">
+          <ScalarProperty Name="id_departmentType" ColumnName="id_departmentType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameShort" ColumnName="NameShort" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_educationdurations">
+      <EntityTypeMapping TypeName="disModel.un_educationdurations">
+        <MappingFragment StoreEntitySet="un_educationdurations">
+          <ScalarProperty Name="id_educationduration" ColumnName="id_educationduration" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_educationforms">
+      <EntityTypeMapping TypeName="disModel.un_educationforms">
+        <MappingFragment StoreEntitySet="un_educationforms">
+          <ScalarProperty Name="id_educationForm" ColumnName="id_educationForm" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameLatin" ColumnName="NameLatin" />
+          <ScalarProperty Name="NameShort" ColumnName="NameShort" />
+          <ScalarProperty Name="MonCode" ColumnName="MonCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_educationlevels">
+      <EntityTypeMapping TypeName="disModel.un_educationlevels">
+        <MappingFragment StoreEntitySet="un_educationlevels">
+          <ScalarProperty Name="id_educationLevel" ColumnName="id_educationLevel" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_egntypes">
+      <EntityTypeMapping TypeName="disModel.un_egntypes">
+        <MappingFragment StoreEntitySet="un_egntypes">
+          <ScalarProperty Name="id_egntype" ColumnName="id_egntype" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_ekatte">
+      <EntityTypeMapping TypeName="disModel.un_ekatte">
+        <MappingFragment StoreEntitySet="un_ekatte">
+          <ScalarProperty Name="id_ekatte" ColumnName="id_ekatte" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Municipality" ColumnName="Municipality" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="id_municipality" ColumnName="id_municipality" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_filetypes">
+      <EntityTypeMapping TypeName="disModel.un_filetypes">
+        <MappingFragment StoreEntitySet="un_filetypes">
+          <ScalarProperty Name="id_fileType" ColumnName="id_fileType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_gender">
+      <EntityTypeMapping TypeName="disModel.un_gender">
+        <MappingFragment StoreEntitySet="un_gender">
+          <ScalarProperty Name="id_gender" ColumnName="id_gender" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_healthinsuranse">
+      <EntityTypeMapping TypeName="disModel.un_healthinsuranse">
+        <MappingFragment StoreEntitySet="un_healthinsuranse">
+          <ScalarProperty Name="id_healthInsuranse" ColumnName="id_healthInsuranse" />
+          <ScalarProperty Name="id_person" ColumnName="id_person" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="To" ColumnName="To" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_identitycards">
+      <EntityTypeMapping TypeName="disModel.un_identitycards">
+        <MappingFragment StoreEntitySet="un_identitycards">
+          <ScalarProperty Name="id_identityCard" ColumnName="id_identityCard" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+          <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+          <ScalarProperty Name="id_city" ColumnName="id_city" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="id_userEdit" ColumnName="id_userEdit" />
+          <ScalarProperty Name="EGN" ColumnName="EGN" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="id_person" ColumnName="id_person" />
+          <ScalarProperty Name="id_cityBirth" ColumnName="id_cityBirth" />
+          <ScalarProperty Name="PicturePath" ColumnName="PicturePath" />
+          <ScalarProperty Name="id_module" ColumnName="id_module" />
+          <ScalarProperty Name="WhatIsChanged" ColumnName="WhatIsChanged" />
+          <ScalarProperty Name="id_citizenship" ColumnName="id_citizenship" />
+          <ScalarProperty Name="id_egnType" ColumnName="id_egnType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_identitycardshistory">
+      <EntityTypeMapping TypeName="disModel.un_identitycardshistory">
+        <MappingFragment StoreEntitySet="un_identitycardshistory">
+          <ScalarProperty Name="id_identityCard" ColumnName="id_identityCard" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+          <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+          <ScalarProperty Name="id_city" ColumnName="id_city" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="id_userEdit" ColumnName="id_userEdit" />
+          <ScalarProperty Name="EGN" ColumnName="EGN" />
+          <ScalarProperty Name="id_egnType" ColumnName="id_egnType" />
+          <ScalarProperty Name="id_person" ColumnName="id_person" />
+          <ScalarProperty Name="id_cityBirth" ColumnName="id_cityBirth" />
+          <ScalarProperty Name="PicturePath" ColumnName="PicturePath" />
+          <ScalarProperty Name="id_module" ColumnName="id_module" />
+          <ScalarProperty Name="WhatIsChanged" ColumnName="WhatIsChanged" />
+          <ScalarProperty Name="id_identityCardParent" ColumnName="id_identityCardParent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_languagelevels">
+      <EntityTypeMapping TypeName="disModel.un_languagelevels">
+        <MappingFragment StoreEntitySet="un_languagelevels">
+          <ScalarProperty Name="id_languageLevel" ColumnName="id_languageLevel" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_languages">
+      <EntityTypeMapping TypeName="disModel.un_languages">
+        <MappingFragment StoreEntitySet="un_languages">
+          <ScalarProperty Name="id_language" ColumnName="id_language" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_messages">
+      <EntityTypeMapping TypeName="disModel.un_messages">
+        <MappingFragment StoreEntitySet="un_messages">
+          <ScalarProperty Name="id_message" ColumnName="id_message" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="IsSent" ColumnName="IsSent" />
+          <ScalarProperty Name="id_person" ColumnName="id_person" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_municipalities">
+      <EntityTypeMapping TypeName="disModel.un_municipalities">
+        <MappingFragment StoreEntitySet="un_municipalities">
+          <ScalarProperty Name="id_municipality" ColumnName="id_municipality" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="id_region" ColumnName="id_region" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_nsicodes">
+      <EntityTypeMapping TypeName="disModel.un_nsicodes">
+        <MappingFragment StoreEntitySet="un_nsicodes">
+          <ScalarProperty Name="id_nsicode" ColumnName="id_nsicode" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_organisation">
+      <EntityTypeMapping TypeName="disModel.un_organisation">
+        <MappingFragment StoreEntitySet="un_organisation">
+          <ScalarProperty Name="id_organisation" ColumnName="id_organisation" />
+          <ScalarProperty Name="MOMNCode" ColumnName="MOMNCode" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="BasicSchoolType" ColumnName="BasicSchoolType" />
+          <ScalarProperty Name="SchoolType" ColumnName="SchoolType" />
+          <ScalarProperty Name="BudgetFrom" ColumnName="BudgetFrom" />
+          <ScalarProperty Name="id_EKTATTE" ColumnName="id_EKTATTE" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Phone3" ColumnName="Phone3" />
+          <ScalarProperty Name="Phone4" ColumnName="Phone4" />
+          <ScalarProperty Name="Phone5" ColumnName="Phone5" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="WebAddress" ColumnName="WebAddress" />
+          <ScalarProperty Name="Bulstat" ColumnName="Bulstat" />
+          <ScalarProperty Name="FoundationYear" ColumnName="FoundationYear" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_personlanguages">
+      <EntityTypeMapping TypeName="disModel.un_personlanguages">
+        <MappingFragment StoreEntitySet="un_personlanguages">
+          <ScalarProperty Name="id_personLanguage" ColumnName="id_personLanguage" />
+          <ScalarProperty Name="id_person" ColumnName="id_person" />
+          <ScalarProperty Name="id_language" ColumnName="id_language" />
+          <ScalarProperty Name="id_languageLevel" ColumnName="id_languageLevel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_persons">
+      <EntityTypeMapping TypeName="disModel.un_persons">
+        <MappingFragment StoreEntitySet="un_persons">
+          <ScalarProperty Name="id_person" ColumnName="id_person" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="SirName" ColumnName="SirName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstNameLatin" ColumnName="FirstNameLatin" />
+          <ScalarProperty Name="SirNameLatin" ColumnName="SirNameLatin" />
+          <ScalarProperty Name="LastNameLatin" ColumnName="LastNameLatin" />
+          <ScalarProperty Name="id_gender" ColumnName="id_gender" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+          <ScalarProperty Name="id_userEdit" ColumnName="id_userEdit" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="id_module" ColumnName="id_module" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_personshistory">
+      <EntityTypeMapping TypeName="disModel.un_personshistory">
+        <MappingFragment StoreEntitySet="un_personshistory">
+          <ScalarProperty Name="id_person" ColumnName="id_person" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="SirName" ColumnName="SirName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstNameLatin" ColumnName="FirstNameLatin" />
+          <ScalarProperty Name="SirNameLatin" ColumnName="SirNameLatin" />
+          <ScalarProperty Name="LastNameLatin" ColumnName="LastNameLatin" />
+          <ScalarProperty Name="id_gender" ColumnName="id_gender" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+          <ScalarProperty Name="id_userEdit" ColumnName="id_userEdit" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="id_module" ColumnName="id_module" />
+          <ScalarProperty Name="id_personParent" ColumnName="id_personParent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_positions">
+      <EntityTypeMapping TypeName="disModel.un_positions">
+        <MappingFragment StoreEntitySet="un_positions">
+          <ScalarProperty Name="id_poistion" ColumnName="id_poistion" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameLatin" ColumnName="NameLatin" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="id_role" ColumnName="id_role" />
+          <ScalarProperty Name="id_positionType" ColumnName="id_positionType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_positiontypes">
+      <EntityTypeMapping TypeName="disModel.un_positiontypes">
+        <MappingFragment StoreEntitySet="un_positiontypes">
+          <ScalarProperty Name="id_positionType" ColumnName="id_positionType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_professionalareas">
+      <EntityTypeMapping TypeName="disModel.un_professionalareas">
+        <MappingFragment StoreEntitySet="un_professionalareas">
+          <ScalarProperty Name="id_professionalArea" ColumnName="id_professionalArea" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameLatin" ColumnName="NameLatin" />
+          <ScalarProperty Name="CodeMon" ColumnName="CodeMon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_professionalgroups">
+      <EntityTypeMapping TypeName="disModel.un_professionalgroups">
+        <MappingFragment StoreEntitySet="un_professionalgroups">
+          <ScalarProperty Name="id_professionalGroup" ColumnName="id_professionalGroup" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameLatin" ColumnName="NameLatin" />
+          <ScalarProperty Name="ProfessionalArea" ColumnName="ProfessionalArea" />
+          <ScalarProperty Name="id_professionalArea" ColumnName="id_professionalArea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_regions">
+      <EntityTypeMapping TypeName="disModel.un_regions">
+        <MappingFragment StoreEntitySet="un_regions">
+          <ScalarProperty Name="id_Region" ColumnName="id_Region" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_roles">
+      <EntityTypeMapping TypeName="disModel.un_roles">
+        <MappingFragment StoreEntitySet="un_roles">
+          <ScalarProperty Name="id_role" ColumnName="id_role" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_sciencehistory">
+      <EntityTypeMapping TypeName="disModel.un_sciencehistory">
+        <MappingFragment StoreEntitySet="un_sciencehistory">
+          <ScalarProperty Name="id_sciencehistory" ColumnName="id_sciencehistory" />
+          <ScalarProperty Name="id_person" ColumnName="id_person" />
+          <ScalarProperty Name="id_educationLevel" ColumnName="id_educationLevel" />
+          <ScalarProperty Name="DiplomDate" ColumnName="DiplomDate" />
+          <ScalarProperty Name="DiplomNumber" ColumnName="DiplomNumber" />
+          <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+          <ScalarProperty Name="Speciality" ColumnName="Speciality" />
+          <ScalarProperty Name="id_userEdit" ColumnName="id_userEdit" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="id_module" ColumnName="id_module" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_specialities">
+      <EntityTypeMapping TypeName="disModel.un_specialities">
+        <MappingFragment StoreEntitySet="un_specialities">
+          <ScalarProperty Name="id_speciality" ColumnName="id_speciality" />
+          <ScalarProperty Name="id_department" ColumnName="id_department" />
+          <ScalarProperty Name="id_specialityType" ColumnName="id_specialityType" />
+          <ScalarProperty Name="AccreditatedFrom" ColumnName="AccreditatedFrom" />
+          <ScalarProperty Name="AccreditatedTo" ColumnName="AccreditatedTo" />
+          <ScalarProperty Name="IsAccreditated" ColumnName="IsAccreditated" />
+          <ScalarProperty Name="id_userEdit" ColumnName="id_userEdit" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="id_module" ColumnName="id_module" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_specialitytypes">
+      <EntityTypeMapping TypeName="disModel.un_specialitytypes">
+        <MappingFragment StoreEntitySet="un_specialitytypes">
+          <ScalarProperty Name="id_specialityType" ColumnName="id_specialityType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameLatin" ColumnName="NameLatin" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="MonCode" ColumnName="MonCode" />
+          <ScalarProperty Name="id_professionalArea" ColumnName="id_professionalArea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_statuses">
+      <EntityTypeMapping TypeName="disModel.un_statuses">
+        <MappingFragment StoreEntitySet="un_statuses">
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_studytypes">
+      <EntityTypeMapping TypeName="disModel.un_studytypes">
+        <MappingFragment StoreEntitySet="un_studytypes">
+          <ScalarProperty Name="id_studyType" ColumnName="id_studyType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameLatin" ColumnName="NameLatin" />
+          <ScalarProperty Name="NameShort" ColumnName="NameShort" />
+          <ScalarProperty Name="MonCode" ColumnName="MonCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_treerevisions">
+      <EntityTypeMapping TypeName="disModel.un_treerevisions">
+        <MappingFragment StoreEntitySet="un_treerevisions">
+          <ScalarProperty Name="id_treeRevision" ColumnName="id_treeRevision" />
+          <ScalarProperty Name="RevisionNumber" ColumnName="RevisionNumber" />
+          <ScalarProperty Name="ActivationDate" ColumnName="ActivationDate" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_userrights">
+      <EntityTypeMapping TypeName="disModel.un_userrights">
+        <MappingFragment StoreEntitySet="un_userrights">
+          <ScalarProperty Name="id_userright" ColumnName="id_userright" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="id_module" ColumnName="id_module" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="un_users">
+      <EntityTypeMapping TypeName="disModel.un_users">
+        <MappingFragment StoreEntitySet="un_users">
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="id_person" ColumnName="id_person" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

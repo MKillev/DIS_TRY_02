@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1202a2c4a67e48d5b7286dc4e158648f" Name="Diagram1">
+        <EntityTypeShape EntityType="disModel.ph_assignments" Width="1.5" PointX="5.25" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.ph_assignmentshistory" Width="1.5" PointX="16.5" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.ph_attestations" Width="1.5" PointX="10.5" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.ph_diplomdata" Width="1.5" PointX="10.5" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.ph_events" Width="1.5" PointX="13.5" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.ph_eventtypes" Width="1.5" PointX="11.25" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.ph_exams" Width="1.5" PointX="13.5" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.ph_examtypes" Width="1.5" PointX="11.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.ph_individualplans" Width="1.5" PointX="13.5" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.ph_reports" Width="1.5" PointX="10.5" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.ph_topics" Width="1.5" PointX="7.5" PointY="48" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.ph_topicshistory" Width="1.5" PointX="9.75" PointY="36.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.ph_tutornames" Width="1.5" PointX="11.25" PointY="40.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.ph_tutors" Width="1.5" PointX="13.5" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_acceptancereasons" Width="1.5" PointX="3" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_assignments" Width="1.5" PointX="8.25" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_assignmentspermanent" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_assignmentstemporary" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_basicclasses" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_binaryfiles" Width="1.5" PointX="8.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_cities" Width="1.5" PointX="8.25" PointY="41.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_citizenship" Width="1.5" PointX="14.25" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_contactdata" Width="1.5" PointX="16.5" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_contacttypes" Width="1.5" PointX="14.25" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_countries" Width="1.5" PointX="6" PointY="40.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_departments" Width="1.5" PointX="3" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_departmentshistory" Width="1.5" PointX="8.25" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_departmenttree" Width="1.5" PointX="8.25" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_departmenttypes" Width="1.5" PointX="0.75" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_educationdurations" Width="1.5" PointX="3" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_educationforms" Width="1.5" PointX="3" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_educationlevels" Width="1.5" PointX="8.25" PointY="52" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_egntypes" Width="1.5" PointX="17.25" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_ekatte" Width="1.5" PointX="6" PointY="44.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_filetypes" Width="1.5" PointX="6" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_gender" Width="1.5" PointX="3.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_healthinsuranse" Width="1.5" PointX="8.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_identitycards" Width="1.5" PointX="19.5" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_identitycardshistory" Width="1.5" PointX="21.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_languagelevels" Width="1.5" PointX="9" PointY="55" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_languages" Width="1.5" PointX="9" PointY="57.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_messages" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_municipalities" Width="1.5" PointX="3.75" PointY="44.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_nsicodes" Width="1.5" PointX="3" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_organisation" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_personlanguages" Width="1.5" PointX="11.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_persons" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_personshistory" Width="1.5" PointX="13.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_positions" Width="1.5" PointX="6" PointY="52.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_positiontypes" Width="1.5" PointX="3.75" PointY="51.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_professionalareas" Width="1.5" PointX="12" PointY="43.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_professionalgroups" Width="1.5" PointX="14.25" PointY="43.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_regions" Width="1.5" PointX="1.5" PointY="45.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_roles" Width="1.5" PointX="3.75" PointY="54" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_sciencehistory" Width="1.5" PointX="10.5" PointY="50.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_specialities" Width="1.5" PointX="11.25" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_specialitytypes" Width="1.5" PointX="9" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_statuses" Width="1.5" PointX="3" PointY="34.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_studytypes" Width="1.5" PointX="3" PointY="37.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_treerevisions" Width="1.5" PointX="6" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_userrights" Width="1.5" PointX="10.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="disModel.un_users" Width="1.5" PointX="8.25" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="disModel.FH_PH_assignments_UN_ProfessionalGroups" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Assignments_UN_AcceptanceReasons" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Assignments_UN_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Assignments_UN_NsiCodes" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Assignments_UN_Statues" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Assignments_UN_StudyTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Assignments_UNEducationDurations" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Assignments_UNEducationForms" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Attestations_PH_Assignments" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_DiplomData_PH_Assignments" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Events_PH_Assignments" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Exams_PH_Assignments" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_IndividualPlans_PH_assignments" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_TopicHistory_PH_Assignment" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_TopicHistory_PH_Assignment0" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Tutors_PH_Assignment" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.KF_PH_Reports_PH_Assignments" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FH_PH_assignments_UN_ProfessionalGroups0" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Assignments_UN_departmentTree0" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Assignments_UN_Statues0" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Assignments_UN_StudyTypes0" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Attestations_UN_Binary" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_DiplomData_UN_Cities" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_DiplomData_UN_Educations" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Events_PH_EventTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Exams_PH_ExamTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Individual_BinaryFile" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.KF_PH_Reports_UN_BinaryFiles" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_TopicHistory_PH_Topics" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_Tutors_PH_TutorNames" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.un_departments1" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.un_persons1" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.un_positions1" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_BinaryFiles_UN_FileTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_Cities_UN_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_Cities_UN_Ekatte" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_CIties_UN_Municipalities" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_ContactData_UN_Cities" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_un_identitycard_un_city" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_un_identitycard_un_city0" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_IdentityCards_UN_Cities" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_IdentityCards_UN_Cities0" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_Citizenship_UN_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_Citizenship_UN_Persons" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_IdentityCards_UN_CItizenship" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_ContactData_UN_ContactTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_ContactData_UN_Persons" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_Departments_UN_DepartmentTyhpes" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_DepartmentsHistory_UN_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_DepartmentTree_UN_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_Specialities_UN_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_Departments_UN_DepartmentTyhpes0" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_DepartmentTree_UN_DepartmentTree" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_DepartmentTree_UN_TreeRevision" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_ScienceHistory_UN_Educations" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.egn" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_EKATTE_UN_Municipalities" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.UN_Persons_UN_Genders" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.UN_Persons_UN_Genders0" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_PH_HealthInsurance_UN_Persons" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_IdentityCards_UN_Persons" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_IdentityCardsHistory_UN_IdentityCards" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_IdentityCards_UN_Persons0" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_PersonLanguages_UN_LanguageLevels" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_PersonLanguages_UN_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.un_messages_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_Municipalities_UN_Regions" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_PersonLanguages_UN_persons" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_PersonsHistory_UN_Persons" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_Users_UN_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.un_positionTypes1" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.un_roles1" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_ProfessionalGroups_UN_ProfessionalAreas" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_Specialities_UN_SpecialityTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="disModel.FK_UN_Users_UN_Userrights" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

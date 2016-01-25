@@ -1,0 +1,2008 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="disModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ph_assignments">
+    <Key>
+      <PropertyRef Name="id_phdAssignment" />
+    </Key>
+    <Property Name="id_phdAssignment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_person" Type="int" Nullable="false" />
+    <Property Name="id_speciality" Type="int" />
+    <Property Name="PhdCode" Type="varchar" MaxLength="45" />
+    <Property Name="StartOrderNumber" Type="varchar" MaxLength="45" />
+    <Property Name="StartOrderDate" Type="datetime" Precision="0" />
+    <Property Name="EndOrderNumber" Type="varchar" MaxLength="45" />
+    <Property Name="EndOrderDate" Type="datetime" Precision="0" />
+    <Property Name="StartDate" Type="datetime" Precision="0" />
+    <Property Name="EndDate" Type="datetime" Precision="0" />
+    <Property Name="UseDormitory" Type="bit" />
+    <Property Name="UseScholarship" Type="bit" />
+    <Property Name="id_status" Type="int" />
+    <Property Name="id_userEdit" Type="int" />
+    <Property Name="Timestamp" Type="datetime" Precision="0" />
+    <Property Name="id_module" Type="int" />
+    <Property Name="id_studyType" Type="int" />
+    <Property Name="id_basicClass" Type="int" />
+    <Property Name="id_nsiCode" Type="int" />
+    <Property Name="id_acceptanceReason" Type="int" />
+    <Property Name="id_educationDuration" Type="int" />
+    <Property Name="id_educationForm" Type="int" />
+    <Property Name="ValidFrom" Type="datetime" Precision="0" />
+    <Property Name="ValidTo" Type="datetime" Precision="0" />
+    <Property Name="id_department" Type="int" />
+    <Property Name="id_mastertype" Type="int" />
+    <Property Name="UseHolidayFacilities" Type="bit" />
+    <Property Name="ParticipatedIntProgs" Type="bit" />
+    <Property Name="TuProvidesHI" Type="bit" />
+  </EntityType>
+  <EntityType Name="ph_assignmentshistory">
+    <Key>
+      <PropertyRef Name="id_phdAssignment" />
+    </Key>
+    <Property Name="id_phdAssignment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_person" Type="int" Nullable="false" />
+    <Property Name="id_department" Type="int" Nullable="false" />
+    <Property Name="id_professionalGroup" Type="int" Nullable="false" />
+    <Property Name="PhdCode" Type="varchar" MaxLength="45" />
+    <Property Name="StartOrderNumber" Type="int" />
+    <Property Name="StartOrderDate" Type="datetime" Precision="0" />
+    <Property Name="EndOrderDate" Type="datetime" Precision="0" />
+    <Property Name="StartDate" Type="datetime" Precision="0" />
+    <Property Name="EndDate" Type="datetime" Precision="0" />
+    <Property Name="UseDormitory" Type="bit" />
+    <Property Name="UseScholarship" Type="bit" />
+    <Property Name="id_status" Type="int" Nullable="false" />
+    <Property Name="id_userEdit" Type="int" Nullable="false" />
+    <Property Name="Timestamp" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="id_module" Type="int" />
+    <Property Name="id_studyType" Type="int" Nullable="false" />
+    <Property Name="id_basicClass" Type="int" Nullable="false" />
+    <Property Name="id_nsiCode" Type="int" Nullable="false" />
+    <Property Name="id_acceptanceReason" Type="int" Nullable="false" />
+    <Property Name="id_educationDuration" Type="int" Nullable="false" />
+    <Property Name="id_educationForm" Type="int" Nullable="false" />
+    <Property Name="id_phdAssignmentParent" Type="int" Nullable="false" />
+    <Property Name="ValidFrom" Type="datetime" Precision="0" />
+    <Property Name="ValidTo" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="ph_attestations">
+    <Key>
+      <PropertyRef Name="id_attestation" />
+    </Key>
+    <Property Name="id_attestation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_phdAssignment" Type="int" Nullable="false" />
+    <Property Name="id_binaryFile" Type="int" />
+    <Property Name="Timestamp" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="ph_diplomdata">
+    <Key>
+      <PropertyRef Name="id_diplomData" />
+    </Key>
+    <Property Name="id_diplomData" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LastEducationUniversity" Type="varchar" MaxLength="45" />
+    <Property Name="LastEducationSubject" Type="varchar" MaxLength="45" />
+    <Property Name="LastEducationEndYear" Type="varchar" MaxLength="45" />
+    <Property Name="LastDiplomNumber" Type="varchar" MaxLength="45" />
+    <Property Name="LastDiplomDate" Type="datetime" Precision="0" />
+    <Property Name="id_citiesLastEducation" Type="int" />
+    <Property Name="id_educationLast" Type="int" />
+    <Property Name="id_pdhAssignment" Type="int" Nullable="false" />
+    <Property Name="id_countryLastEducation" Type="int" />
+  </EntityType>
+  <EntityType Name="ph_events">
+    <Key>
+      <PropertyRef Name="id_event" />
+    </Key>
+    <Property Name="id_event" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_eventType" Type="int" Nullable="false" />
+    <Property Name="id_phdAssignment" Type="int" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" Precision="0" />
+    <Property Name="OrderNumber" Type="varchar" MaxLength="50" />
+    <Property Name="OrderDate" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="ph_eventtypes">
+    <Key>
+      <PropertyRef Name="id_eventType" />
+    </Key>
+    <Property Name="id_eventType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="NameLatin" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ph_exams">
+    <Key>
+      <PropertyRef Name="id_exam" />
+    </Key>
+    <Property Name="id_exam" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" />
+    <Property Name="id_examType" Type="int" Nullable="false" />
+    <Property Name="id_phAssignment" Type="int" Nullable="false" />
+    <Property Name="Mark" Type="double" Nullable="false" />
+    <Property Name="id_examinator1" Type="int" />
+    <Property Name="id_examinator2" Type="int" />
+    <Property Name="id_examinator3" Type="int" />
+    <Property Name="Date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="MarkName" Type="varchar" MaxLength="20" />
+    <Property Name="id_userEdit" Type="int" />
+    <Property Name="Timestamp" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="ph_examtypes">
+    <Key>
+      <PropertyRef Name="id_examType" />
+    </Key>
+    <Property Name="id_examType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="NameLatin" Type="varchar" MaxLength="255" />
+    <Property Name="id_binaryFile" Type="int" />
+  </EntityType>
+  <EntityType Name="ph_individualplans">
+    <Key>
+      <PropertyRef Name="id_individualPlan" />
+    </Key>
+    <Property Name="id_individualPlan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_phdAssignment" Type="int" Nullable="false" />
+    <Property Name="id_binaryFile" Type="int" />
+    <Property Name="Timestamp" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="ph_reports">
+    <Key>
+      <PropertyRef Name="id_phdReport" />
+    </Key>
+    <Property Name="id_phdReport" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_phdAssignment" Type="int" Nullable="false" />
+    <Property Name="id_binaryFile" Type="int" />
+    <Property Name="Timestamp" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="ph_topics">
+    <Key>
+      <PropertyRef Name="id_phdTopic" />
+    </Key>
+    <Property Name="id_phdTopic" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_phdAssignment" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" />
+    <Property Name="NameLatin" Type="varchar" MaxLength="255" />
+    <Property Name="ValidFrom" Type="datetime" Precision="0" />
+    <Property Name="ValidTo" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="ph_topicshistory">
+    <Key>
+      <PropertyRef Name="id_phdTopicHistory" />
+    </Key>
+    <Property Name="id_phdTopicHistory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_phdAssignment" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="45" />
+    <Property Name="NameLatin" Type="varchar" MaxLength="45" />
+    <Property Name="ValidFrom" Type="datetime" Precision="0" />
+    <Property Name="ValidTo" Type="datetime" Precision="0" />
+    <Property Name="id_phdTopicParent" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ph_tutornames">
+    <Key>
+      <PropertyRef Name="id_tutorName" />
+    </Key>
+    <Property Name="id_tutorName" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ph_tutors">
+    <Key>
+      <PropertyRef Name="id_tutor" />
+    </Key>
+    <Property Name="id_tutor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_tutorName" Type="int" />
+    <Property Name="id_phdAssignment" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="un_acceptancereasons">
+    <Key>
+      <PropertyRef Name="id_acceptanceReason" />
+    </Key>
+    <Property Name="id_acceptanceReason" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_assignments">
+    <Key>
+      <PropertyRef Name="id_assignment" />
+    </Key>
+    <Property Name="id_assignment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_person" Type="int" Nullable="false" />
+    <Property Name="id_department" Type="int" Nullable="false" />
+    <Property Name="Timestamp" Type="datetime" Precision="0" />
+    <Property Name="id_userEdit" Type="int" />
+    <Property Name="id_position" Type="int" Nullable="false" />
+    <Property Name="id_positionType" Type="int" />
+  </EntityType>
+  <EntityType Name="un_assignmentspermanent">
+    <Key>
+      <PropertyRef Name="id_assignmentPermanent" />
+    </Key>
+    <Property Name="id_assignmentPermanent" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="45" />
+    <Property Name="NameLatin" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="un_assignmentstemporary">
+    <Key>
+      <PropertyRef Name="id_assignmentTemporary" />
+    </Key>
+    <Property Name="id_assignmentTemporary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="45" />
+    <Property Name="NameLatin" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="un_basicclasses">
+    <Key>
+      <PropertyRef Name="id_basicClass" />
+    </Key>
+    <Property Name="id_basicClass" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Recode" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="un_binaryfiles">
+    <Key>
+      <PropertyRef Name="id_binaryFile" />
+    </Key>
+    <Property Name="id_binaryFile" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="id_fileType" Type="int" Nullable="false" />
+    <Property Name="Binary" Type="longblob" Nullable="false" />
+    <Property Name="id_userEdit" Type="int" />
+    <Property Name="Timestamp" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="un_cities">
+    <Key>
+      <PropertyRef Name="id_city" />
+    </Key>
+    <Property Name="id_city" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_ekatte" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="255" />
+    <Property Name="Municipality" Type="varchar" MaxLength="45" />
+    <Property Name="Region" Type="varchar" MaxLength="45" />
+    <Property Name="Type" Type="varchar" MaxLength="10" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="45" />
+    <Property Name="id_country" Type="int" />
+    <Property Name="id_municipality" Type="int" />
+  </EntityType>
+  <EntityType Name="un_citizenship">
+    <Key>
+      <PropertyRef Name="id_citizenship" />
+    </Key>
+    <Property Name="id_citizenship" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_country" Type="int" Nullable="false" />
+    <Property Name="id_person" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_contactdata">
+    <Key>
+      <PropertyRef Name="id_contactdata" />
+    </Key>
+    <Property Name="id_contactdata" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="255" />
+    <Property Name="id_city" Type="int" />
+    <Property Name="email" Type="varchar" MaxLength="45" />
+    <Property Name="id_person" Type="int" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="45" />
+    <Property Name="Room" Type="varchar" MaxLength="45" />
+    <Property Name="id_userEdit" Type="int" />
+    <Property Name="Timestamp" Type="datetime" Precision="0" />
+    <Property Name="id_module" Type="int" />
+    <Property Name="id_contactType" Type="int" />
+  </EntityType>
+  <EntityType Name="un_contacttypes">
+    <Key>
+      <PropertyRef Name="id_contactType" />
+    </Key>
+    <Property Name="id_contactType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="45" />
+    <Property Name="IsPublic" Type="bit" />
+  </EntityType>
+  <EntityType Name="un_countries">
+    <Key>
+      <PropertyRef Name="id_country" />
+    </Key>
+    <Property Name="id_country" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="NameLatin" Type="varchar" MaxLength="45" />
+    <Property Name="Code" Type="varchar" MaxLength="45" />
+    <Property Name="TelCode" Type="varchar" MaxLength="45" />
+    <Property Name="IsCity" Type="bool" />
+    <Property Name="ISO_3166Code" Type="varchar" MaxLength="45" />
+    <Property Name="ISO_A3" Type="varchar" MaxLength="45" />
+    <Property Name="ISO_Number" Type="varchar" MaxLength="45" />
+    <Property Name="IsEUMember" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_departments">
+    <Key>
+      <PropertyRef Name="id_department" />
+    </Key>
+    <Property Name="id_department" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_city" Type="int" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="255" />
+    <Property Name="BULSTAT" Type="varchar" MaxLength="15" />
+    <Property Name="Phone1" Type="varchar" MaxLength="45" />
+    <Property Name="Phone2" Type="varchar" MaxLength="45" />
+    <Property Name="Phone3" Type="varchar" MaxLength="45" />
+    <Property Name="email" Type="varchar" MaxLength="255" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="NameLatin" Type="varchar" MaxLength="255" />
+    <Property Name="NameShort" Type="varchar" MaxLength="45" />
+    <Property Name="id_departmentType" Type="int" Nullable="false" />
+    <Property Name="id_userEdit" Type="int" />
+    <Property Name="Timestamp" Type="datetime" Precision="0" />
+    <Property Name="id_module" Type="int" />
+    <Property Name="ValidFrom" Type="datetime" Precision="0" />
+    <Property Name="ValidTo" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="un_departmentshistory">
+    <Key>
+      <PropertyRef Name="id_department" />
+    </Key>
+    <Property Name="id_department" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_EKATTE" Type="int" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="255" />
+    <Property Name="BULSTAT" Type="varchar" MaxLength="15" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="NameLatin" Type="varchar" MaxLength="255" />
+    <Property Name="NameShort" Type="varchar" MaxLength="45" />
+    <Property Name="id_departmentType" Type="int" Nullable="false" />
+    <Property Name="id_userEdit" Type="int" />
+    <Property Name="Timestamp" Type="datetime" Precision="0" />
+    <Property Name="id_module" Type="int" />
+    <Property Name="ValidFrom" Type="datetime" Precision="0" />
+    <Property Name="ValidTo" Type="datetime" Precision="0" />
+    <Property Name="id_departmentParent" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_departmenttree">
+    <Key>
+      <PropertyRef Name="id_departmentTree" />
+    </Key>
+    <Property Name="id_departmentTree" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_departmentParent" Type="int" />
+    <Property Name="id_treeRevision" Type="int" Nullable="false" />
+    <Property Name="id_department" Type="int" Nullable="false" />
+    <Property Name="Code" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_departmenttypes">
+    <Key>
+      <PropertyRef Name="id_departmentType" />
+    </Key>
+    <Property Name="id_departmentType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NameShort" Type="varchar" MaxLength="100" />
+    <Property Name="Code" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="un_educationdurations">
+    <Key>
+      <PropertyRef Name="id_educationduration" />
+    </Key>
+    <Property Name="id_educationduration" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Duration" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_educationforms">
+    <Key>
+      <PropertyRef Name="id_educationForm" />
+    </Key>
+    <Property Name="id_educationForm" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="NameLatin" Type="varchar" MaxLength="45" />
+    <Property Name="NameShort" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="MonCode" Type="int" />
+  </EntityType>
+  <EntityType Name="un_educationlevels">
+    <Key>
+      <PropertyRef Name="id_educationLevel" />
+    </Key>
+    <Property Name="id_educationLevel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_egntypes">
+    <Key>
+      <PropertyRef Name="id_egntype" />
+    </Key>
+    <Property Name="id_egntype" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="un_ekatte">
+    <Key>
+      <PropertyRef Name="id_ekatte" />
+    </Key>
+    <Property Name="id_ekatte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" />
+    <Property Name="Municipality" Type="varchar" MaxLength="45" />
+    <Property Name="Region" Type="varchar" MaxLength="45" />
+    <Property Name="Code" Type="varchar" MaxLength="45" />
+    <Property Name="id_municipality" Type="int" />
+  </EntityType>
+  <EntityType Name="un_filetypes">
+    <Key>
+      <PropertyRef Name="id_fileType" />
+    </Key>
+    <Property Name="id_fileType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Extension" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="un_gender">
+    <Key>
+      <PropertyRef Name="id_gender" />
+    </Key>
+    <Property Name="id_gender" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_healthinsuranse">
+    <Key>
+      <PropertyRef Name="id_healthInsuranse" />
+    </Key>
+    <Property Name="id_healthInsuranse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_person" Type="int" Nullable="false" />
+    <Property Name="From" Type="datetime" Precision="0" />
+    <Property Name="To" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="un_identitycards">
+    <Key>
+      <PropertyRef Name="id_identityCard" />
+    </Key>
+    <Property Name="id_identityCard" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="int" />
+    <Property Name="ExpiryDate" Type="datetime" Precision="0" />
+    <Property Name="IssueDate" Type="datetime" Precision="0" />
+    <Property Name="IssuedBy" Type="varchar" MaxLength="45" />
+    <Property Name="id_city" Type="int" />
+    <Property Name="Address" Type="varchar" MaxLength="255" />
+    <Property Name="ValidFrom" Type="datetime" Precision="0" />
+    <Property Name="ValidTo" Type="datetime" Precision="0" />
+    <Property Name="Timestamp" Type="datetime" Precision="0" />
+    <Property Name="id_userEdit" Type="int" />
+    <Property Name="EGN" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="BirthDate" Type="datetime" Precision="0" />
+    <Property Name="id_person" Type="int" Nullable="false" />
+    <Property Name="id_cityBirth" Type="int" />
+    <Property Name="PicturePath" Type="varchar" MaxLength="45" />
+    <Property Name="id_module" Type="int" />
+    <Property Name="WhatIsChanged" Type="varchar" MaxLength="255" />
+    <Property Name="id_citizenship" Type="int" />
+    <Property Name="id_egnType" Type="int" />
+  </EntityType>
+  <EntityType Name="un_identitycardshistory">
+    <Key>
+      <PropertyRef Name="id_identityCard" />
+    </Key>
+    <Property Name="id_identityCard" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="false" />
+    <Property Name="ExpiryDate" Type="datetime" Precision="0" />
+    <Property Name="IssueDate" Type="datetime" Precision="0" />
+    <Property Name="IssuedBy" Type="varchar" MaxLength="45" />
+    <Property Name="id_city" Type="int" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="IsActive" Type="bool" />
+    <Property Name="ValidFrom" Type="datetime" Precision="0" />
+    <Property Name="ValidTo" Type="datetime" Precision="0" />
+    <Property Name="Timestamp" Type="datetime" Precision="0" />
+    <Property Name="id_userEdit" Type="int" />
+    <Property Name="EGN" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="id_egnType" Type="int" Nullable="false" />
+    <Property Name="id_person" Type="int" Nullable="false" />
+    <Property Name="id_cityBirth" Type="int" />
+    <Property Name="PicturePath" Type="varchar" MaxLength="45" />
+    <Property Name="id_module" Type="int" />
+    <Property Name="WhatIsChanged" Type="varchar" MaxLength="255" />
+    <Property Name="id_identityCardParent" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_languagelevels">
+    <Key>
+      <PropertyRef Name="id_languageLevel" />
+    </Key>
+    <Property Name="id_languageLevel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_languages">
+    <Key>
+      <PropertyRef Name="id_language" />
+    </Key>
+    <Property Name="id_language" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_messages">
+    <Key>
+      <PropertyRef Name="id_message" />
+    </Key>
+    <Property Name="id_message" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Body" Type="longtext" Nullable="false" />
+    <Property Name="Timestamp" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsSent" Type="bit" Nullable="false" />
+    <Property Name="id_person" Type="int" />
+  </EntityType>
+  <EntityType Name="un_municipalities">
+    <Key>
+      <PropertyRef Name="id_municipality" />
+    </Key>
+    <Property Name="id_municipality" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="45" />
+    <Property Name="Code" Type="varchar" MaxLength="45" />
+    <Property Name="id_region" Type="int" />
+  </EntityType>
+  <EntityType Name="un_nsicodes">
+    <Key>
+      <PropertyRef Name="id_nsicode" />
+    </Key>
+    <Property Name="id_nsicode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_organisation">
+    <Key>
+      <PropertyRef Name="id_organisation" />
+    </Key>
+    <Property Name="id_organisation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MOMNCode" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="Period" Type="int" Nullable="false" />
+    <Property Name="FullName" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="ShortName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="BasicSchoolType" Type="int" Nullable="false" />
+    <Property Name="SchoolType" Type="int" Nullable="false" />
+    <Property Name="BudgetFrom" Type="int" Nullable="false" />
+    <Property Name="id_EKTATTE" Type="int" Nullable="false" />
+    <Property Name="PostalCode" Type="int" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="Phone1" Type="varchar" MaxLength="15" />
+    <Property Name="Phone2" Type="varchar" MaxLength="15" />
+    <Property Name="Phone3" Type="varchar" MaxLength="15" />
+    <Property Name="Phone4" Type="varchar" MaxLength="15" />
+    <Property Name="Phone5" Type="varchar" MaxLength="15" />
+    <Property Name="Fax" Type="varchar" MaxLength="15" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="WebAddress" Type="varchar" MaxLength="50" />
+    <Property Name="Bulstat" Type="varchar" MaxLength="9" />
+    <Property Name="FoundationYear" Type="varchar" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="un_personlanguages">
+    <Key>
+      <PropertyRef Name="id_personLanguage" />
+    </Key>
+    <Property Name="id_personLanguage" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_person" Type="int" Nullable="false" />
+    <Property Name="id_language" Type="int" Nullable="false" />
+    <Property Name="id_languageLevel" Type="int" />
+  </EntityType>
+  <EntityType Name="un_persons">
+    <Key>
+      <PropertyRef Name="id_person" />
+    </Key>
+    <Property Name="id_person" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SirName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="FirstNameLatin" Type="varchar" MaxLength="50" />
+    <Property Name="SirNameLatin" Type="varchar" MaxLength="50" />
+    <Property Name="LastNameLatin" Type="varchar" MaxLength="50" />
+    <Property Name="id_gender" Type="int" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="45" />
+    <Property Name="ValidFrom" Type="datetime" Precision="0" />
+    <Property Name="ValidTo" Type="datetime" Precision="0" />
+    <Property Name="id_userEdit" Type="int" />
+    <Property Name="Timestamp" Type="datetime" Precision="0" />
+    <Property Name="id_module" Type="int" />
+  </EntityType>
+  <EntityType Name="un_personshistory">
+    <Key>
+      <PropertyRef Name="id_person" />
+    </Key>
+    <Property Name="id_person" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SirName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="FirstNameLatin" Type="varchar" MaxLength="50" />
+    <Property Name="SirNameLatin" Type="varchar" MaxLength="50" />
+    <Property Name="LastNameLatin" Type="varchar" MaxLength="50" />
+    <Property Name="id_gender" Type="int" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="45" />
+    <Property Name="ValidFrom" Type="datetime" Precision="0" />
+    <Property Name="ValidTo" Type="datetime" Precision="0" />
+    <Property Name="id_userEdit" Type="int" />
+    <Property Name="Timestamp" Type="datetime" Precision="0" />
+    <Property Name="id_module" Type="int" />
+    <Property Name="id_personParent" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_positions">
+    <Key>
+      <PropertyRef Name="id_poistion" />
+    </Key>
+    <Property Name="id_poistion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" />
+    <Property Name="NameLatin" Type="varchar" MaxLength="255" />
+    <Property Name="Timestamp" Type="datetime" Precision="0" />
+    <Property Name="id_role" Type="int" />
+    <Property Name="id_positionType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_positiontypes">
+    <Key>
+      <PropertyRef Name="id_positionType" />
+    </Key>
+    <Property Name="id_positionType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_professionalareas">
+    <Key>
+      <PropertyRef Name="id_professionalArea" />
+    </Key>
+    <Property Name="id_professionalArea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="NameLatin" Type="varchar" MaxLength="255" />
+    <Property Name="CodeMon" Type="int" />
+  </EntityType>
+  <EntityType Name="un_professionalgroups">
+    <Key>
+      <PropertyRef Name="id_professionalGroup" />
+    </Key>
+    <Property Name="id_professionalGroup" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="NameLatin" Type="varchar" MaxLength="255" />
+    <Property Name="ProfessionalArea" Type="varchar" MaxLength="255" />
+    <Property Name="id_professionalArea" Type="int" />
+  </EntityType>
+  <EntityType Name="un_regions">
+    <Key>
+      <PropertyRef Name="id_Region" />
+    </Key>
+    <Property Name="id_Region" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" />
+    <Property Name="Code" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="un_roles">
+    <Key>
+      <PropertyRef Name="id_role" />
+    </Key>
+    <Property Name="id_role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_sciencehistory">
+    <Key>
+      <PropertyRef Name="id_sciencehistory" />
+    </Key>
+    <Property Name="id_sciencehistory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_person" Type="int" />
+    <Property Name="id_educationLevel" Type="int" />
+    <Property Name="DiplomDate" Type="datetime" Precision="0" />
+    <Property Name="DiplomNumber" Type="varchar" MaxLength="255" />
+    <Property Name="IssuedBy" Type="varchar" MaxLength="45" />
+    <Property Name="Speciality" Type="varchar" MaxLength="45" />
+    <Property Name="id_userEdit" Type="int" />
+    <Property Name="Timestamp" Type="datetime" Precision="0" />
+    <Property Name="id_module" Type="int" />
+  </EntityType>
+  <EntityType Name="un_specialities">
+    <Key>
+      <PropertyRef Name="id_speciality" />
+    </Key>
+    <Property Name="id_speciality" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_department" Type="int" Nullable="false" />
+    <Property Name="id_specialityType" Type="int" Nullable="false" />
+    <Property Name="AccreditatedFrom" Type="datetime" Precision="0" />
+    <Property Name="AccreditatedTo" Type="datetime" Precision="0" />
+    <Property Name="IsAccreditated" Type="bit" />
+    <Property Name="id_userEdit" Type="int" />
+    <Property Name="Timestamp" Type="datetime" Precision="0" />
+    <Property Name="id_module" Type="int" />
+  </EntityType>
+  <EntityType Name="un_specialitytypes">
+    <Key>
+      <PropertyRef Name="id_specialityType" />
+    </Key>
+    <Property Name="id_specialityType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" />
+    <Property Name="NameLatin" Type="varchar" MaxLength="255" />
+    <Property Name="Code" Type="int" />
+    <Property Name="MonCode" Type="int" />
+    <Property Name="id_professionalArea" Type="int" />
+  </EntityType>
+  <EntityType Name="un_statuses">
+    <Key>
+      <PropertyRef Name="id_status" />
+    </Key>
+    <Property Name="id_status" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_studytypes">
+    <Key>
+      <PropertyRef Name="id_studyType" />
+    </Key>
+    <Property Name="id_studyType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="NameLatin" Type="varchar" MaxLength="45" />
+    <Property Name="NameShort" Type="varchar" MaxLength="45" />
+    <Property Name="MonCode" Type="int" />
+  </EntityType>
+  <EntityType Name="un_treerevisions">
+    <Key>
+      <PropertyRef Name="id_treeRevision" />
+    </Key>
+    <Property Name="id_treeRevision" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RevisionNumber" Type="int" />
+    <Property Name="ActivationDate" Type="datetime" Precision="0" />
+    <Property Name="ExpiryDate" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="un_userrights">
+    <Key>
+      <PropertyRef Name="id_userright" />
+    </Key>
+    <Property Name="id_userright" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_user" Type="int" Nullable="false" />
+    <Property Name="id_module" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="un_users">
+    <Key>
+      <PropertyRef Name="id_user" />
+    </Key>
+    <Property Name="id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="id_person" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="egn">
+    <End Role="un_egntypes" Type="Self.un_egntypes" Multiplicity="0..1" />
+    <End Role="un_identitycards" Type="Self.un_identitycards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_egntypes">
+        <PropertyRef Name="id_egntype" />
+      </Principal>
+      <Dependent Role="un_identitycards">
+        <PropertyRef Name="id_egnType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FH_PH_assignments_UN_ProfessionalGroups">
+    <End Role="un_specialities" Type="Self.un_specialities" Multiplicity="0..1" />
+    <End Role="ph_assignments" Type="Self.ph_assignments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_specialities">
+        <PropertyRef Name="id_speciality" />
+      </Principal>
+      <Dependent Role="ph_assignments">
+        <PropertyRef Name="id_speciality" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FH_PH_assignments_UN_ProfessionalGroups0">
+    <End Role="un_professionalgroups" Type="Self.un_professionalgroups" Multiplicity="1" />
+    <End Role="ph_assignmentshistory" Type="Self.ph_assignmentshistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_professionalgroups">
+        <PropertyRef Name="id_professionalGroup" />
+      </Principal>
+      <Dependent Role="ph_assignmentshistory">
+        <PropertyRef Name="id_professionalGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Assignments_UN_AcceptanceReasons">
+    <End Role="un_acceptancereasons" Type="Self.un_acceptancereasons" Multiplicity="0..1" />
+    <End Role="ph_assignments" Type="Self.ph_assignments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_acceptancereasons">
+        <PropertyRef Name="id_acceptanceReason" />
+      </Principal>
+      <Dependent Role="ph_assignments">
+        <PropertyRef Name="id_acceptanceReason" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Assignments_UN_Departments">
+    <End Role="un_departments" Type="Self.un_departments" Multiplicity="0..1" />
+    <End Role="ph_assignments" Type="Self.ph_assignments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_departments">
+        <PropertyRef Name="id_department" />
+      </Principal>
+      <Dependent Role="ph_assignments">
+        <PropertyRef Name="id_department" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Assignments_UN_departmentTree0">
+    <End Role="un_departmenttree" Type="Self.un_departmenttree" Multiplicity="1" />
+    <End Role="ph_assignmentshistory" Type="Self.ph_assignmentshistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_departmenttree">
+        <PropertyRef Name="id_departmentTree" />
+      </Principal>
+      <Dependent Role="ph_assignmentshistory">
+        <PropertyRef Name="id_department" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Assignments_UN_NsiCodes">
+    <End Role="un_nsicodes" Type="Self.un_nsicodes" Multiplicity="0..1" />
+    <End Role="ph_assignments" Type="Self.ph_assignments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_nsicodes">
+        <PropertyRef Name="id_nsicode" />
+      </Principal>
+      <Dependent Role="ph_assignments">
+        <PropertyRef Name="id_nsiCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Assignments_UN_Statues">
+    <End Role="un_statuses" Type="Self.un_statuses" Multiplicity="0..1" />
+    <End Role="ph_assignments" Type="Self.ph_assignments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_statuses">
+        <PropertyRef Name="id_status" />
+      </Principal>
+      <Dependent Role="ph_assignments">
+        <PropertyRef Name="id_status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Assignments_UN_Statues0">
+    <End Role="un_statuses" Type="Self.un_statuses" Multiplicity="1" />
+    <End Role="ph_assignmentshistory" Type="Self.ph_assignmentshistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_statuses">
+        <PropertyRef Name="id_status" />
+      </Principal>
+      <Dependent Role="ph_assignmentshistory">
+        <PropertyRef Name="id_status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Assignments_UN_StudyTypes">
+    <End Role="un_studytypes" Type="Self.un_studytypes" Multiplicity="0..1" />
+    <End Role="ph_assignments" Type="Self.ph_assignments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_studytypes">
+        <PropertyRef Name="id_studyType" />
+      </Principal>
+      <Dependent Role="ph_assignments">
+        <PropertyRef Name="id_studyType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Assignments_UN_StudyTypes0">
+    <End Role="un_studytypes" Type="Self.un_studytypes" Multiplicity="1" />
+    <End Role="ph_assignmentshistory" Type="Self.ph_assignmentshistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_studytypes">
+        <PropertyRef Name="id_studyType" />
+      </Principal>
+      <Dependent Role="ph_assignmentshistory">
+        <PropertyRef Name="id_studyType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Assignments_UNEducationDurations">
+    <End Role="un_educationdurations" Type="Self.un_educationdurations" Multiplicity="0..1" />
+    <End Role="ph_assignments" Type="Self.ph_assignments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_educationdurations">
+        <PropertyRef Name="id_educationduration" />
+      </Principal>
+      <Dependent Role="ph_assignments">
+        <PropertyRef Name="id_educationDuration" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Assignments_UNEducationForms">
+    <End Role="un_educationforms" Type="Self.un_educationforms" Multiplicity="0..1" />
+    <End Role="ph_assignments" Type="Self.ph_assignments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_educationforms">
+        <PropertyRef Name="id_educationForm" />
+      </Principal>
+      <Dependent Role="ph_assignments">
+        <PropertyRef Name="id_educationForm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Attestations_PH_Assignments">
+    <End Role="ph_assignments" Type="Self.ph_assignments" Multiplicity="1" />
+    <End Role="ph_attestations" Type="Self.ph_attestations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ph_assignments">
+        <PropertyRef Name="id_phdAssignment" />
+      </Principal>
+      <Dependent Role="ph_attestations">
+        <PropertyRef Name="id_phdAssignment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Attestations_UN_Binary">
+    <End Role="un_binaryfiles" Type="Self.un_binaryfiles" Multiplicity="0..1" />
+    <End Role="ph_attestations" Type="Self.ph_attestations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_binaryfiles">
+        <PropertyRef Name="id_binaryFile" />
+      </Principal>
+      <Dependent Role="ph_attestations">
+        <PropertyRef Name="id_binaryFile" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_DiplomData_PH_Assignments">
+    <End Role="ph_assignments" Type="Self.ph_assignments" Multiplicity="1" />
+    <End Role="ph_diplomdata" Type="Self.ph_diplomdata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ph_assignments">
+        <PropertyRef Name="id_phdAssignment" />
+      </Principal>
+      <Dependent Role="ph_diplomdata">
+        <PropertyRef Name="id_pdhAssignment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_DiplomData_UN_Cities">
+    <End Role="un_cities" Type="Self.un_cities" Multiplicity="0..1" />
+    <End Role="ph_diplomdata" Type="Self.ph_diplomdata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_cities">
+        <PropertyRef Name="id_city" />
+      </Principal>
+      <Dependent Role="ph_diplomdata">
+        <PropertyRef Name="id_citiesLastEducation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_DiplomData_UN_Educations">
+    <End Role="un_educationlevels" Type="Self.un_educationlevels" Multiplicity="0..1" />
+    <End Role="ph_diplomdata" Type="Self.ph_diplomdata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_educationlevels">
+        <PropertyRef Name="id_educationLevel" />
+      </Principal>
+      <Dependent Role="ph_diplomdata">
+        <PropertyRef Name="id_educationLast" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Events_PH_Assignments">
+    <End Role="ph_assignments" Type="Self.ph_assignments" Multiplicity="1" />
+    <End Role="ph_events" Type="Self.ph_events" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ph_assignments">
+        <PropertyRef Name="id_phdAssignment" />
+      </Principal>
+      <Dependent Role="ph_events">
+        <PropertyRef Name="id_phdAssignment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Events_PH_EventTypes">
+    <End Role="ph_eventtypes" Type="Self.ph_eventtypes" Multiplicity="1" />
+    <End Role="ph_events" Type="Self.ph_events" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ph_eventtypes">
+        <PropertyRef Name="id_eventType" />
+      </Principal>
+      <Dependent Role="ph_events">
+        <PropertyRef Name="id_eventType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Exams_PH_Assignments">
+    <End Role="ph_assignments" Type="Self.ph_assignments" Multiplicity="1" />
+    <End Role="ph_exams" Type="Self.ph_exams" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ph_assignments">
+        <PropertyRef Name="id_phdAssignment" />
+      </Principal>
+      <Dependent Role="ph_exams">
+        <PropertyRef Name="id_phAssignment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Exams_PH_ExamTypes">
+    <End Role="ph_examtypes" Type="Self.ph_examtypes" Multiplicity="1" />
+    <End Role="ph_exams" Type="Self.ph_exams" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ph_examtypes">
+        <PropertyRef Name="id_examType" />
+      </Principal>
+      <Dependent Role="ph_exams">
+        <PropertyRef Name="id_examType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_HealthInsurance_UN_Persons">
+    <End Role="un_persons" Type="Self.un_persons" Multiplicity="1" />
+    <End Role="un_healthinsuranse" Type="Self.un_healthinsuranse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_persons">
+        <PropertyRef Name="id_person" />
+      </Principal>
+      <Dependent Role="un_healthinsuranse">
+        <PropertyRef Name="id_person" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Individual_BinaryFile">
+    <End Role="un_binaryfiles" Type="Self.un_binaryfiles" Multiplicity="0..1" />
+    <End Role="ph_individualplans" Type="Self.ph_individualplans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_binaryfiles">
+        <PropertyRef Name="id_binaryFile" />
+      </Principal>
+      <Dependent Role="ph_individualplans">
+        <PropertyRef Name="id_binaryFile" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_IndividualPlans_PH_assignments">
+    <End Role="ph_assignments" Type="Self.ph_assignments" Multiplicity="1" />
+    <End Role="ph_individualplans" Type="Self.ph_individualplans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ph_assignments">
+        <PropertyRef Name="id_phdAssignment" />
+      </Principal>
+      <Dependent Role="ph_individualplans">
+        <PropertyRef Name="id_phdAssignment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_TopicHistory_PH_Assignment">
+    <End Role="ph_assignments" Type="Self.ph_assignments" Multiplicity="1" />
+    <End Role="ph_topicshistory" Type="Self.ph_topicshistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ph_assignments">
+        <PropertyRef Name="id_phdAssignment" />
+      </Principal>
+      <Dependent Role="ph_topicshistory">
+        <PropertyRef Name="id_phdAssignment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_TopicHistory_PH_Assignment0">
+    <End Role="ph_assignments" Type="Self.ph_assignments" Multiplicity="1" />
+    <End Role="ph_topics" Type="Self.ph_topics" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ph_assignments">
+        <PropertyRef Name="id_phdAssignment" />
+      </Principal>
+      <Dependent Role="ph_topics">
+        <PropertyRef Name="id_phdAssignment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_TopicHistory_PH_Topics">
+    <End Role="ph_topics" Type="Self.ph_topics" Multiplicity="1" />
+    <End Role="ph_topicshistory" Type="Self.ph_topicshistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ph_topics">
+        <PropertyRef Name="id_phdTopic" />
+      </Principal>
+      <Dependent Role="ph_topicshistory">
+        <PropertyRef Name="id_phdTopicParent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Tutors_PH_Assignment">
+    <End Role="ph_assignments" Type="Self.ph_assignments" Multiplicity="1" />
+    <End Role="ph_tutors" Type="Self.ph_tutors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ph_assignments">
+        <PropertyRef Name="id_phdAssignment" />
+      </Principal>
+      <Dependent Role="ph_tutors">
+        <PropertyRef Name="id_phdAssignment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PH_Tutors_PH_TutorNames">
+    <End Role="ph_tutornames" Type="Self.ph_tutornames" Multiplicity="0..1" />
+    <End Role="ph_tutors" Type="Self.ph_tutors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ph_tutornames">
+        <PropertyRef Name="id_tutorName" />
+      </Principal>
+      <Dependent Role="ph_tutors">
+        <PropertyRef Name="id_tutorName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_BinaryFiles_UN_FileTypes">
+    <End Role="un_filetypes" Type="Self.un_filetypes" Multiplicity="1" />
+    <End Role="un_binaryfiles" Type="Self.un_binaryfiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_filetypes">
+        <PropertyRef Name="id_fileType" />
+      </Principal>
+      <Dependent Role="un_binaryfiles">
+        <PropertyRef Name="id_fileType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_Cities_UN_Countries">
+    <End Role="un_countries" Type="Self.un_countries" Multiplicity="0..1" />
+    <End Role="un_cities" Type="Self.un_cities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_countries">
+        <PropertyRef Name="id_country" />
+      </Principal>
+      <Dependent Role="un_cities">
+        <PropertyRef Name="id_country" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_Cities_UN_Ekatte">
+    <End Role="un_ekatte" Type="Self.un_ekatte" Multiplicity="0..1" />
+    <End Role="un_cities" Type="Self.un_cities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_ekatte">
+        <PropertyRef Name="id_ekatte" />
+      </Principal>
+      <Dependent Role="un_cities">
+        <PropertyRef Name="id_ekatte" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_CIties_UN_Municipalities">
+    <End Role="un_municipalities" Type="Self.un_municipalities" Multiplicity="0..1" />
+    <End Role="un_cities" Type="Self.un_cities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_municipalities">
+        <PropertyRef Name="id_municipality" />
+      </Principal>
+      <Dependent Role="un_cities">
+        <PropertyRef Name="id_municipality" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_Citizenship_UN_Countries">
+    <End Role="un_countries" Type="Self.un_countries" Multiplicity="1" />
+    <End Role="un_citizenship" Type="Self.un_citizenship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_countries">
+        <PropertyRef Name="id_country" />
+      </Principal>
+      <Dependent Role="un_citizenship">
+        <PropertyRef Name="id_country" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_Citizenship_UN_Persons">
+    <End Role="un_persons" Type="Self.un_persons" Multiplicity="1" />
+    <End Role="un_citizenship" Type="Self.un_citizenship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_persons">
+        <PropertyRef Name="id_person" />
+      </Principal>
+      <Dependent Role="un_citizenship">
+        <PropertyRef Name="id_person" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_ContactData_UN_Cities">
+    <End Role="un_cities" Type="Self.un_cities" Multiplicity="0..1" />
+    <End Role="un_contactdata" Type="Self.un_contactdata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_cities">
+        <PropertyRef Name="id_city" />
+      </Principal>
+      <Dependent Role="un_contactdata">
+        <PropertyRef Name="id_city" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_ContactData_UN_ContactTypes">
+    <End Role="un_contacttypes" Type="Self.un_contacttypes" Multiplicity="0..1" />
+    <End Role="un_contactdata" Type="Self.un_contactdata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_contacttypes">
+        <PropertyRef Name="id_contactType" />
+      </Principal>
+      <Dependent Role="un_contactdata">
+        <PropertyRef Name="id_contactType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_ContactData_UN_Persons">
+    <End Role="un_persons" Type="Self.un_persons" Multiplicity="1" />
+    <End Role="un_contactdata" Type="Self.un_contactdata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_persons">
+        <PropertyRef Name="id_person" />
+      </Principal>
+      <Dependent Role="un_contactdata">
+        <PropertyRef Name="id_person" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_Departments_UN_DepartmentTyhpes">
+    <End Role="un_departmenttypes" Type="Self.un_departmenttypes" Multiplicity="1" />
+    <End Role="un_departments" Type="Self.un_departments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_departmenttypes">
+        <PropertyRef Name="id_departmentType" />
+      </Principal>
+      <Dependent Role="un_departments">
+        <PropertyRef Name="id_departmentType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_Departments_UN_DepartmentTyhpes0">
+    <End Role="un_departmenttypes" Type="Self.un_departmenttypes" Multiplicity="1" />
+    <End Role="un_departmentshistory" Type="Self.un_departmentshistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_departmenttypes">
+        <PropertyRef Name="id_departmentType" />
+      </Principal>
+      <Dependent Role="un_departmentshistory">
+        <PropertyRef Name="id_departmentType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_DepartmentsHistory_UN_Departments">
+    <End Role="un_departments" Type="Self.un_departments" Multiplicity="1" />
+    <End Role="un_departmentshistory" Type="Self.un_departmentshistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_departments">
+        <PropertyRef Name="id_department" />
+      </Principal>
+      <Dependent Role="un_departmentshistory">
+        <PropertyRef Name="id_departmentParent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_DepartmentTree_UN_Departments">
+    <End Role="un_departments" Type="Self.un_departments" Multiplicity="1" />
+    <End Role="un_departmenttree" Type="Self.un_departmenttree" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_departments">
+        <PropertyRef Name="id_department" />
+      </Principal>
+      <Dependent Role="un_departmenttree">
+        <PropertyRef Name="id_department" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_DepartmentTree_UN_DepartmentTree">
+    <End Role="un_departmenttree" Type="Self.un_departmenttree" Multiplicity="0..1" />
+    <End Role="un_departmenttree1" Type="Self.un_departmenttree" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_departmenttree">
+        <PropertyRef Name="id_departmentTree" />
+      </Principal>
+      <Dependent Role="un_departmenttree1">
+        <PropertyRef Name="id_departmentParent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_DepartmentTree_UN_TreeRevision">
+    <End Role="un_treerevisions" Type="Self.un_treerevisions" Multiplicity="1" />
+    <End Role="un_departmenttree" Type="Self.un_departmenttree" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_treerevisions">
+        <PropertyRef Name="id_treeRevision" />
+      </Principal>
+      <Dependent Role="un_departmenttree">
+        <PropertyRef Name="id_treeRevision" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_EKATTE_UN_Municipalities">
+    <End Role="un_municipalities" Type="Self.un_municipalities" Multiplicity="0..1" />
+    <End Role="un_ekatte" Type="Self.un_ekatte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_municipalities">
+        <PropertyRef Name="id_municipality" />
+      </Principal>
+      <Dependent Role="un_ekatte">
+        <PropertyRef Name="id_municipality" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_un_identitycard_un_city">
+    <End Role="un_cities" Type="Self.un_cities" Multiplicity="0..1" />
+    <End Role="un_identitycards" Type="Self.un_identitycards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_cities">
+        <PropertyRef Name="id_city" />
+      </Principal>
+      <Dependent Role="un_identitycards">
+        <PropertyRef Name="id_city" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_un_identitycard_un_city0">
+    <End Role="un_cities" Type="Self.un_cities" Multiplicity="1" />
+    <End Role="un_identitycardshistory" Type="Self.un_identitycardshistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_cities">
+        <PropertyRef Name="id_city" />
+      </Principal>
+      <Dependent Role="un_identitycardshistory">
+        <PropertyRef Name="id_city" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_IdentityCards_UN_Cities">
+    <End Role="un_cities" Type="Self.un_cities" Multiplicity="0..1" />
+    <End Role="un_identitycards" Type="Self.un_identitycards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_cities">
+        <PropertyRef Name="id_city" />
+      </Principal>
+      <Dependent Role="un_identitycards">
+        <PropertyRef Name="id_cityBirth" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_IdentityCards_UN_Cities0">
+    <End Role="un_cities" Type="Self.un_cities" Multiplicity="0..1" />
+    <End Role="un_identitycardshistory" Type="Self.un_identitycardshistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_cities">
+        <PropertyRef Name="id_city" />
+      </Principal>
+      <Dependent Role="un_identitycardshistory">
+        <PropertyRef Name="id_cityBirth" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_IdentityCards_UN_CItizenship">
+    <End Role="un_citizenship" Type="Self.un_citizenship" Multiplicity="0..1" />
+    <End Role="un_identitycards" Type="Self.un_identitycards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_citizenship">
+        <PropertyRef Name="id_citizenship" />
+      </Principal>
+      <Dependent Role="un_identitycards">
+        <PropertyRef Name="id_citizenship" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_IdentityCards_UN_Persons">
+    <End Role="un_persons" Type="Self.un_persons" Multiplicity="1" />
+    <End Role="un_identitycards" Type="Self.un_identitycards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_persons">
+        <PropertyRef Name="id_person" />
+      </Principal>
+      <Dependent Role="un_identitycards">
+        <PropertyRef Name="id_person" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_IdentityCards_UN_Persons0">
+    <End Role="un_persons" Type="Self.un_persons" Multiplicity="1" />
+    <End Role="un_identitycardshistory" Type="Self.un_identitycardshistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_persons">
+        <PropertyRef Name="id_person" />
+      </Principal>
+      <Dependent Role="un_identitycardshistory">
+        <PropertyRef Name="id_person" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_IdentityCardsHistory_UN_IdentityCards">
+    <End Role="un_identitycards" Type="Self.un_identitycards" Multiplicity="1" />
+    <End Role="un_identitycardshistory" Type="Self.un_identitycardshistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_identitycards">
+        <PropertyRef Name="id_identityCard" />
+      </Principal>
+      <Dependent Role="un_identitycardshistory">
+        <PropertyRef Name="id_identityCardParent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_Municipalities_UN_Regions">
+    <End Role="un_regions" Type="Self.un_regions" Multiplicity="0..1" />
+    <End Role="un_municipalities" Type="Self.un_municipalities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_regions">
+        <PropertyRef Name="id_Region" />
+      </Principal>
+      <Dependent Role="un_municipalities">
+        <PropertyRef Name="id_region" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_PersonLanguages_UN_LanguageLevels">
+    <End Role="un_languagelevels" Type="Self.un_languagelevels" Multiplicity="0..1" />
+    <End Role="un_personlanguages" Type="Self.un_personlanguages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_languagelevels">
+        <PropertyRef Name="id_languageLevel" />
+      </Principal>
+      <Dependent Role="un_personlanguages">
+        <PropertyRef Name="id_languageLevel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_PersonLanguages_UN_Languages">
+    <End Role="un_languages" Type="Self.un_languages" Multiplicity="1" />
+    <End Role="un_personlanguages" Type="Self.un_personlanguages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_languages">
+        <PropertyRef Name="id_language" />
+      </Principal>
+      <Dependent Role="un_personlanguages">
+        <PropertyRef Name="id_language" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_PersonLanguages_UN_persons">
+    <End Role="un_persons" Type="Self.un_persons" Multiplicity="1" />
+    <End Role="un_personlanguages" Type="Self.un_personlanguages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_persons">
+        <PropertyRef Name="id_person" />
+      </Principal>
+      <Dependent Role="un_personlanguages">
+        <PropertyRef Name="id_person" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_PersonsHistory_UN_Persons">
+    <End Role="un_persons" Type="Self.un_persons" Multiplicity="1" />
+    <End Role="un_personshistory" Type="Self.un_personshistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_persons">
+        <PropertyRef Name="id_person" />
+      </Principal>
+      <Dependent Role="un_personshistory">
+        <PropertyRef Name="id_personParent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_ProfessionalGroups_UN_ProfessionalAreas">
+    <End Role="un_professionalareas" Type="Self.un_professionalareas" Multiplicity="0..1" />
+    <End Role="un_professionalgroups" Type="Self.un_professionalgroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_professionalareas">
+        <PropertyRef Name="id_professionalArea" />
+      </Principal>
+      <Dependent Role="un_professionalgroups">
+        <PropertyRef Name="id_professionalArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_ScienceHistory_UN_Educations">
+    <End Role="un_educationlevels" Type="Self.un_educationlevels" Multiplicity="0..1" />
+    <End Role="un_sciencehistory" Type="Self.un_sciencehistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_educationlevels">
+        <PropertyRef Name="id_educationLevel" />
+      </Principal>
+      <Dependent Role="un_sciencehistory">
+        <PropertyRef Name="id_educationLevel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_Specialities_UN_Departments">
+    <End Role="un_departments" Type="Self.un_departments" Multiplicity="1" />
+    <End Role="un_specialities" Type="Self.un_specialities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_departments">
+        <PropertyRef Name="id_department" />
+      </Principal>
+      <Dependent Role="un_specialities">
+        <PropertyRef Name="id_department" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_Specialities_UN_SpecialityTypes">
+    <End Role="un_specialitytypes" Type="Self.un_specialitytypes" Multiplicity="1" />
+    <End Role="un_specialities" Type="Self.un_specialities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_specialitytypes">
+        <PropertyRef Name="id_specialityType" />
+      </Principal>
+      <Dependent Role="un_specialities">
+        <PropertyRef Name="id_specialityType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_Users_UN_Person">
+    <End Role="un_persons" Type="Self.un_persons" Multiplicity="1" />
+    <End Role="un_users" Type="Self.un_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_persons">
+        <PropertyRef Name="id_person" />
+      </Principal>
+      <Dependent Role="un_users">
+        <PropertyRef Name="id_person" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UN_Users_UN_Userrights">
+    <End Role="un_users" Type="Self.un_users" Multiplicity="1" />
+    <End Role="un_userrights" Type="Self.un_userrights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="un_userrights">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KF_PH_Reports_PH_Assignments">
+    <End Role="ph_assignments" Type="Self.ph_assignments" Multiplicity="1" />
+    <End Role="ph_reports" Type="Self.ph_reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ph_assignments">
+        <PropertyRef Name="id_phdAssignment" />
+      </Principal>
+      <Dependent Role="ph_reports">
+        <PropertyRef Name="id_phdAssignment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KF_PH_Reports_UN_BinaryFiles">
+    <End Role="un_binaryfiles" Type="Self.un_binaryfiles" Multiplicity="0..1" />
+    <End Role="ph_reports" Type="Self.ph_reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_binaryfiles">
+        <PropertyRef Name="id_binaryFile" />
+      </Principal>
+      <Dependent Role="ph_reports">
+        <PropertyRef Name="id_binaryFile" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="un_departments1">
+    <End Role="un_departments" Type="Self.un_departments" Multiplicity="1" />
+    <End Role="un_assignments" Type="Self.un_assignments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_departments">
+        <PropertyRef Name="id_department" />
+      </Principal>
+      <Dependent Role="un_assignments">
+        <PropertyRef Name="id_department" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="un_messages_ibfk_1">
+    <End Role="un_persons" Type="Self.un_persons" Multiplicity="0..1" />
+    <End Role="un_messages" Type="Self.un_messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_persons">
+        <PropertyRef Name="id_person" />
+      </Principal>
+      <Dependent Role="un_messages">
+        <PropertyRef Name="id_person" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="un_persons1">
+    <End Role="un_persons" Type="Self.un_persons" Multiplicity="1" />
+    <End Role="un_assignments" Type="Self.un_assignments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_persons">
+        <PropertyRef Name="id_person" />
+      </Principal>
+      <Dependent Role="un_assignments">
+        <PropertyRef Name="id_person" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UN_Persons_UN_Genders">
+    <End Role="un_gender" Type="Self.un_gender" Multiplicity="1" />
+    <End Role="un_persons" Type="Self.un_persons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_gender">
+        <PropertyRef Name="id_gender" />
+      </Principal>
+      <Dependent Role="un_persons">
+        <PropertyRef Name="id_gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UN_Persons_UN_Genders0">
+    <End Role="un_gender" Type="Self.un_gender" Multiplicity="1" />
+    <End Role="un_personshistory" Type="Self.un_personshistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_gender">
+        <PropertyRef Name="id_gender" />
+      </Principal>
+      <Dependent Role="un_personshistory">
+        <PropertyRef Name="id_gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="un_positions1">
+    <End Role="un_positions" Type="Self.un_positions" Multiplicity="1" />
+    <End Role="un_assignments" Type="Self.un_assignments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_positions">
+        <PropertyRef Name="id_poistion" />
+      </Principal>
+      <Dependent Role="un_assignments">
+        <PropertyRef Name="id_position" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="un_positionTypes1">
+    <End Role="un_positiontypes" Type="Self.un_positiontypes" Multiplicity="1" />
+    <End Role="un_positions" Type="Self.un_positions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_positiontypes">
+        <PropertyRef Name="id_positionType" />
+      </Principal>
+      <Dependent Role="un_positions">
+        <PropertyRef Name="id_positionType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="un_roles1">
+    <End Role="un_roles" Type="Self.un_roles" Multiplicity="0..1" />
+    <End Role="un_positions" Type="Self.un_positions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="un_roles">
+        <PropertyRef Name="id_role" />
+      </Principal>
+      <Dependent Role="un_positions">
+        <PropertyRef Name="id_role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="disModelStoreContainer">
+    <EntitySet Name="ph_assignments" EntityType="Self.ph_assignments" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="ph_assignmentshistory" EntityType="Self.ph_assignmentshistory" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="ph_attestations" EntityType="Self.ph_attestations" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="ph_diplomdata" EntityType="Self.ph_diplomdata" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="ph_events" EntityType="Self.ph_events" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="ph_eventtypes" EntityType="Self.ph_eventtypes" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="ph_exams" EntityType="Self.ph_exams" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="ph_examtypes" EntityType="Self.ph_examtypes" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="ph_individualplans" EntityType="Self.ph_individualplans" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="ph_reports" EntityType="Self.ph_reports" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="ph_topics" EntityType="Self.ph_topics" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="ph_topicshistory" EntityType="Self.ph_topicshistory" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="ph_tutornames" EntityType="Self.ph_tutornames" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="ph_tutors" EntityType="Self.ph_tutors" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_acceptancereasons" EntityType="Self.un_acceptancereasons" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_assignments" EntityType="Self.un_assignments" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_assignmentspermanent" EntityType="Self.un_assignmentspermanent" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_assignmentstemporary" EntityType="Self.un_assignmentstemporary" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_basicclasses" EntityType="Self.un_basicclasses" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_binaryfiles" EntityType="Self.un_binaryfiles" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_cities" EntityType="Self.un_cities" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_citizenship" EntityType="Self.un_citizenship" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_contactdata" EntityType="Self.un_contactdata" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_contacttypes" EntityType="Self.un_contacttypes" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_countries" EntityType="Self.un_countries" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_departments" EntityType="Self.un_departments" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_departmentshistory" EntityType="Self.un_departmentshistory" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_departmenttree" EntityType="Self.un_departmenttree" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_departmenttypes" EntityType="Self.un_departmenttypes" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_educationdurations" EntityType="Self.un_educationdurations" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_educationforms" EntityType="Self.un_educationforms" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_educationlevels" EntityType="Self.un_educationlevels" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_egntypes" EntityType="Self.un_egntypes" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_ekatte" EntityType="Self.un_ekatte" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_filetypes" EntityType="Self.un_filetypes" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_gender" EntityType="Self.un_gender" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_healthinsuranse" EntityType="Self.un_healthinsuranse" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_identitycards" EntityType="Self.un_identitycards" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_identitycardshistory" EntityType="Self.un_identitycardshistory" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_languagelevels" EntityType="Self.un_languagelevels" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_languages" EntityType="Self.un_languages" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_messages" EntityType="Self.un_messages" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_municipalities" EntityType="Self.un_municipalities" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_nsicodes" EntityType="Self.un_nsicodes" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_organisation" EntityType="Self.un_organisation" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_personlanguages" EntityType="Self.un_personlanguages" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_persons" EntityType="Self.un_persons" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_personshistory" EntityType="Self.un_personshistory" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_positions" EntityType="Self.un_positions" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_positiontypes" EntityType="Self.un_positiontypes" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_professionalareas" EntityType="Self.un_professionalareas" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_professionalgroups" EntityType="Self.un_professionalgroups" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_regions" EntityType="Self.un_regions" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_roles" EntityType="Self.un_roles" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_sciencehistory" EntityType="Self.un_sciencehistory" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_specialities" EntityType="Self.un_specialities" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_specialitytypes" EntityType="Self.un_specialitytypes" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_statuses" EntityType="Self.un_statuses" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_studytypes" EntityType="Self.un_studytypes" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_treerevisions" EntityType="Self.un_treerevisions" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_userrights" EntityType="Self.un_userrights" Schema="dis" store:Type="Tables" />
+    <EntitySet Name="un_users" EntityType="Self.un_users" Schema="dis" store:Type="Tables" />
+    <AssociationSet Name="egn" Association="Self.egn">
+      <End Role="un_egntypes" EntitySet="un_egntypes" />
+      <End Role="un_identitycards" EntitySet="un_identitycards" />
+    </AssociationSet>
+    <AssociationSet Name="FH_PH_assignments_UN_ProfessionalGroups" Association="Self.FH_PH_assignments_UN_ProfessionalGroups">
+      <End Role="un_specialities" EntitySet="un_specialities" />
+      <End Role="ph_assignments" EntitySet="ph_assignments" />
+    </AssociationSet>
+    <AssociationSet Name="FH_PH_assignments_UN_ProfessionalGroups0" Association="Self.FH_PH_assignments_UN_ProfessionalGroups0">
+      <End Role="un_professionalgroups" EntitySet="un_professionalgroups" />
+      <End Role="ph_assignmentshistory" EntitySet="ph_assignmentshistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Assignments_UN_AcceptanceReasons" Association="Self.FK_PH_Assignments_UN_AcceptanceReasons">
+      <End Role="un_acceptancereasons" EntitySet="un_acceptancereasons" />
+      <End Role="ph_assignments" EntitySet="ph_assignments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Assignments_UN_Departments" Association="Self.FK_PH_Assignments_UN_Departments">
+      <End Role="un_departments" EntitySet="un_departments" />
+      <End Role="ph_assignments" EntitySet="ph_assignments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Assignments_UN_departmentTree0" Association="Self.FK_PH_Assignments_UN_departmentTree0">
+      <End Role="un_departmenttree" EntitySet="un_departmenttree" />
+      <End Role="ph_assignmentshistory" EntitySet="ph_assignmentshistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Assignments_UN_NsiCodes" Association="Self.FK_PH_Assignments_UN_NsiCodes">
+      <End Role="un_nsicodes" EntitySet="un_nsicodes" />
+      <End Role="ph_assignments" EntitySet="ph_assignments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Assignments_UN_Statues" Association="Self.FK_PH_Assignments_UN_Statues">
+      <End Role="un_statuses" EntitySet="un_statuses" />
+      <End Role="ph_assignments" EntitySet="ph_assignments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Assignments_UN_Statues0" Association="Self.FK_PH_Assignments_UN_Statues0">
+      <End Role="un_statuses" EntitySet="un_statuses" />
+      <End Role="ph_assignmentshistory" EntitySet="ph_assignmentshistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Assignments_UN_StudyTypes" Association="Self.FK_PH_Assignments_UN_StudyTypes">
+      <End Role="un_studytypes" EntitySet="un_studytypes" />
+      <End Role="ph_assignments" EntitySet="ph_assignments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Assignments_UN_StudyTypes0" Association="Self.FK_PH_Assignments_UN_StudyTypes0">
+      <End Role="un_studytypes" EntitySet="un_studytypes" />
+      <End Role="ph_assignmentshistory" EntitySet="ph_assignmentshistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Assignments_UNEducationDurations" Association="Self.FK_PH_Assignments_UNEducationDurations">
+      <End Role="un_educationdurations" EntitySet="un_educationdurations" />
+      <End Role="ph_assignments" EntitySet="ph_assignments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Assignments_UNEducationForms" Association="Self.FK_PH_Assignments_UNEducationForms">
+      <End Role="un_educationforms" EntitySet="un_educationforms" />
+      <End Role="ph_assignments" EntitySet="ph_assignments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Attestations_PH_Assignments" Association="Self.FK_PH_Attestations_PH_Assignments">
+      <End Role="ph_assignments" EntitySet="ph_assignments" />
+      <End Role="ph_attestations" EntitySet="ph_attestations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Attestations_UN_Binary" Association="Self.FK_PH_Attestations_UN_Binary">
+      <End Role="un_binaryfiles" EntitySet="un_binaryfiles" />
+      <End Role="ph_attestations" EntitySet="ph_attestations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_DiplomData_PH_Assignments" Association="Self.FK_PH_DiplomData_PH_Assignments">
+      <End Role="ph_assignments" EntitySet="ph_assignments" />
+      <End Role="ph_diplomdata" EntitySet="ph_diplomdata" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_DiplomData_UN_Cities" Association="Self.FK_PH_DiplomData_UN_Cities">
+      <End Role="un_cities" EntitySet="un_cities" />
+      <End Role="ph_diplomdata" EntitySet="ph_diplomdata" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_DiplomData_UN_Educations" Association="Self.FK_PH_DiplomData_UN_Educations">
+      <End Role="un_educationlevels" EntitySet="un_educationlevels" />
+      <End Role="ph_diplomdata" EntitySet="ph_diplomdata" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Events_PH_Assignments" Association="Self.FK_PH_Events_PH_Assignments">
+      <End Role="ph_assignments" EntitySet="ph_assignments" />
+      <End Role="ph_events" EntitySet="ph_events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Events_PH_EventTypes" Association="Self.FK_PH_Events_PH_EventTypes">
+      <End Role="ph_eventtypes" EntitySet="ph_eventtypes" />
+      <End Role="ph_events" EntitySet="ph_events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Exams_PH_Assignments" Association="Self.FK_PH_Exams_PH_Assignments">
+      <End Role="ph_assignments" EntitySet="ph_assignments" />
+      <End Role="ph_exams" EntitySet="ph_exams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Exams_PH_ExamTypes" Association="Self.FK_PH_Exams_PH_ExamTypes">
+      <End Role="ph_examtypes" EntitySet="ph_examtypes" />
+      <End Role="ph_exams" EntitySet="ph_exams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_HealthInsurance_UN_Persons" Association="Self.FK_PH_HealthInsurance_UN_Persons">
+      <End Role="un_persons" EntitySet="un_persons" />
+      <End Role="un_healthinsuranse" EntitySet="un_healthinsuranse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Individual_BinaryFile" Association="Self.FK_PH_Individual_BinaryFile">
+      <End Role="un_binaryfiles" EntitySet="un_binaryfiles" />
+      <End Role="ph_individualplans" EntitySet="ph_individualplans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_IndividualPlans_PH_assignments" Association="Self.FK_PH_IndividualPlans_PH_assignments">
+      <End Role="ph_assignments" EntitySet="ph_assignments" />
+      <End Role="ph_individualplans" EntitySet="ph_individualplans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_TopicHistory_PH_Assignment" Association="Self.FK_PH_TopicHistory_PH_Assignment">
+      <End Role="ph_assignments" EntitySet="ph_assignments" />
+      <End Role="ph_topicshistory" EntitySet="ph_topicshistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_TopicHistory_PH_Assignment0" Association="Self.FK_PH_TopicHistory_PH_Assignment0">
+      <End Role="ph_assignments" EntitySet="ph_assignments" />
+      <End Role="ph_topics" EntitySet="ph_topics" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_TopicHistory_PH_Topics" Association="Self.FK_PH_TopicHistory_PH_Topics">
+      <End Role="ph_topics" EntitySet="ph_topics" />
+      <End Role="ph_topicshistory" EntitySet="ph_topicshistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Tutors_PH_Assignment" Association="Self.FK_PH_Tutors_PH_Assignment">
+      <End Role="ph_assignments" EntitySet="ph_assignments" />
+      <End Role="ph_tutors" EntitySet="ph_tutors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PH_Tutors_PH_TutorNames" Association="Self.FK_PH_Tutors_PH_TutorNames">
+      <End Role="ph_tutornames" EntitySet="ph_tutornames" />
+      <End Role="ph_tutors" EntitySet="ph_tutors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_BinaryFiles_UN_FileTypes" Association="Self.FK_UN_BinaryFiles_UN_FileTypes">
+      <End Role="un_filetypes" EntitySet="un_filetypes" />
+      <End Role="un_binaryfiles" EntitySet="un_binaryfiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_Cities_UN_Countries" Association="Self.FK_UN_Cities_UN_Countries">
+      <End Role="un_countries" EntitySet="un_countries" />
+      <End Role="un_cities" EntitySet="un_cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_Cities_UN_Ekatte" Association="Self.FK_UN_Cities_UN_Ekatte">
+      <End Role="un_ekatte" EntitySet="un_ekatte" />
+      <End Role="un_cities" EntitySet="un_cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_CIties_UN_Municipalities" Association="Self.FK_UN_CIties_UN_Municipalities">
+      <End Role="un_municipalities" EntitySet="un_municipalities" />
+      <End Role="un_cities" EntitySet="un_cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_Citizenship_UN_Countries" Association="Self.FK_UN_Citizenship_UN_Countries">
+      <End Role="un_countries" EntitySet="un_countries" />
+      <End Role="un_citizenship" EntitySet="un_citizenship" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_Citizenship_UN_Persons" Association="Self.FK_UN_Citizenship_UN_Persons">
+      <End Role="un_persons" EntitySet="un_persons" />
+      <End Role="un_citizenship" EntitySet="un_citizenship" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_ContactData_UN_Cities" Association="Self.FK_UN_ContactData_UN_Cities">
+      <End Role="un_cities" EntitySet="un_cities" />
+      <End Role="un_contactdata" EntitySet="un_contactdata" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_ContactData_UN_ContactTypes" Association="Self.FK_UN_ContactData_UN_ContactTypes">
+      <End Role="un_contacttypes" EntitySet="un_contacttypes" />
+      <End Role="un_contactdata" EntitySet="un_contactdata" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_ContactData_UN_Persons" Association="Self.FK_UN_ContactData_UN_Persons">
+      <End Role="un_persons" EntitySet="un_persons" />
+      <End Role="un_contactdata" EntitySet="un_contactdata" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_Departments_UN_DepartmentTyhpes" Association="Self.FK_UN_Departments_UN_DepartmentTyhpes">
+      <End Role="un_departmenttypes" EntitySet="un_departmenttypes" />
+      <End Role="un_departments" EntitySet="un_departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_Departments_UN_DepartmentTyhpes0" Association="Self.FK_UN_Departments_UN_DepartmentTyhpes0">
+      <End Role="un_departmenttypes" EntitySet="un_departmenttypes" />
+      <End Role="un_departmentshistory" EntitySet="un_departmentshistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_DepartmentsHistory_UN_Departments" Association="Self.FK_UN_DepartmentsHistory_UN_Departments">
+      <End Role="un_departments" EntitySet="un_departments" />
+      <End Role="un_departmentshistory" EntitySet="un_departmentshistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_DepartmentTree_UN_Departments" Association="Self.FK_UN_DepartmentTree_UN_Departments">
+      <End Role="un_departments" EntitySet="un_departments" />
+      <End Role="un_departmenttree" EntitySet="un_departmenttree" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_DepartmentTree_UN_DepartmentTree" Association="Self.FK_UN_DepartmentTree_UN_DepartmentTree">
+      <End Role="un_departmenttree" EntitySet="un_departmenttree" />
+      <End Role="un_departmenttree1" EntitySet="un_departmenttree" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_DepartmentTree_UN_TreeRevision" Association="Self.FK_UN_DepartmentTree_UN_TreeRevision">
+      <End Role="un_treerevisions" EntitySet="un_treerevisions" />
+      <End Role="un_departmenttree" EntitySet="un_departmenttree" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_EKATTE_UN_Municipalities" Association="Self.FK_UN_EKATTE_UN_Municipalities">
+      <End Role="un_municipalities" EntitySet="un_municipalities" />
+      <End Role="un_ekatte" EntitySet="un_ekatte" />
+    </AssociationSet>
+    <AssociationSet Name="FK_un_identitycard_un_city" Association="Self.FK_un_identitycard_un_city">
+      <End Role="un_cities" EntitySet="un_cities" />
+      <End Role="un_identitycards" EntitySet="un_identitycards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_un_identitycard_un_city0" Association="Self.FK_un_identitycard_un_city0">
+      <End Role="un_cities" EntitySet="un_cities" />
+      <End Role="un_identitycardshistory" EntitySet="un_identitycardshistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_IdentityCards_UN_Cities" Association="Self.FK_UN_IdentityCards_UN_Cities">
+      <End Role="un_cities" EntitySet="un_cities" />
+      <End Role="un_identitycards" EntitySet="un_identitycards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_IdentityCards_UN_Cities0" Association="Self.FK_UN_IdentityCards_UN_Cities0">
+      <End Role="un_cities" EntitySet="un_cities" />
+      <End Role="un_identitycardshistory" EntitySet="un_identitycardshistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_IdentityCards_UN_CItizenship" Association="Self.FK_UN_IdentityCards_UN_CItizenship">
+      <End Role="un_citizenship" EntitySet="un_citizenship" />
+      <End Role="un_identitycards" EntitySet="un_identitycards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_IdentityCards_UN_Persons" Association="Self.FK_UN_IdentityCards_UN_Persons">
+      <End Role="un_persons" EntitySet="un_persons" />
+      <End Role="un_identitycards" EntitySet="un_identitycards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_IdentityCards_UN_Persons0" Association="Self.FK_UN_IdentityCards_UN_Persons0">
+      <End Role="un_persons" EntitySet="un_persons" />
+      <End Role="un_identitycardshistory" EntitySet="un_identitycardshistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_IdentityCardsHistory_UN_IdentityCards" Association="Self.FK_UN_IdentityCardsHistory_UN_IdentityCards">
+      <End Role="un_identitycards" EntitySet="un_identitycards" />
+      <End Role="un_identitycardshistory" EntitySet="un_identitycardshistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_Municipalities_UN_Regions" Association="Self.FK_UN_Municipalities_UN_Regions">
+      <End Role="un_regions" EntitySet="un_regions" />
+      <End Role="un_municipalities" EntitySet="un_municipalities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_PersonLanguages_UN_LanguageLevels" Association="Self.FK_UN_PersonLanguages_UN_LanguageLevels">
+      <End Role="un_languagelevels" EntitySet="un_languagelevels" />
+      <End Role="un_personlanguages" EntitySet="un_personlanguages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_PersonLanguages_UN_Languages" Association="Self.FK_UN_PersonLanguages_UN_Languages">
+      <End Role="un_languages" EntitySet="un_languages" />
+      <End Role="un_personlanguages" EntitySet="un_personlanguages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_PersonLanguages_UN_persons" Association="Self.FK_UN_PersonLanguages_UN_persons">
+      <End Role="un_persons" EntitySet="un_persons" />
+      <End Role="un_personlanguages" EntitySet="un_personlanguages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_PersonsHistory_UN_Persons" Association="Self.FK_UN_PersonsHistory_UN_Persons">
+      <End Role="un_persons" EntitySet="un_persons" />
+      <End Role="un_personshistory" EntitySet="un_personshistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_ProfessionalGroups_UN_ProfessionalAreas" Association="Self.FK_UN_ProfessionalGroups_UN_ProfessionalAreas">
+      <End Role="un_professionalareas" EntitySet="un_professionalareas" />
+      <End Role="un_professionalgroups" EntitySet="un_professionalgroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_ScienceHistory_UN_Educations" Association="Self.FK_UN_ScienceHistory_UN_Educations">
+      <End Role="un_educationlevels" EntitySet="un_educationlevels" />
+      <End Role="un_sciencehistory" EntitySet="un_sciencehistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_Specialities_UN_Departments" Association="Self.FK_UN_Specialities_UN_Departments">
+      <End Role="un_departments" EntitySet="un_departments" />
+      <End Role="un_specialities" EntitySet="un_specialities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_Specialities_UN_SpecialityTypes" Association="Self.FK_UN_Specialities_UN_SpecialityTypes">
+      <End Role="un_specialitytypes" EntitySet="un_specialitytypes" />
+      <End Role="un_specialities" EntitySet="un_specialities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_Users_UN_Person" Association="Self.FK_UN_Users_UN_Person">
+      <End Role="un_persons" EntitySet="un_persons" />
+      <End Role="un_users" EntitySet="un_users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UN_Users_UN_Userrights" Association="Self.FK_UN_Users_UN_Userrights">
+      <End Role="un_users" EntitySet="un_users" />
+      <End Role="un_userrights" EntitySet="un_userrights" />
+    </AssociationSet>
+    <AssociationSet Name="KF_PH_Reports_PH_Assignments" Association="Self.KF_PH_Reports_PH_Assignments">
+      <End Role="ph_assignments" EntitySet="ph_assignments" />
+      <End Role="ph_reports" EntitySet="ph_reports" />
+    </AssociationSet>
+    <AssociationSet Name="KF_PH_Reports_UN_BinaryFiles" Association="Self.KF_PH_Reports_UN_BinaryFiles">
+      <End Role="un_binaryfiles" EntitySet="un_binaryfiles" />
+      <End Role="ph_reports" EntitySet="ph_reports" />
+    </AssociationSet>
+    <AssociationSet Name="un_departments1" Association="Self.un_departments1">
+      <End Role="un_departments" EntitySet="un_departments" />
+      <End Role="un_assignments" EntitySet="un_assignments" />
+    </AssociationSet>
+    <AssociationSet Name="un_messages_ibfk_1" Association="Self.un_messages_ibfk_1">
+      <End Role="un_persons" EntitySet="un_persons" />
+      <End Role="un_messages" EntitySet="un_messages" />
+    </AssociationSet>
+    <AssociationSet Name="un_persons1" Association="Self.un_persons1">
+      <End Role="un_persons" EntitySet="un_persons" />
+      <End Role="un_assignments" EntitySet="un_assignments" />
+    </AssociationSet>
+    <AssociationSet Name="UN_Persons_UN_Genders" Association="Self.UN_Persons_UN_Genders">
+      <End Role="un_gender" EntitySet="un_gender" />
+      <End Role="un_persons" EntitySet="un_persons" />
+    </AssociationSet>
+    <AssociationSet Name="UN_Persons_UN_Genders0" Association="Self.UN_Persons_UN_Genders0">
+      <End Role="un_gender" EntitySet="un_gender" />
+      <End Role="un_personshistory" EntitySet="un_personshistory" />
+    </AssociationSet>
+    <AssociationSet Name="un_positions1" Association="Self.un_positions1">
+      <End Role="un_positions" EntitySet="un_positions" />
+      <End Role="un_assignments" EntitySet="un_assignments" />
+    </AssociationSet>
+    <AssociationSet Name="un_positionTypes1" Association="Self.un_positionTypes1">
+      <End Role="un_positiontypes" EntitySet="un_positiontypes" />
+      <End Role="un_positions" EntitySet="un_positions" />
+    </AssociationSet>
+    <AssociationSet Name="un_roles1" Association="Self.un_roles1">
+      <End Role="un_roles" EntitySet="un_roles" />
+      <End Role="un_positions" EntitySet="un_positions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
