@@ -68,10 +68,10 @@ namespace DIS_TRY_02.Model
                 Complete_Data[i].LastName = personal[i].LastName;
                 Complete_Data[i].SirName = personal[i].SirName;
                 Complete_Data[i].id = personal[i].id_person;
-                //Complete_Data[i].EGN = identityCard.Where(w=> w.id_person == Complete_Data[i].id).Select(s => s.EGN).ToString();
+                var query = identityCard.FirstOrDefault(w => w.id_person == Complete_Data[i].id);
+                Complete_Data[i].EGN = query.EGN;
                 //Complete_Data[i].Start = assigments.Where(w => w.id_person == Complete_Data[i].id).Select(s => s.StartDate).ToString();
                 //Complete_Data[i].End = assigments.Where(w => w.id_person == Complete_Data[i].id).Select(s => s.EndDate).ToString();
-               
                 FindDep(Complete_Data[i].id, assigments, out department, out faculty, out university);
                 Complete_Data[i].Department = department;
                 Complete_Data[i].Faculty = faculty;
