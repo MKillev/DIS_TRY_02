@@ -12,8 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DIS_TRY_02.Model;
 using TuBL.Models;
+using DIS_TRY_02.Logic;
+using DIS_TRY_02.Add_New_Person;
+using DIS_TRY_02.Logic.EditWindow;
+using DIS_TRY_02.ViewModels;
 
 namespace DIS_TRY_02
 {
@@ -24,24 +27,44 @@ namespace DIS_TRY_02
     {
         public MainWindow()
         {
-            
-            
-             InitializeComponent();
-          
+             InitializeComponent();         
         }
-
-        public void Init()
-        {
-            //General<PersonsViewModel> person = null;
-            //var data = person.Initialize_Grid();
-            //DataGrid.DataContext = data;
-        }
-
         private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
         {
-            General person = new General();
-            var data = person.Initialize_Grid();
+            DataGridLogic person = new DataGridLogic();
+            var data = person.LoadGridData();
             DataGrid.DataContext = data;
+        }
+
+        private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            DataGridRow row = sender as DataGridRow;
+            General_View data = (General_View)row.DataContext;    
+            if (row != null)
+            {
+                var addnew = new Add_New_Person.Add_New_Person(data);
+                addnew.ShowDialog();               
+            }
+        }
+
+        private void AddNew_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Delete_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

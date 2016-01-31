@@ -264,7 +264,10 @@
     <Compile Include="Data_Base\un_users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\General.cs" />
+    <Compile Include="Logic\BaseLogic.cs" />
+    <Compile Include="Logic\DataGridLogic.cs" />
+    <Compile Include="Logic\EditWindow\EditWindowLogic.cs" />
+    <Compile Include="Logic\InitGrid.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="ViewModels\General_View.cs" />
     <Compile Include="ViewModels\PersonIDCardViewModel.cs" />
@@ -339,6 +342,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

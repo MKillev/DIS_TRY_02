@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DIS_TRY_02.Logic.EditWindow;
+using DIS_TRY_02.ViewModels;
 
 namespace DIS_TRY_02.Add_New_Person
 {
@@ -19,9 +21,23 @@ namespace DIS_TRY_02.Add_New_Person
     /// </summary>
     public partial class Add_New_Person : Window
     {
-        public Add_New_Person()
+        private General_View editData { get; set; }
+        public Add_New_Person(General_View data)
         {
             InitializeComponent();
+            editData = data;
+        }
+
+        private void Add_New_Person_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            EditGrid.DataContext = editData;
+           EditGrid.CurrentCellChanged += EditGridOnCurrentCellChanged;  
+        }
+
+        private void EditGridOnCurrentCellChanged(object sender, EventArgs eventArgs)
+        {
+            var edit = new EditWindowLogic();
+            edit.CellChangeLogic(editData);
         }
     }
 }

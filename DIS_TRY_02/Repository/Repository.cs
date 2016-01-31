@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -14,16 +15,18 @@ namespace DIS_TRY_02.Repository
         void Insert(T entity);
         void Update(T entity);
         void Remove(T entity);
+        T GetById(int id);
         List<T> GetAll();
+        
     }
     public class Repository<T>: IRepository<T> where T: class
     {
         private DbSet<T> dbSet { get; set; }
-        private readonly DIS_Entities DBContext = new DIS_Entities();
-        public Repository(DbContext dbContext)
+        private  DIS_Entities DBContext { get; set; }
+        public Repository(DIS_Entities dbContext)
         {
             
-            dbContext = DBContext;
+            DBContext = dbContext;
             dbSet = dbContext.Set<T>();          
         }
 
@@ -31,7 +34,10 @@ namespace DIS_TRY_02.Repository
         {
             
         }
-
+        public T GetById(int id)
+        {
+            return dbSet.Find(id);
+        }
         public void Insert(T entity)
         {
             dbSet.Add(entity);
@@ -44,7 +50,12 @@ namespace DIS_TRY_02.Repository
 
         public void Update(T entity)
         {
-            //Update
+            var entry = DBContext.Entry(entity);
+            if (entry.State == EntityState.Detached)
+            {
+                dbSet.Attach(entity);
+            }
+            entry.State = EntityState.Modified;
         }
 
         public List<T> GetAll()
