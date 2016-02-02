@@ -22,10 +22,10 @@ namespace DIS_TRY_02.Add_New_Person
     public partial class Add_New_Person : Window
     {
         private General_View editData { get; set; }
-        public Add_New_Person(General_View data)
+        public Add_New_Person(General_View person)
         {
             InitializeComponent();
-            editData = data;
+            editData = person;
         }
 
         private void Add_New_Person_OnLoaded(object sender, RoutedEventArgs e)
@@ -37,7 +37,7 @@ namespace DIS_TRY_02.Add_New_Person
         private void EditGridOnCurrentCellChanged(object sender, EventArgs eventArgs)
         {
             var edit = new EditWindowLogic();
-            edit.CellChangeLogic(editData);
+            edit.CellChangeLogic(editData.id);
         }
     }
 }

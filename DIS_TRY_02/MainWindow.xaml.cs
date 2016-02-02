@@ -39,10 +39,10 @@ namespace DIS_TRY_02
         private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
         {
             DataGridRow row = sender as DataGridRow;
-            General_View data = (General_View)row.DataContext;    
+            General_View person = (General_View)row.DataContext;    
             if (row != null)
             {
-                var addnew = new Add_New_Person.Add_New_Person(data);
+                var addnew = new Add_New_Person.Add_New_Person(person);
                 addnew.ShowDialog();               
             }
         }

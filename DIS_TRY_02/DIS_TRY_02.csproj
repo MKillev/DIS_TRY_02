@@ -266,9 +266,11 @@
     </Compile>
     <Compile Include="Logic\BaseLogic.cs" />
     <Compile Include="Logic\DataGridLogic.cs" />
+    <Compile Include="Logic\EditWindow\ComboBoxLogic.cs" />
     <Compile Include="Logic\EditWindow\EditWindowLogic.cs" />
     <Compile Include="Logic\InitGrid.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="ViewModels\ComboBoxModel.cs" />
     <Compile Include="ViewModels\General_View.cs" />
     <Compile Include="ViewModels\PersonIDCardViewModel.cs" />
     <Compile Include="ViewModels\PersonsViewModel.cs" />

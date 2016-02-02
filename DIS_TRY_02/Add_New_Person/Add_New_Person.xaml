@@ -5,24 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DIS_TRY_02.Add_New_Person"
         mc:Ignorable="d"
-        Title="Add_New_Person" Height="300" Width="300" Loaded="Add_New_Person_OnLoaded">
+        Title="Add_New_Person" Height="800" Width="600" Loaded="Add_New_Person_OnLoaded">
     <Grid Name="Grid">
-        <DataGrid Name="EditGrid" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding id}"></DataGridTextColumn>
-                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Middle Name" Binding="{Binding SirName}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"></DataGridTextColumn>
-                <DataGridTextColumn Header="EGN" Binding="{Binding EGN}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Gender" Binding="{Binding Gender}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Citizenship" Binding="{Binding Citizenship}"></DataGridTextColumn>
-                <DataGridTextColumn Header="University" Binding="{Binding University}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Faculty" Binding="{Binding Faculty}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Department" Binding="{Binding Department}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Type" Binding="{Binding Type}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Start" Binding="{Binding Start}"></DataGridTextColumn>
-                <DataGridTextColumn Header="End" Binding="{Binding End}"></DataGridTextColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+          <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
       </Grid>
 </Window>

@@ -12,11 +12,9 @@ namespace DIS_TRY_02.Logic.EditWindow
 {
    public class EditWindowLogic
     {
-        public void CellChangeLogic(General_View rowView)
+        public void CellChangeLogic(int id)
         {
-            DIS_Entities dbContext;
-            var repository = new Repository<General_View>();
-           // repository.Update(entry);
+            
         } 
     }
 }
