@@ -40,5 +40,19 @@ namespace DIS_TRY_02.Logic
 
            return joinedTables;
        }
+
+       //public General_View GetIDs(General_View person)
+       //{
+       //     General_View result = new General_View();
+       //     var baselogic = new BaseLogic();
+       //     var departments = baselogic.Departments.GetAll();
+       //     var country = baselogic.Country.GetAll();
+       //     var gender = baselogic.gender.GetAll();
+       //    var query1 = departments.FirstOrDefault(w => w.Name == person.Department);
+       //    result.id_dep = query1.id_department;
+       //     var query2 = departments.FirstOrDefault(w => w.Name == person.Faculty);
+       //    result.id_fac = query2.id_department;
+       //     result
+       //}
     }
 }

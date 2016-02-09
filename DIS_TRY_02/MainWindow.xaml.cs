@@ -49,7 +49,8 @@ namespace DIS_TRY_02
 
         private void AddNew_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            var addnew = new Add_New_Person.Add_New_Person(null);
+            addnew.ShowDialog();
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)

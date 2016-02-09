@@ -30,14 +30,34 @@ namespace DIS_TRY_02.Add_New_Person
 
         private void Add_New_Person_OnLoaded(object sender, RoutedEventArgs e)
         {
-            EditGrid.DataContext = editData;
-           EditGrid.CurrentCellChanged += EditGridOnCurrentCellChanged;  
+            //EditGrid.DataContext = editData;
+           //EditGrid.CurrentCellChanged += EditGridOnCurrentCellChanged;  
         }
 
-        private void EditGridOnCurrentCellChanged(object sender, EventArgs eventArgs)
+
+        private void cmbGender_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var edit = new EditWindowLogic();
-            edit.CellChangeLogic(editData.id);
+          
+        }
+
+        private void CmbDepartment_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           
+        }
+
+        private void CmbFaculty_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CmbUniversity_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+       
+        }
+
+        private void CmbEgnType_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }
