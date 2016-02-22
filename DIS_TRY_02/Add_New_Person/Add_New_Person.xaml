@@ -25,28 +25,32 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Content="FirstName" Grid.Row="1" Grid.Column="0"></Label>
-        <TextBox Name="txtFirstName" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"></TextBox>
-        <Label Content="SirName" Grid.Row="2" Grid.Column="0"></Label>
-        <TextBox Name="txtSirName" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"></TextBox>
-        <Label Content="LastName" Grid.Row="3" Grid.Column="0"></Label>
-        <TextBox Name="txtLastName" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"></TextBox>
-        <Label Content="Gender" Grid.Row="4"></Label>
-        <ComboBox Name="cmbGender" Grid.Column="0" Grid.Row="4" DisplayMemberPath="gender" SelectedValue="{Binding Path = gender_id}" VerticalAlignment="Center" SelectionChanged="cmbGender_SelectionChanged"></ComboBox>
-        <Label Content="Start Date" Grid.Row="5" Grid.Column="3"></Label>
-        <DatePicker Name="dtpStart" Grid.Column="3" Grid.Row="5" VerticalAlignment="Center"></DatePicker>
-        <Label Content="End Date" Grid.Row="6" Grid.Column="3"></Label>
-        <DatePicker Name="dtpEnd" Grid.Column="3" Grid.Row="6" VerticalAlignment="Center"></DatePicker>
-        <ComboBox Name="cmbDepartment" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" SelectionChanged="CmbDepartment_OnSelectionChanged"></ComboBox>
-        <ComboBox Name="cmbFaculty" Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" SelectionChanged="CmbFaculty_OnSelectionChanged"></ComboBox>
-        <ComboBox Name="cmbUniversity" Grid.Column="3" Grid.Row="3" VerticalAlignment="Center" SelectionChanged="CmbUniversity_OnSelectionChanged"></ComboBox>
-        <Label Content="University" Grid.Row="3" Grid.Column="3"></Label>
-        <Label Content="Faculty" Grid.Row="2" Grid.Column="3"></Label>
-        <Label Content="Department" Grid.Row="1" Grid.Column="3"></Label>
-        <Label Content="EGN Type" Grid.Row="1" Grid.Column="2"></Label>
-        <ComboBox Name="cmbEgnType" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" SelectionChanged="CmbEgnType_OnSelectionChanged"></ComboBox>
-        <TextBox Name="txtEGN" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"></TextBox>
-        <Label Content="EGN" Grid.Row="2" Grid.Column="2"></Label>
+        <Label Content="FirstName" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top"></Label>
+        <TextBox Name="txtFirstName" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text ="{Binding Path = FirstName}"></TextBox>
+        <Label Content="SirName" Grid.Row="2" Grid.Column="0" VerticalAlignment="Top"></Label>
+        <TextBox Name="txtSirName" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text ="{Binding Path = SirName}"></TextBox>
+        <Label Content="LastName" Grid.Row="3" Grid.Column="0" VerticalAlignment="Top"></Label>
+        <TextBox Name="txtLastName" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Text ="{Binding Path = LastName}"></TextBox>
+        <Label Content="Gender" Grid.Row="4" VerticalAlignment="Top"></Label>
+        <ComboBox Name="cmbCountry" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"  DisplayMemberPath="Name" SelectedValue="{Binding Path=id_citizenship}" SelectedValuePath="id" SelectionChanged="CmbCountry_OnSelectionChanged"></ComboBox>
+        <Label Content="Country" Grid.Row="3" Grid.Column="2" VerticalAlignment="Top"></Label>
+        <ComboBox Name="cmbGender" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValue="{Binding Path=id_gender}" SelectedValuePath="id" SelectionChanged="cmbGender_SelectionChanged"></ComboBox>
+        <Label Content="Start Date" Grid.Row="5" Grid.Column="3" VerticalAlignment="Top"></Label>
+        <DatePicker Name="dtpStart" Grid.Column="3" Grid.Row="5" VerticalAlignment="Center" SelectedDate="{Binding Path=StartDate}"></DatePicker>
+        <Label Content="End Date" Grid.Row="6" Grid.Column="3" VerticalAlignment="Top"></Label>
+        <DatePicker Name="dtpEnd" Grid.Column="3" Grid.Row="6" VerticalAlignment="Center" SelectedDate="{Binding Path=EndDate}"></DatePicker>
+        <ComboBox Name="cmbDepartment" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValue="{Binding Path=id_department}" SelectedValuePath="id" SelectionChanged="CmbDepartment_OnSelectionChanged"></ComboBox>
+        <ComboBox Name="cmbFaculty" Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValue="{Binding Path=id_department}" SelectedValuePath="id" SelectionChanged="CmbFaculty_OnSelectionChanged"></ComboBox>
+        <ComboBox Name="cmbUniversity" Grid.Column="3" Grid.Row="3" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValue="{Binding Path=id_department}" SelectedValuePath="id" SelectionChanged="CmbUniversity_OnSelectionChanged"></ComboBox>
+        <Label Content="University" Grid.Row="3" Grid.Column="3" VerticalAlignment="Top"></Label>
+        <Label Content="Faculty" Grid.Row="2" Grid.Column="3" VerticalAlignment="Top"></Label>
+        <Label Content="Department" Grid.Row="1" Grid.Column="3" VerticalAlignment="Top"></Label>
+        <Label Content="EGN Type" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top"></Label>
+        <ComboBox Name="cmbEgnType" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValue="{Binding Path=id_egntype}" SelectedValuePath="id" SelectionChanged="CmbEgnType_OnSelectionChanged"></ComboBox>
+        <TextBox Name="txtEGN" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Text="{Binding Path=EGN}"></TextBox>
+        <Label Content="EGN" Grid.Row="2" Grid.Column="2" VerticalAlignment="Top"></Label>
+        <Button Name="Save" Grid.Row="8" Grid.Column="2"  VerticalAlignment="Center" Height="20" Content="SAVE" Click="Save_OnClick"></Button>
+        <Button Name="Cancel" Grid.Row="8" Grid.Column="3"  VerticalAlignment="Center" Height="20" Content="CANCEL" Click="Cancel_OnClick"></Button>
 
     </Grid>
 </Window>

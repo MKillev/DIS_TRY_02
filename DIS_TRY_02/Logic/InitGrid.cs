@@ -15,7 +15,7 @@ namespace DIS_TRY_02.Logic
         {
             List<General_View> Complete_Data = new List<General_View>();
             var personal = Person.GetAll();
-            var assigments = ph_assigments.GetAll();
+            var assigments = Ph_Assigments.GetAll();
             var country = citizenship.GetAll();
             var Tree = Dep_Tree.GetAll();
             var identityCard = ID_Cards.GetAll();

@@ -33,6 +33,7 @@ namespace DIS_TRY_02
         {
             DataGridLogic person = new DataGridLogic();
             var data = person.LoadGridData();
+
             DataGrid.DataContext = data;
         }
 
@@ -58,14 +59,8 @@ namespace DIS_TRY_02
 
         }
 
-        private void Delete_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Save_Click(object sender, RoutedEventArgs e)
         {
 
-        }
-    }
+        }}
 }

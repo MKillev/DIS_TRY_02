@@ -267,15 +267,19 @@
     <Compile Include="Logic\BaseLogic.cs" />
     <Compile Include="Logic\DataGridLogic.cs" />
     <Compile Include="Logic\EditWindow\ComboBoxLogic.cs" />
+    <Compile Include="Logic\EditWindow\DepartmentsLogic.cs" />
     <Compile Include="Logic\EditWindow\EditWindowLogic.cs" />
     <Compile Include="Logic\EditWindow\TextBoxLogic.cs" />
     <Compile Include="Logic\InitGrid.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="ViewModels\ComboBoxModel.cs" />
+    <Compile Include="ViewModels\EditWindow\CitiesViewModel.cs" />
+    <Compile Include="ViewModels\EditWindow\CitizenshipViewModel.cs" />
+    <Compile Include="ViewModels\EditWindow\StructureModel.cs" />
     <Compile Include="ViewModels\General_View.cs" />
-    <Compile Include="ViewModels\PersonIDCardViewModel.cs" />
-    <Compile Include="ViewModels\PersonsViewModel.cs" />
-    <Compile Include="ViewModels\PHDAssignmentViewModel.cs" />
+    <Compile Include="ViewModels\EditWindow\PersonIDCardViewModel.cs" />
+    <Compile Include="ViewModels\EditWindow\PersonsViewModel.cs" />
+    <Compile Include="ViewModels\EditWindow\PHDAssignmentViewModel.cs" />
     <Page Include="Add_New_Person\Add_New_Person.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

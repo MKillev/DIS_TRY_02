@@ -38,7 +38,7 @@ namespace DIS_TRY_02.Logic
                 joinedTables[i].Gender = (query5 != null ? query5.Name : null);
             }
 
-           return joinedTables;
+           return joinedTables;   
        }
 
        //public General_View GetIDs(General_View person)
