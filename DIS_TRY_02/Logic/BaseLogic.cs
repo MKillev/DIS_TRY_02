@@ -32,7 +32,10 @@ namespace DIS_TRY_02.Logic
         {
             get { return new Repository<un_countries>(_databaseContext); }
         }
-
+        public Repository<ph_diplomdata> Diploma
+        {
+            get { return new Repository<ph_diplomdata>(_databaseContext); }
+        }
         public Repository<ph_assignments> Ph_Assigments
         {
             get { return new Repository<ph_assignments>(_databaseContext); }
@@ -52,6 +55,18 @@ namespace DIS_TRY_02.Logic
         {
             get { return new Repository<un_departmenttree>(_databaseContext); }
         }
+        public Repository<un_contactdata> Contacts
+        {
+            get { return new Repository<un_contactdata>(_databaseContext); }
+        }
+        public Repository<un_languages> Languages
+        {
+            get { return new Repository<un_languages>(_databaseContext); }
+        }
+        public Repository<un_personlanguages> Person_Language
+        {
+            get { return new Repository<un_personlanguages>(_databaseContext); }
+        }
 
         public Repository<un_departments> Departments
         {
@@ -65,7 +80,22 @@ namespace DIS_TRY_02.Logic
         {
             get { return new Repository<un_citizenship>(_databaseContext); }
         }
-
+        public Repository<un_cities> City
+        {
+            get { return new Repository<un_cities>(_databaseContext); }
+        }
+        public Repository<un_regions> Region
+        {
+            get { return new Repository<un_regions>(_databaseContext); }
+        }
+        public Repository<un_specialities> Specialty
+        {
+            get { return new Repository<un_specialities>(_databaseContext); }
+        }
+        public Repository<un_specialitytypes> SpecialtyTypes  
+        {
+            get { return new Repository<un_specialitytypes>(_databaseContext); }
+        }
 
     }
 }

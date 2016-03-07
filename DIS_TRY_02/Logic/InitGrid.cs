@@ -27,7 +27,7 @@ namespace DIS_TRY_02.Logic
                           from id1 in idG.DefaultIfEmpty()
                           join cit in country on per.id_person equals cit.id_person into citG
                           from cit1 in citG.DefaultIfEmpty()
-                          join dt in Tree on (ass1 == null ? null :ass1.id_department) equals dt.id_department into dtG
+                          join dt in Tree on ass1?.id_department equals dt.id_department into dtG
                           from dt1 in dtG.DefaultIfEmpty()
                           select new General_View()
                           {

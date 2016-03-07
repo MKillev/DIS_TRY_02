@@ -47,7 +47,7 @@ namespace TuBL.Models
         public int? id_cityBirth {get; set;}
         public int id_ekatteBirth { get; set; }
         public string PicturePath {get; set;}
-        public int id_module {get; set;}
+        public int? id_module {get; set;}
         public string WhatIsChanged { get; set; }
     }
 }

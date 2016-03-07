@@ -26,6 +26,7 @@ namespace DIS_TRY_02.Add_New_Person
     public partial class Add_New_Person : Window
     {
         private General_View editData { get; set; }
+        GenericPersonViewModel generic = new GenericPersonViewModel();
         private BaseLogic baselogic;
         private un_persons personView;
         private ph_assignments phd_view;
@@ -38,7 +39,7 @@ namespace DIS_TRY_02.Add_New_Person
         private un_cities citiesView;
         private un_identitycards identitycards;
         private un_egntypes ID_Type;
-        
+        private ComboBoxLogic comboboxLogic = new ComboBoxLogic();
         public Add_New_Person(General_View person)
         {
             InitializeComponent();
@@ -47,11 +48,14 @@ namespace DIS_TRY_02.Add_New_Person
 
         private void Add_New_Person_OnLoaded(object sender, RoutedEventArgs e)
         {
-            var comboboxLogic = new ComboBoxLogic();
+
+
+            Fill_Generic_Data fill = new Fill_Generic_Data();
             baselogic = new BaseLogic();
             if (editData == null)
             {
-               gender = new un_gender();
+
+                gender = new un_gender();
                 personView = new un_persons();
                 citizenshipView = new un_citizenship();
                 departments = new un_departments();
@@ -60,86 +64,94 @@ namespace DIS_TRY_02.Add_New_Person
                 identitycards = new un_identitycards();
                 phd_view = new ph_assignments();
                 ID_Type = new un_egntypes();
-          }
+                cmbUniversity.ItemsSource = comboboxLogic.Unis();
+            }
             else
             {
-                personView = baselogic.Person.GetById(editData.id);
-                gender = baselogic.gender.GetById(editData.id_gender);
-                phd_view = comboboxLogic.GetAssignment(editData.id);
-                citizenshipView = baselogic.citizenship.GetById(editData.id_city);
-                departments = baselogic.Departments.GetById((int)editData.id_dep);
-                faculty = baselogic.Departments.GetById((int)editData.id_fac);
-                university = baselogic.Departments.GetById((int)editData.id_uni);
-                identitycards = baselogic.ID_Cards.GetById(editData.id);
-                ID_Type = comboboxLogic.Id_Type(editData.id);
+                generic.CitizenshipViewModel = fill.CitizenshipView(editData.id);
+                generic.PHDAssignmentViewModel = fill.Assigment_View(editData.id);
+                //generic.PHDDiplomDataViewModel = fill.Diplom_Data(editData.id);
+                generic.PersonIDCardViewModel = fill.Id_Card(editData.id);
+                generic.PersonLanguagesViewModel = fill.LanguagesView(editData.id);
+                generic.PersonsViewModel = fill.person_View(editData.id);
+                generic.PhdPersonViewModel = fill.Phd_Person_View(generic.PHDAssignmentViewModel);//, generic.PHDDiplomDataViewModel);
+                //cmbDepartment.ItemsSource = comboboxLogic.Department(editData.id_fac);
+               
+                
             }
-
+            cmbSpecialty.ItemsSource = comboboxLogic.SpecialtyList();
+            cmbUniversity.ItemsSource = comboboxLogic.Unis();
+            cmbCurrentCity.ItemsSource = comboboxLogic.Cities();
+            cmbCurrentRegion.ItemsSource = comboboxLogic.Regions();
+            cmbRegion.ItemsSource = comboboxLogic.Regions();
+            cmbCity.ItemsSource = comboboxLogic.Cities();
             cmbGender.ItemsSource = comboboxLogic.Gender();
-            cmbDepartment.ItemsSource = comboboxLogic.Department(departments.id_department, 0, 0);
-            cmbFaculty.ItemsSource = comboboxLogic.Department(0, faculty.id_department, 0);
-            cmbUniversity.ItemsSource = comboboxLogic.Department(0, 0,university.id_department);
             cmbCountry.ItemsSource = comboboxLogic.ReadCountry();
             cmbEgnType.ItemsSource = comboboxLogic.Id_Types();
-            //dtpEnd.SelectedDate = phd_view.EndDate;
-            //dtpEnd.SelectedDate = phd_view.StartDate;
+            cmbUniversity.DataContext = editData;
+            
+            this.DataContext = generic;
+            
+            
 
-            cmbGender.DataContext = gender;
-            cmbDepartment.DataContext = departments;
-            cmbFaculty.DataContext = faculty;
-            cmbUniversity.DataContext = university;
-            cmbCountry.DataContext = citizenshipView;
-            cmbEgnType.DataContext = ID_Type;
-            txtFirstName.DataContext = personView;
-            txtSirName.DataContext = personView;
-            txtLastName.DataContext = personView;
-            txtEGN.DataContext = identitycards;
-            dtpEnd.DataContext = phd_view;
-            dtpStart.DataContext = phd_view;
 
         }
 
 
         private void cmbGender_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxModel gen = new ComboBoxModel();
-            gen = (ComboBoxModel)cmbGender.SelectedItem;
-            personView.id_gender = gen.id;
+            //  if (generic != null)
+            //  {
+            //ComboBoxModel gen = new ComboBoxModel();
+            //gen = (ComboBoxModel) cmbGender.SelectedItem;
+            //generic.PersonsViewModel.id_gender = gen.id;
+            // }
         }
 
         private void CmbDepartment_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            //cmbFaculty.ItemsSource = comboboxLogic.Faculties(editData.id_uni);
+            
         }
 
         private void CmbFaculty_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            ComboBoxModel sel = (ComboBoxModel)cmbFaculty.SelectedItem;
+            if (sel != null)
+            {
+                cmbDepartment.ItemsSource = comboboxLogic.Department(sel.id);
+                //cmbUniversity.DataContext = editData;
+            }
         }
 
         private void CmbUniversity_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            ComboBoxModel sel = (ComboBoxModel)cmbUniversity.SelectedItem;
+            cmbFaculty.ItemsSource = comboboxLogic.Faculties(sel.id);
+            cmbFaculty.DataContext = editData;
+            cmbDepartment.ItemsSource = null;
         }
 
         private void CmbEgnType_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxModel egn_type = new ComboBoxModel();
-            egn_type = (ComboBoxModel) cmbEgnType.SelectedItem;
-            identitycards.id_egnType = egn_type.id;
+            //ComboBoxModel egn_type = new ComboBoxModel();
+            //egn_type = (ComboBoxModel) cmbEgnType.SelectedItem;
+            //identitycards.id_egnType = egn_type.id;
         }
 
         private void CmbCountry_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxModel citizenship = new ComboBoxModel();
-            citizenship = (ComboBoxModel)cmbCountry.SelectedItem;
-            citizenshipView.id_citizenship = citizenship.id;
+            //ComboBoxModel citizenship = new ComboBoxModel();
+            //citizenship = (ComboBoxModel)cmbCountry.SelectedItem;
+            //citizenshipView.id_citizenship = citizenship.id;
         }
 
         private void Save_OnClick(object sender, RoutedEventArgs e)
         {
             if (editData == null)
             {
-                baselogic.Person.Insert(personView);             
+                //personView.un_citizenship = citizenshipView;
+                baselogic.Person.Insert(personView);
             }
             else
             {
@@ -154,7 +166,7 @@ namespace DIS_TRY_02.Add_New_Person
                 throw new DataException();
             }
             //Insert_ALL();
-            
+
             Close();
         }
 

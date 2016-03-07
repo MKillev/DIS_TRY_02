@@ -15,7 +15,7 @@ namespace TuBL.Models
         //[Required(ErrorMessage = TuBl.Constants.EnterStartOrderNumber )]
       
         public string StartOrderNumber { get; set; }
-      
+        public string PHDCode { get; set; }
         public DateTime? StartOrderDate { get; set; }
         
         public string EndOrderNumber { get; set; }
@@ -29,7 +29,7 @@ namespace TuBL.Models
         public int? id_status { get; set; }
         public int id_userEdit { get; set; }
         public DateTime? Timestamp { get; set; }
-        public int id_module { get; set; }
+        public int? id_module { get; set; }
 
         public int? id_studyType { get; set; }
         public int? id_basicClass { get; set; }

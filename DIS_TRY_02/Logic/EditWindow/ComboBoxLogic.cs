@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Documents;
 using DIS_TRY_02.Data_Base;
 using DIS_TRY_02.ViewModels;
+using TuBL.Models;
 
 namespace DIS_TRY_02.Logic.EditWindow
 {
@@ -70,55 +71,90 @@ namespace DIS_TRY_02.Logic.EditWindow
             return result = type.FirstOrDefault(s => s.id_egntype == query.id_egnType);
         }
 
-        public List<ComboBoxModel> Department(int id_dep, int id_fac, int id_uni)
+
+
+        public List<ComboBoxModel> Department(int? id_fac = 0)
         {
-            var gen = Departments.GetAll();
+            var dep = Departments.GetAll();
             var tree = Dep_Tree.GetAll();
-            List<ComboBoxModel> result = new List<ComboBoxModel>();
-            if (id_dep != 0)
-            {
-                var query =
-                    tree.FirstOrDefault(s => s.id_department == id_dep);
-                var list =
-                    tree.Where(w => w.id_departmentParent == query.id_departmentParent)
-                        .ToList();
-                foreach (var dep in list)
+            List<ComboBoxModel> res = new List<ComboBoxModel>();
+            //if (id_fac != 0)
+           // {
+                var query = tree.FirstOrDefault(w => w.id_department == id_fac);
+                var query1 = tree.Where(w => w.id_departmentParent == query.id_departmentTree).ToList();
+                for (int i = 0; i < query1.Count; i++)
                 {
-                    var temp = gen.FirstOrDefault(w => w.id_department == dep.id_department);
-                    result.Add(new ComboBoxModel {id = temp.id_department, Name = temp.Name});
+                    var temp = dep.FirstOrDefault(f => f.id_department == query1[i].id_department);
+                    res.Add(new ComboBoxModel {id = temp.id_department, Name = temp.Name});
                 }
-                return result;
-            }
-            else if (id_fac != 0)
-            {
-                var query =
-                    tree.FirstOrDefault(s => s.id_department == id_fac);
-                var list =
-                    tree.Where(w => w.id_departmentParent == query.id_departmentParent && w.id_departmentTree != query.id_departmentParent)                       
-                        .ToList();
-                foreach (var dep in list)
-                {
-                    var temp = gen.FirstOrDefault(w => w.id_department == dep.id_department);
-                    result.Add(new ComboBoxModel { id = temp.id_department, Name = temp.Name });
-                }
-                return result;
-            }
-            else if (id_uni != 0)
-            {
-                var query = tree.Where(w => w.id_departmentTree == w.id_departmentParent).ToList();
-                foreach (var uni in query)
-                {
-                    var temp = gen.FirstOrDefault(g => g.id_department == uni.id_department);
-                    result.Add(new ComboBoxModel {id = temp.id_department, Name = temp.Name});                   
-                }
-                return result;
-            }
-            else
-            {
-                return result = gen.Select(s => new ComboBoxModel {id = s.id_department, Name = s.Name}).ToList();
-            }
+               
+           // }
+            //else if (id_dep != 0)
+            //{
+            //    var query = tree.FirstOrDefault(w => w.id_department == id_dep);
+            //    var query1 = tree.Where(s => s.id_departmentParent == query.id_departmentParent).ToList();
+            //    for (int i = 0; i < query1.Count; i++)
+            //    {
+            //        var temp = dep.FirstOrDefault(f => f.id_department == query1[i].id_department);
+            //        res.Add(new ComboBoxModel { id = temp.id_department, Name = temp.Name });
+            //    }
+               
+            //}
+            return res;
         }
 
-   
+        public List<ComboBoxModel> Unis()
+        {
+            var dep = Departments.GetAll();
+            var tree = Dep_Tree.GetAll();
+            List<ComboBoxModel> res = new List<ComboBoxModel>();
+
+            var query = tree.Where(w => w.id_departmentTree == w.id_departmentParent).ToList();
+           for(int i = 0; i<query.Count; i++)
+           {
+               var temp = dep.FirstOrDefault(f => f.id_department == query[i].id_department);
+                res.Add(new ComboBoxModel {id = temp.id_department, Name = temp.Name});
+           }
+            return res;
+        }
+        public List<ComboBoxModel> Faculties(int? id_uni)
+        {
+            var dep = Departments.GetAll();
+            var tree = Dep_Tree.GetAll();
+            List<ComboBoxModel> res = new List<ComboBoxModel>();
+
+            var query = tree.FirstOrDefault(w => w.id_department == id_uni);
+            var query1 = tree.Where(w => w.id_departmentParent == query.id_departmentTree).ToList();
+            for (int i = 0; i < query1.Count; i++)
+            {
+                var temp = dep.FirstOrDefault(f => f.id_department == query1[i].id_department);
+                res.Add(new ComboBoxModel { id = temp.id_department, Name = temp.Name });
+            }
+            return res;
+        }
+
+        public List<ComboBoxModel> Cities()
+        {
+            List<ComboBoxModel> result = new List<ComboBoxModel>();
+            var cities = City.GetAll();
+            result = cities.Select(s => new ComboBoxModel {id = s.id_city, Name = s.Name}).ToList();
+            return result;
+        }
+        public List<ComboBoxModel> Regions()
+        {
+            List<ComboBoxModel> result = new List<ComboBoxModel>();
+            var region = Region.GetAll();
+            result = region.Select(s => new ComboBoxModel { id = s.id_Region, Name = s.Name }).ToList();
+            return result;
+        }
+
+        public List<ComboBoxModel> SpecialtyList()
+        {
+            List<ComboBoxModel> result = new List<ComboBoxModel>();
+            var spec = SpecialtyTypes.GetAll();
+            result = spec.Select(s => new ComboBoxModel {id = s.id_specialityType, Name = s.Name}).ToList();
+            return result;
+        } 
+
     }
 }
