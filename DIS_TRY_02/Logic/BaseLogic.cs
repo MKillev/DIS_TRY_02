@@ -92,10 +92,41 @@ namespace DIS_TRY_02.Logic
         {
             get { return new Repository<un_specialities>(_databaseContext); }
         }
-        public Repository<un_specialitytypes> SpecialtyTypes  
+        public Repository<un_specialitytypes> SpecialtyTypes
         {
             get { return new Repository<un_specialitytypes>(_databaseContext); }
         }
+        public Repository<un_educationlevels> EducationLevel
+        {
+            get { return new Repository<un_educationlevels>(_databaseContext); }
+        }
+        public Repository<un_acceptancereasons> AcceptanceReasons
+        {
+            get { return new Repository<un_acceptancereasons>(_databaseContext); }
+        }
+        public Repository<un_educationforms> EducationForms
+        {
+            get { return new Repository<un_educationforms>(_databaseContext); }
+        }
+
+        public Repository<un_statuses> Statuses
+        {
+            get { return new Repository<un_statuses>(_databaseContext); }
+        }
+
+        public Repository<un_studytypes> StudyType
+        {
+            get { return new Repository<un_studytypes>(_databaseContext); }
+        }
+        public Repository<ph_tutors> Tutors
+        {
+            get { return new Repository<ph_tutors>(_databaseContext); }
+        }
+        public Repository<ph_topics> Topics
+        {
+            get { return new Repository<ph_topics>(_databaseContext); }
+        }
+
 
     }
 }

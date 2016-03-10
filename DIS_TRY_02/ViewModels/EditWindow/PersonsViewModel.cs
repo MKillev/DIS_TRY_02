@@ -94,5 +94,10 @@ namespace DIS_TRY_02.ViewModels.EditWindow
             get;
             set;
         }
+        public bool isModified
+        {
+            get { return isModified; }
+            set { isModified = false; }
+        }
     }
 }

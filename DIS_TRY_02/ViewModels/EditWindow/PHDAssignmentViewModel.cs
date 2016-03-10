@@ -55,5 +55,10 @@ namespace TuBL.Models
         public int FacultyIndex { get; set; }       
         public int DepartmentIndex { get; set; }       
         public int SpecialityIndex { get; set; }
+        public bool isModified
+        {
+            get { return isModified; }
+            set { isModified = false; }
+        }
     }
 }

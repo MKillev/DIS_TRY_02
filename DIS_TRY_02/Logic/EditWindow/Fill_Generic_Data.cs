@@ -12,6 +12,20 @@ namespace DIS_TRY_02.Logic.EditWindow
 {
     public class Fill_Generic_Data : BaseLogic
     {
+        public GenericPersonViewModel All(int id)
+        {
+            GenericPersonViewModel generic = new GenericPersonViewModel();
+
+            generic.CitizenshipViewModel = CitizenshipView(id);
+            generic.PHDAssignmentViewModel = Assigment_View(id);
+            generic.PHDDiplomDataViewModel = Diplom_Data(id);
+            generic.PersonIDCardViewModel = Id_Card(id);
+            generic.PersonLanguagesViewModel = LanguagesView(id);
+            generic.PersonsViewModel = person_View(id);
+            generic.PhdPersonViewModel = Phd_Person_View(generic.PHDAssignmentViewModel);
+
+            return generic;
+        }
         public PersonsViewModel person_View(int id_person )
         {
             PersonsViewModel result = new PersonsViewModel();
@@ -87,24 +101,26 @@ namespace DIS_TRY_02.Logic.EditWindow
             return result;
         }
 
-        //public PHDDiplomDataViewModel Diplom_Data(int id_person)
-        //{
-        //    PHDDiplomDataViewModel result = new PHDDiplomDataViewModel();
-        //    var assigment = Ph_Assigments.GetAll();
-        //    var diploma = Diploma.GetAll();
+        public PHDDiplomDataViewModel Diplom_Data(int id_person)
+        {
+            PHDDiplomDataViewModel result = new PHDDiplomDataViewModel();
+            var assigment = Ph_Assigments.GetAll();
+            var diploma = Diploma.GetAll();
 
-        //    var query = assigment.FirstOrDefault(f => f.id_person == id_person);
-        //    var query1 = diploma.FirstOrDefault(f => f.id_pdhAssignment == query.id_phdAssignment);
+            var query = assigment.FirstOrDefault(f => f.id_person == id_person);
+            var query1 = diploma.FirstOrDefault(f => f.id_pdhAssignment == query.id_phdAssignment);
+            if (query1 != null)
+            {
+                result.id_phdDiplomData = query1.id_diplomData;
+                result.id_phdAssignment = query1.id_pdhAssignment;
+                result.id_person = id_person;
+                result.id_countryLastEducation = query1.id_countryLastEducation;
+                result.id_citiesLastEducation = query1.id_citiesLastEducation;
+                result.id_educationLast = query1.id_educationLast;
+            }
 
-        //    result.id_phdDiplomData = query1.id_diplomData;
-        //    result.id_phdAssignment = query1.id_pdhAssignment;
-        //    result.id_person = id_person;
-        //    result.id_countryLastEducation = query1.id_countryLastEducation;
-        //    result.id_citiesLastEducation = query1.id_citiesLastEducation;
-        //    result.id_educationLast = query1.id_educationLast;
-
-        //    return result;
-        //}
+            return result;
+        }
 
         public CitizenshipViewModel CitizenshipView(int id_person)
         {

@@ -60,6 +60,7 @@ namespace DIS_TRY_02.Repository
 
         public List<T> GetAll()
         {
+
             return dbSet.ToList();
         } 
     }

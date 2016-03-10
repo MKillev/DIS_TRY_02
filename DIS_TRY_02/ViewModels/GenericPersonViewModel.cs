@@ -15,7 +15,7 @@ namespace TuBL.Models
         public PersonLanguagesViewModel PersonLanguagesViewModel { get; set; }
 	    public ContactDataViewModel ContactDataViewModel { get; set; }
 		public PHDAssignmentViewModel PHDAssignmentViewModel { get; set;}
-		//public PHDDiplomDataViewModel PHDDiplomDataViewModel { get; set;}
+		public PHDDiplomDataViewModel PHDDiplomDataViewModel { get; set;}
         public CitizenshipViewModel CitizenshipViewModel { get; set; }
         public List<PersonAssignmentViewModel> PersonAssignmentViewModelLst { get; set; }
 

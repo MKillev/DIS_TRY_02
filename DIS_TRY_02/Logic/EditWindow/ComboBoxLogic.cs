@@ -154,7 +154,41 @@ namespace DIS_TRY_02.Logic.EditWindow
             var spec = SpecialtyTypes.GetAll();
             result = spec.Select(s => new ComboBoxModel {id = s.id_specialityType, Name = s.Name}).ToList();
             return result;
-        } 
+        }
+        public List<ComboBoxModel> Levels()
+        {
+            List<ComboBoxModel> result = new List<ComboBoxModel>();
+            var lev = EducationLevel.GetAll();
+            result = lev.Select(s => new ComboBoxModel { id = s.id_educationLevel, Name = s.Name }).ToList();
+            return result;
+        }
+        public List<ComboBoxModel> AccReason()
+        {
+            List<ComboBoxModel> result = new List<ComboBoxModel>();
+            var acc = AcceptanceReasons.GetAll();
+            result = acc.Select(s => new ComboBoxModel { id = s.id_acceptanceReason, Name = s.Name }).ToList();
+            return result;
+        }public List<ComboBoxModel> FormEdu()
+        {
+            List<ComboBoxModel> result = new List<ComboBoxModel>();
+            var form = EducationForms.GetAll();
+            result = form.Select(s => new ComboBoxModel { id = s.id_educationForm, Name = s.Name }).ToList();
+            return result;
+        }
+        public List<ComboBoxModel> Type()
+        {
+            List<ComboBoxModel> result = new List<ComboBoxModel>();
+            var type = StudyType.GetAll();
+            result = type.Select(s => new ComboBoxModel { id = s.id_studyType, Name = s.Name }).ToList();
+            return result;
+        }
+        public List<ComboBoxModel> Status()
+        {
+            List<ComboBoxModel> result = new List<ComboBoxModel>();
+            var status = Statuses.GetAll();
+            result = status.Select(s => new ComboBoxModel { id = s.id_status, Name = s.Name }).ToList();
+            return result;
+        }
 
     }
 }

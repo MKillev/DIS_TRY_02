@@ -49,5 +49,10 @@ namespace TuBL.Models
         public string PicturePath {get; set;}
         public int? id_module {get; set;}
         public string WhatIsChanged { get; set; }
+        public bool isModified
+        {
+            get { return isModified; }
+            set { isModified = false; }
+        }
     }
 }
