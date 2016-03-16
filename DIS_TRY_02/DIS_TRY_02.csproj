@@ -268,7 +268,7 @@
     <Compile Include="Logic\DataGridLogic.cs" />
     <Compile Include="Logic\EditWindow\ComboBoxLogic.cs" />
     <Compile Include="Logic\EditWindow\TXTLogic.cs" />
-    <Compile Include="Logic\EditWindow\EditWindowLogic.cs" />
+    <Compile Include="Logic\EditWindow\UpdateLogic.cs" />
     <Compile Include="Logic\EditWindow\Fill_Generic_Data.cs" />
     <Compile Include="Logic\InitGrid.cs" />
     <Compile Include="Repository\Repository.cs" />
@@ -277,6 +277,7 @@
     <Compile Include="ViewModels\EditWindow\CitiesViewModel.cs" />
     <Compile Include="ViewModels\EditWindow\CitizenshipViewModel.cs" />
     <Compile Include="ViewModels\EditWindow\StructureModel.cs" />
+    <Compile Include="ViewModels\EditWindow\TableUpdateViewModel.cs" />
     <Compile Include="ViewModels\General_View.cs" />
     <Compile Include="ViewModels\EditWindow\PersonIDCardViewModel.cs" />
     <Compile Include="ViewModels\EditWindow\PersonsViewModel.cs" />

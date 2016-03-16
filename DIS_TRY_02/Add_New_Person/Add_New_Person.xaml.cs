@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -17,6 +18,7 @@ using DIS_TRY_02.Data_Base;
 using DIS_TRY_02.Logic;
 using DIS_TRY_02.Logic.EditWindow;
 using DIS_TRY_02.ViewModels;
+using DIS_TRY_02.ViewModels.EditWindow;
 using TuBL.Models;
 
 namespace DIS_TRY_02.Add_New_Person
@@ -75,7 +77,7 @@ namespace DIS_TRY_02.Add_New_Person
             cmbCurrentCity.ItemsSource = comboboxLogic.Cities();
             cmbCurrentRegion.ItemsSource = comboboxLogic.Regions();
             cmbRegion.ItemsSource = comboboxLogic.Regions();
-            cmbCity.ItemsSource = comboboxLogic.Cities();
+           // cmbCity.ItemsSource = comboboxLogic.Cities();
             cmbGender.ItemsSource = comboboxLogic.Gender();
             cmbCountry.ItemsSource = comboboxLogic.ReadCountry();
             cmbEgnType.ItemsSource = comboboxLogic.Id_Types();
@@ -291,7 +293,8 @@ namespace DIS_TRY_02.Add_New_Person
 
         private void cmbRegion_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //cascade...
+            ComboBoxModel sel = (ComboBoxModel) cmbRegion.SelectedItem;
+
         }
 
         private void cmbCurrentCity_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -468,10 +471,14 @@ namespace DIS_TRY_02.Add_New_Person
         private void Save_OnClick(object sender, RoutedEventArgs e)
         {
             BaseLogic baselogic = new BaseLogic();
-
+            UpdateLogic updatelogic = new UpdateLogic();
+            TableUpdateViewModel data = new TableUpdateViewModel();
 
             //check whether condtitions are met and warn if not
-
+            //if (personView.FirstName != null && personView.LastName != null && phd_view.id_department!=null &&)
+            //{
+            //    Save.IsEnabled = true;
+            //}
 
             if (editData == null)
             {
@@ -491,15 +498,44 @@ namespace DIS_TRY_02.Add_New_Person
             }
             else
             {
-                baselogic.Person.Update(personView);
+                data = updatelogic.GenUpdate(generic);
+                if (generic.PersonsViewModel.isModified)
+                {
+                    baselogic.Person.Update(data.Persons);
+                }
+                if (generic.PHDAssignmentViewModel.isModified)
+                {
+                    baselogic.Ph_Assigments.Update(data.PHAssigments);
+                }
+                if (generic.PersonIDCardViewModel.isModified)
+                {
+                    baselogic.ID_Cards.Update(data.Identitycards);
+                }
+                if (generic.PHDDiplomDataViewModel.isModified)
+                {
+                    baselogic.Diploma.Update(data.DiplomData);
+                }
+                if (generic.PersonLanguagesViewModel.isModified)
+                {
+                    baselogic.Person_Language.Update(data.Languages);
+                }
+                if (generic.CitizenshipViewModel.isModified)
+                {
+                    baselogic.citizenship.Update(data.Citizenship);
+                }
+                if (generic.ContactDataViewModel.isModified)
+                {
+                    baselogic.Contacts.Update(data.ContactData);
+                }
             }
-            
+            try
+            {
                 baselogic._databaseContext.SaveChanges();
-            
-         
-            
-            //Insert_ALL();
-
+            }
+            catch
+            {
+                
+            }
             Close();
         }
 

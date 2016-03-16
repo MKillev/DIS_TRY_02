@@ -35,7 +35,7 @@ namespace DIS_TRY_02.Data_Base
         public string FirstNameLatin { get; set; }
         public string SirNameLatin { get; set; }
         public string LastNameLatin { get; set; }
-        public int id_gender { get; set; }
+        public int? id_gender { get; set; }
         public string Title { get; set; }
         public Nullable<System.DateTime> ValidFrom { get; set; }
         public Nullable<System.DateTime> ValidTo { get; set; }
