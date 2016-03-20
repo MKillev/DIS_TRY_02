@@ -28,6 +28,7 @@ namespace DIS_TRY_02.ViewModels
             public int? id_educationform { get; set; }
             public int id_city { get; set; }
             public int? id_gender { get; set; }
+            public List<ComboBoxModel> cmbDepartments { get; set; } 
     }
 
     }

@@ -50,6 +50,7 @@ namespace DIS_TRY_02.Repository
 
         public void Update(T entity)
         {
+            
             var entry = DBContext.Entry(entity);
             if (entry.State == EntityState.Detached)
             {

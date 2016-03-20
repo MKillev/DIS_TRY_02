@@ -76,10 +76,7 @@ namespace DIS_TRY_02.Logic
         {
             get { return new Repository<un_identitycards>(_databaseContext); }
         }
-        public Repository<un_citizenship> citizenship
-        {
-            get { return new Repository<un_citizenship>(_databaseContext); }
-        }
+       
         public Repository<un_cities> City
         {
             get { return new Repository<un_cities>(_databaseContext); }
@@ -113,7 +110,14 @@ namespace DIS_TRY_02.Logic
         {
             get { return new Repository<un_statuses>(_databaseContext); }
         }
-
+        public Repository<un_municipalities> Municipalities
+        {
+            get { return new Repository<un_municipalities>(_databaseContext); }
+        }
+        public Repository<un_citizenship> Citizenship
+        {
+            get { return new Repository<un_citizenship>(_databaseContext); }
+        }
         public Repository<un_studytypes> StudyType
         {
             get { return new Repository<un_studytypes>(_databaseContext); }
@@ -127,6 +131,9 @@ namespace DIS_TRY_02.Logic
             get { return new Repository<ph_topics>(_databaseContext); }
         }
 
-
+        public void Save()
+        {
+            _databaseContext.SaveChanges();
+        }
     }
 }

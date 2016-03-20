@@ -28,22 +28,14 @@ namespace DIS_TRY_02.Add_New_Person
     /// </summary>
     public partial class Add_New_Person : Window
     {
-        private General_View editData { get; set; }
-        GenericPersonViewModel generic = new GenericPersonViewModel();
-        private un_persons personView;
-        private ph_assignments phd_view;
-        private un_identitycards identitycards;
-        private un_citizenship citizenship;
-        private un_contactdata contactdata;
-        private ph_diplomdata diplomdata;
-        private ph_tutors tutor;
-        private ph_topics topic;
-       
+        private General_View EditData { get; set; }
+        private GenericPersonViewModel _generic;
+   
        
         public Add_New_Person(General_View person)
         {
             InitializeComponent();
-            editData = person;
+            EditData = person;
         }
 
         private void Add_New_Person_OnLoaded(object sender, RoutedEventArgs e)
@@ -52,32 +44,24 @@ namespace DIS_TRY_02.Add_New_Person
 
             Fill_Generic_Data fill = new Fill_Generic_Data();
             ComboBoxLogic comboboxLogic = new ComboBoxLogic();
+            List<ph_tutors> tutor = new List<ph_tutors>();
             TXTLogic txtLogic = new TXTLogic();
             
-            if (editData == null)
+            if (EditData == null)
             {
-                personView = new un_persons();
-                identitycards = new un_identitycards();
-                phd_view = new ph_assignments();
-                citizenship = new un_citizenship();
-                contactdata = new un_contactdata();
-                diplomdata = new ph_diplomdata();
-                tutor = new ph_tutors();
-                topic = new ph_topics();
+              _generic = new GenericPersonViewModel();
                 cmbUniversity.ItemsSource = comboboxLogic.Unis();
             }
             else
             {
-                generic = fill.All(editData.id);
-                tutor = txtLogic.Tutor(editData.id);
-                topic = txtLogic.Topic(editData.id);
+                _generic = fill.All(EditData.id);
+                tutor = txtLogic.Tutor(EditData.id);
+               // topic = txtLogic.Topic(editData.id);
             }
             cmbSpecialty.ItemsSource = comboboxLogic.SpecialtyList();
             cmbUniversity.ItemsSource = comboboxLogic.Unis();
-            cmbCurrentCity.ItemsSource = comboboxLogic.Cities();
-            cmbCurrentRegion.ItemsSource = comboboxLogic.Regions();
-            cmbRegion.ItemsSource = comboboxLogic.Regions();
-           // cmbCity.ItemsSource = comboboxLogic.Cities();
+            cmbCurrentMunicipality.ItemsSource = comboboxLogic.Regions();
+            cmbMunicipality.ItemsSource = comboboxLogic.Regions();
             cmbGender.ItemsSource = comboboxLogic.Gender();
             cmbCountry.ItemsSource = comboboxLogic.ReadCountry();
             cmbEgnType.ItemsSource = comboboxLogic.Id_Types();
@@ -88,47 +72,33 @@ namespace DIS_TRY_02.Add_New_Person
             cmbLastLevel.ItemsSource = comboboxLogic.Levels();
             cmbLastEdu.ItemsSource = comboboxLogic.ReadCountry();
             
-            cmbUniversity.DataContext = editData;
-            txtPhTutor.DataContext = tutor;
-            txtTopic.DataContext = topic;
-            this.DataContext = generic;
+            cmbUniversity.DataContext = EditData;
+            dtgrdTutor.DataContext = tutor;
+           // txtTopic.DataContext = topic;
+            this.DataContext = _generic;
 
             //identitycards.un_persons = personView;
         }
 
-
-        private void cmbGender_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Cancel_OnClick(object sender, RoutedEventArgs e)
         {
-            ComboBoxModel sel = (ComboBoxModel)cmbGender.SelectedItem;
-            if (editData == null)
-            {
-                personView.id_gender = sel.id;
-            }
-            else
-            {
-                generic.PersonsViewModel.id_gender = sel.id;
-                generic.PersonsViewModel.isModified = true;
-            }
+            Close();
         }
-
-        private void CmbDepartment_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void cmbUniversity_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxModel sel = new ComboBoxModel();
-            sel = (ComboBoxModel) cmbDepartment.SelectedItem;
-            if (editData == null)
-            {
-                phd_view.id_department = sel.id;
-            }
-            else
-            {
-                generic.PHDAssignmentViewModel.id_department = sel.id;
-                generic.PHDAssignmentViewModel.isModified = true;
-            }
-            
+            cmbDepartment.IsEnabled = false;
+            ComboBoxLogic comboboxLogic = new ComboBoxLogic();
+            ComboBoxModel sel = (ComboBoxModel)cmbUniversity.SelectedItem;
+            cmbFaculty.IsEnabled = true;
+            if (sel != null) cmbFaculty.ItemsSource = comboboxLogic.Faculties(sel.id);
+            cmbFaculty.DataContext = EditData;
+            cmbDepartment.ItemsSource = null;
+            cmbDepartment.IsEnabled = false;
         }
 
         private void CmbFaculty_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            cmbDepartment.ItemsSource = null;
             ComboBoxLogic comboboxLogic = new ComboBoxLogic();
             ComboBoxModel sel = (ComboBoxModel)cmbFaculty.SelectedItem;
             cmbDepartment.IsEnabled = true;
@@ -138,411 +108,108 @@ namespace DIS_TRY_02.Add_New_Person
             }
         }
 
-        private void CmbUniversity_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void cmbDepartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            cmbDepartment.IsEnabled = false;
-            ComboBoxLogic comboboxLogic = new ComboBoxLogic();
-            ComboBoxModel sel = (ComboBoxModel)cmbUniversity.SelectedItem;
-            cmbFaculty.IsEnabled = true;
-            cmbFaculty.ItemsSource = comboboxLogic.Faculties(sel.id);
-            cmbFaculty.DataContext = editData;
-            cmbDepartment.ItemsSource = null;
-            
-        }
+            //ComboBoxModel sel = new ComboBoxModel();
+            //sel = (ComboBoxModel)cmbDepartment.SelectedItem;
+            //if (sel != null)
+            //{
+            //    if (EditData == null)
+            //    {
+            //        _generic.PHDAssignmentViewModel.id_department = sel.id;
+            //    }
+            //    else
+            //    {
+            //        _generic.PHDAssignmentViewModel.id_department = sel.id;
+            //        _generic.PHDAssignmentViewModel.isModified = true;
+            //    }
+            //}
 
-        private void CmbEgnType_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBoxModel egn_type = new ComboBoxModel();
-            egn_type = (ComboBoxModel)cmbEgnType.SelectedItem;
-            if (editData == null)
-            {
-                identitycards.id_egnType = egn_type.id;
-            }
-            else
-            {
-                generic.PersonIDCardViewModel.id_egnType = egn_type.id;
-                generic.PersonIDCardViewModel.isModified = true;
-            }
-        }
-
-        private void CmbCountry_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBoxModel sel = (ComboBoxModel)cmbCountry.SelectedItem;
-            if (editData == null)
-            {
-                citizenship.un_persons = personView;
-                citizenship.id_country = sel.id;
-            }
-            else
-            {
-                generic.CitizenshipViewModel.id_country = sel.id;
-                generic.CitizenshipViewModel.isModified = true;
-            }
-        }
-        private void TxtFirstName_OnTextChanged(object sender, TextChangedEventArgs e)
-        {
-            string txt = txtFirstName.Text;
-            if (editData == null)
-            {
-                personView.FirstName = txt;
-            }
-            else
-            {
-                generic.PersonsViewModel.FirstName = txt;
-                generic.PersonsViewModel.isModified = true;
-            }
-        }
-
-        private void txtSirName_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string txt = txtSirName.Text;
-            if (editData == null)
-            {
-                personView.SirName = txt;
-            }
-            else
-            {
-                generic.PersonsViewModel.SirName = txt;
-                generic.PersonsViewModel.isModified = true;
-            }
-        }
-
-        private void TxtLastName_OnTextChanged(object sender, TextChangedEventArgs e)
-        {
-            string txt = txtLastName.Text;
-            if (editData == null)
-            {
-                personView.LastName = txt;
-            }
-            else
-            {
-                generic.PersonsViewModel.LastName = txt;
-                generic.PersonsViewModel.isModified = true;
-            }
-        }
-
-        private void DtpStart_OnSelectedDateChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var date = dtpStart.SelectedDate;
-            if (editData == null)
-            {
-                phd_view.StartDate = date;
-            }
-            else
-            {
-                generic.PHDAssignmentViewModel.StartDate = date;
-                generic.PHDAssignmentViewModel.isModified = true;
-            }
-        }
-
-        private void DtpEnd_OnSelectedDateChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var date = dtpEnd.SelectedDate;
-            if (editData == null)
-            {
-                phd_view.EndDate = date;
-            }
-            else
-            {
-                generic.PHDAssignmentViewModel.EndDate = date;
-                generic.PHDAssignmentViewModel.isModified = true;
-            }
-        }
-
-        private void TxtEGN_OnTextChanged(object sender, TextChangedEventArgs e)
-        {
-            string txt = txtEGN.Text;
-            if (editData == null)
-            {
-                identitycards.EGN = txt;
-            }
-            else
-            {
-                generic.PersonIDCardViewModel.EGN = txt;
-                generic.PersonIDCardViewModel.isModified = true;
-            }
-        }
-
-        private void BirthDate_OnSelectedDateChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var date = BirthDate.SelectedDate;
-            if (editData == null)
-            {
-                identitycards.BirthDate = date;
-            }
-            else
-            {
-                generic.PersonIDCardViewModel.BirthDate = date;
-                generic.PersonIDCardViewModel.isModified = true;
-            }
         }
 
         private void CmbCity_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxModel sel = (ComboBoxModel)cmbCity.SelectedItem;
-            if (editData == null)
-            {
-                identitycards.id_cityBirth = sel.id;
-            }
-            else
-            {
-                generic.PersonIDCardViewModel.id_cityBirth = sel.id;
-                generic.PersonIDCardViewModel.isModified = true;
-            }
-        }
-
-        private void cmbRegion_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBoxModel sel = (ComboBoxModel) cmbRegion.SelectedItem;
 
         }
 
-        private void cmbCurrentCity_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CmbMunicipality_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxModel sel = (ComboBoxModel)cmbCurrentCity.SelectedItem;
-            if (editData == null)
+         ComboBoxModel sel = new ComboBoxModel();
+         ComboBoxLogic comboboxLogic = new ComboBoxLogic();
+            sel = (ComboBoxModel) cmbMunicipality.SelectedItem;
+            if (sel != null)
             {
-                identitycards.id_city = sel.id;
-            }
-            else
-            {
-                generic.PersonIDCardViewModel.id_city = sel.id;
-                generic.PersonIDCardViewModel.isModified = true;
+                cmbCity.IsEnabled = true;
+                cmbCity.ItemsSource = comboboxLogic.Cities(sel.Name);
             }
         }
 
-        private void CmbCurrentRegion_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CmbCurrentCity_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-          //cascade...
+
         }
 
-        private void TxtAddress_OnTextChanged(object sender, TextChangedEventArgs e)
+        private void CmbCurrentMunicipality_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string txt = txtAddress.Text;
-            if (editData == null)
+            ComboBoxModel sel = new ComboBoxModel();
+            ComboBoxLogic comboboxLogic = new ComboBoxLogic();
+            sel = (ComboBoxModel)cmbCurrentMunicipality.SelectedItem;
+            if (sel != null)
             {
-                identitycards.Address = txt;
+                cmbCurrentCity.IsEnabled = true;
+                cmbCity.ItemsSource = comboboxLogic.Cities(sel.Name);
             }
-            else
-            {
-                generic.PersonIDCardViewModel.Address = txt;
-                generic.PersonIDCardViewModel.isModified = true;
-            }
-        }
-
-        private void TxtEmail_OnTextChanged(object sender, TextChangedEventArgs e)
-        {
-            string txt = txtEmail.Text;
-            if (editData == null)
-            {
-                contactdata.email = txt;
-            }
-            else
-            {
-                generic.ContactDataViewModel.email = txt;
-                generic.ContactDataViewModel.isModified = true;
-            }
-        }
-
-        private void TxtPhone_OnTextChanged(object sender, TextChangedEventArgs e)
-        {
-            string txt = txtPhone.Text;
-            if (editData == null)
-            {
-                //contactdata.un_persons = personView;
-                contactdata.Phone = txt;
-            }
-            else
-            {
-                generic.ContactDataViewModel.Phone = txt;
-                generic.PersonsViewModel.isModified = true;
-            }
-        }
-
-        private void CmbSpecialty_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBoxModel sel = (ComboBoxModel)cmbSpecialty.SelectedItem;
-            if (editData == null)
-            {
-                phd_view.id_speciality = sel.id;
-            }
-            else
-            {
-                generic.PHDAssignmentViewModel.id_speciality = sel.id;
-                generic.PersonIDCardViewModel.isModified = true;
-            }
-        }
-
-        private void CmbLastEdu_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBoxModel sel = (ComboBoxModel)cmbLastEdu.SelectedItem;
-            if (editData == null)
-            {
-                diplomdata.id_countryLastEducation = sel.id;
-            }
-            else
-            {
-                generic.PHDDiplomDataViewModel.id_countryLastEducation = sel.id;
-                generic.PHDDiplomDataViewModel.isModified = true;
-            }
-        }
-
-        private void CmbLastLevel_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBoxModel sel = (ComboBoxModel)cmbLastLevel.SelectedItem;
-            if (editData == null)
-            {
-                diplomdata.id_educationLast = sel.id;
-            }
-            else
-            {
-                generic.PHDDiplomDataViewModel.id_educationLast = sel.id;
-                generic.PHDDiplomDataViewModel.isModified = true;
-            }
-        }
-
-        private void CmbAccReason_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBoxModel sel = (ComboBoxModel)cmbAccReason.SelectedItem;
-            if (editData == null)
-            {
-                phd_view.id_acceptanceReason = sel.id;
-            }
-            else
-            {
-                generic.PHDAssignmentViewModel.id_acceptanceReason = sel.id;
-                generic.PHDAssignmentViewModel.isModified = true;
-            }
-        }
-
-        private void CmbFormEdu_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBoxModel sel = (ComboBoxModel)cmbFormEdu.SelectedItem;
-            if (editData == null)
-            {
-                phd_view.id_educationForm = sel.id;
-            }
-            else
-            {
-                generic.PHDAssignmentViewModel.id_educationForm = sel.id;
-                generic.PHDAssignmentViewModel.isModified = true;
-            }
-        }
-
-        private void cmbStatus_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBoxModel sel = (ComboBoxModel)cmbStatus.SelectedItem;
-            if (editData == null)
-            {
-                phd_view.id_status = sel.id;
-            }
-            else
-            {
-                generic.PHDAssignmentViewModel.id_status = sel.id;
-                generic.PHDAssignmentViewModel.isModified = true;
-            }
-        }
-
-        private void CmbTypeEdu_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBoxModel sel = (ComboBoxModel)cmbTypeEdu.SelectedItem;
-            if (editData == null)
-            {
-                phd_view.id_studyType = sel.id;
-            }
-            else
-            {
-                generic.PHDAssignmentViewModel.id_studyType = sel.id;
-                generic.PHDAssignmentViewModel.isModified = true;
-            }
-        }
-
-        private void TxtPhTutor_OnTextChanged(object sender, TextChangedEventArgs e)
-        {
-            string txt = txtPhTutor.Text;
-            tutor.Name = txt;
-        }
-
-        private void TxtTopic_OnTextChanged(object sender, TextChangedEventArgs e)
-        {
-            string txt = txtTopic.Text;
-            topic.Name = txt;
         }
         private void Save_OnClick(object sender, RoutedEventArgs e)
         {
             BaseLogic baselogic = new BaseLogic();
             UpdateLogic updatelogic = new UpdateLogic();
             TableUpdateViewModel data = new TableUpdateViewModel();
-
-            //check whether condtitions are met and warn if not
-            //if (personView.FirstName != null && personView.LastName != null && phd_view.id_department!=null &&)
-            //{
-            //    Save.IsEnabled = true;
-            //}
-
-            if (editData == null)
+            InsertLogic Insert_Logic = new InsertLogic();
+            if (_generic.PHDAssignmentViewModel.EndDate == null)
             {
-                citizenship.un_persons = personView;
-                identitycards.un_persons = personView;
-                identitycards.un_citizenship = citizenship;
-                diplomdata.ph_assignments = phd_view;
-                tutor.ph_assignments = phd_view;
-                topic.ph_assignments = phd_view;
-                baselogic.Person.Insert(personView);
-                baselogic.Ph_Assigments.Insert(phd_view);
-                baselogic.ID_Cards.Insert(identitycards);
-                baselogic.citizenship.Insert(citizenship);
-                baselogic.Tutors.Insert(tutor);
-                baselogic.Topics.Insert(topic);
-                baselogic.Diploma.Insert(diplomdata);
+                MessageBox.Show("Моля въведете Крайна Дата");
+                return;
+            }
+            if (_generic.PHDAssignmentViewModel.StartDate == null)
+            {
+                MessageBox.Show("Моля въведете Начална Дата");
+                return;
+            }
+            if (_generic.PHDAssignmentViewModel.id_department == null)
+            {
+                MessageBox.Show("Моля въведете Катедра на Обучение");
+                return;
+            }
+            if (_generic.PersonsViewModel.FirstName == null)
+            {
+                MessageBox.Show("Моля въведете Първо Име");
+                return;
+            }
+            if (_generic.PersonsViewModel.LastName == null)
+            {
+                MessageBox.Show("Моля въведете Фамилия");
+                return;
+            }
+            if (_generic.PersonsViewModel.id_gender == null)
+            {
+                MessageBox.Show("Моля въведете ПОЛ");
+                return;
+            }
+            if (EditData == null)
+            {
+                Insert_Logic.Insert_Entry(_generic);
             }
             else
             {
-                data = updatelogic.GenUpdate(generic);
-                if (generic.PersonsViewModel.isModified)
-                {
-                    baselogic.Person.Update(data.Persons);
-                }
-                if (generic.PHDAssignmentViewModel.isModified)
-                {
-                    baselogic.Ph_Assigments.Update(data.PHAssigments);
-                }
-                if (generic.PersonIDCardViewModel.isModified)
-                {
-                    baselogic.ID_Cards.Update(data.Identitycards);
-                }
-                if (generic.PHDDiplomDataViewModel.isModified)
-                {
-                    baselogic.Diploma.Update(data.DiplomData);
-                }
-                if (generic.PersonLanguagesViewModel.isModified)
-                {
-                    baselogic.Person_Language.Update(data.Languages);
-                }
-                if (generic.CitizenshipViewModel.isModified)
-                {
-                    baselogic.citizenship.Update(data.Citizenship);
-                }
-                if (generic.ContactDataViewModel.isModified)
-                {
-                    baselogic.Contacts.Update(data.ContactData);
-                }
-            }
-            try
-            {
-                baselogic._databaseContext.SaveChanges();
-            }
-            catch
-            {
-                
+                updatelogic.Update_Entry(_generic, EditData.id);
             }
             Close();
         }
 
-
-        private void Cancel_OnClick(object sender, RoutedEventArgs e)
+        private void Grid_OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            Close();
+            _generic.IsModified = true;
         }
     }
 }

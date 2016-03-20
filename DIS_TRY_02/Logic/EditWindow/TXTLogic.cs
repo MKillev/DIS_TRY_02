@@ -10,15 +10,15 @@ namespace DIS_TRY_02.Logic.EditWindow
 {
     public class TXTLogic : BaseLogic
     {
-        public ph_tutors Tutor (int id)
+        public List<ph_tutors> Tutor (int id)
         {
-            ph_tutors result = new ph_tutors();
+            List<ph_tutors> result = new List<ph_tutors>();
             if (id != 0)
             {
                 var tutor = Tutors.GetAll();
                 var ph = Ph_Assigments.GetAll();
                 var query = ph.FirstOrDefault(f => f.id_person == id);
-                 result = tutor.FirstOrDefault(f => f.id_phdAssignment == query.id_phdAssignment);
+                 result = tutor.Where(f => query != null && f.id_phdAssignment == query.id_phdAssignment).ToList();
             }
             return result;
         }

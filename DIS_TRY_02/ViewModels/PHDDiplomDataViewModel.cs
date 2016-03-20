@@ -29,10 +29,7 @@ namespace TuBL.Models
         public int RegionIndex { get; set; }
         public int MunicipalityIndex { get; set; }
         public int CityIndex { get; set; }
-        public bool isModified
-        {
-            get { return isModified; }
-            set { isModified = false; }
-        }
+        public bool isModified { get; set; }
+
     }
 }

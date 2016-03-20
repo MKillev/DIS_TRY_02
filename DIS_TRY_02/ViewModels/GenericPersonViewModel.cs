@@ -18,7 +18,7 @@ namespace TuBL.Models
 		public PHDDiplomDataViewModel PHDDiplomDataViewModel { get; set;}
         public CitizenshipViewModel CitizenshipViewModel { get; set; }
         public List<PersonAssignmentViewModel> PersonAssignmentViewModelLst { get; set; }
-
+        public bool IsModified { get; set; }
         public string email
         {
             get;

@@ -267,6 +267,7 @@
     <Compile Include="Logic\BaseLogic.cs" />
     <Compile Include="Logic\DataGridLogic.cs" />
     <Compile Include="Logic\EditWindow\ComboBoxLogic.cs" />
+    <Compile Include="Logic\EditWindow\InsertLogic.cs" />
     <Compile Include="Logic\EditWindow\TXTLogic.cs" />
     <Compile Include="Logic\EditWindow\UpdateLogic.cs" />
     <Compile Include="Logic\EditWindow\Fill_Generic_Data.cs" />

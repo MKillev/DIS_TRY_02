@@ -62,5 +62,11 @@ namespace DIS_TRY_02
         private void Save_Click(object sender, RoutedEventArgs e)
         {
 
-        }}
+        }
+
+        private void Refresh_OnClick(object sender, RoutedEventArgs e)
+        {
+            DataGrid.Items.Refresh();
+        }
+    }
 }

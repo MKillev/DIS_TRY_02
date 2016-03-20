@@ -33,7 +33,7 @@
             <DataGridTextColumn Header="Citizenship" Binding="{Binding Citizenship}"></DataGridTextColumn>
             <DataGridTextColumn Header="University" Binding="{Binding University}"></DataGridTextColumn>
             <DataGridTextColumn Header="Faculty" Binding="{Binding Faculty}"></DataGridTextColumn>
-            <DataGridComboBoxColumn Header="Department" IsReadOnly="True" DisplayMemberPath="Department" SelectedValuePath="id_dep" SelectedValueBinding="{Binding Path=Department}"></DataGridComboBoxColumn>
+            <DataGridComboBoxColumn Header="Department" x:Name="Departments" IsReadOnly="True" DisplayMemberPath="Name" SelectedValuePath="id" SelectedValueBinding="{Binding Path=id_department}"></DataGridComboBoxColumn>
             <DataGridTextColumn Header="Department" Binding="{Binding Department}"></DataGridTextColumn>
             <DataGridTextColumn Header="Type" Binding="{Binding Type}"></DataGridTextColumn>
             <DataGridTextColumn Header="Start" Binding="{Binding Start}"></DataGridTextColumn>
@@ -42,5 +42,7 @@
         </DataGrid>
         <Button Name="AddNew" Grid.Column="0" Grid.Row="0" Content="ADD NEW" Click="AddNew_OnClick"></Button>
         <Button Name="Save" Grid.Column="2" Grid.Row="0" Content="SAVE" Click="Save_Click"></Button>
+        <Button Name="Refresh" Grid.Column="1" Grid.Row="0" Content="REFRESH" Click="Refresh_OnClick"></Button>
+
     </Grid>
 </Window>

@@ -133,11 +133,11 @@ namespace DIS_TRY_02.Logic.EditWindow
             return res;
         }
 
-        public List<ComboBoxModel> Cities()
+        public List<ComboBoxModel> Cities(string Name)
         {
             List<ComboBoxModel> result = new List<ComboBoxModel>();
             var cities = City.GetAll();
-            result = cities.Select(s => new ComboBoxModel {id = s.id_city, Name = s.Name}).ToList();
+            result = cities.Where(w=> w.Region == Name).Select(s => new ComboBoxModel {id = s.id_city, Name = s.Name}).ToList();
             return result;
         }
         public List<ComboBoxModel> Regions()
@@ -148,6 +148,13 @@ namespace DIS_TRY_02.Logic.EditWindow
             return result;
         }
 
+        public List<ComboBoxModel> Municipalitiy()
+        {
+            List<ComboBoxModel> result = new List<ComboBoxModel>();
+            var municipality = Municipalities.GetAll();
+            result = municipality.Select(s => new ComboBoxModel { id = s.id_municipality, Name = s.Name }).ToList();
+            return result;
+        } 
         public List<ComboBoxModel> SpecialtyList()
         {
             List<ComboBoxModel> result = new List<ComboBoxModel>();

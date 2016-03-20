@@ -33,10 +33,7 @@ namespace TuBL.Models
             get;
             set;
         }
-        public bool isModified
-        {
-            get { return isModified; }
-            set { isModified = false; }
-        }
+        public bool isModified { get; set; }
+
     }
 }

@@ -37,7 +37,7 @@ namespace DIS_TRY_02.Logic
                 var query5 = gender.FirstOrDefault(w => w.id_gender == joinedTables[i].id_gender);
                 joinedTables[i].Gender = (query5 != null ? query5.Name : null);
             }
-
+           
            return joinedTables;   
        }
 

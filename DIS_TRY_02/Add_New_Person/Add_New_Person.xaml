@@ -6,14 +6,13 @@
         xmlns:local="clr-namespace:DIS_TRY_02.Add_New_Person"
         mc:Ignorable="d"
         Title="Add_New_Person" Height="1024" Width="1024" WindowState="Maximized" Loaded="Add_New_Person_OnLoaded">
-    <Grid Name="Grid">
+    <Grid Name="Grid" DataContextChanged="Grid_OnDataContextChanged">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
-
         </Grid.ColumnDefinitions>
       <Grid.RowDefinitions>
           <RowDefinition></RowDefinition>
@@ -32,78 +31,84 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Label Content="FirstName" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top"></Label>
-        <TextBox Name="txtFirstName" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text ="{Binding Path = PersonsViewModel.FirstName}" TextChanged="TxtFirstName_OnTextChanged"></TextBox>
-        <Label Content="SirName" Grid.Row="2" Grid.Column="0" VerticalAlignment="Top"></Label>
-        <TextBox Name="txtSirName" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text ="{Binding Path = PersonsViewModel.SirName}" TextChanged="txtSirName_TextChanged"></TextBox>
-        <Label Content="LastName" Grid.Row="3" Grid.Column="0" VerticalAlignment="Top"></Label>
-        <TextBox Name="txtLastName" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Text ="{Binding Path = PersonsViewModel.LastName}" TextChanged="TxtLastName_OnTextChanged"></TextBox>
-        <Label Content="Gender" Grid.Row="4" VerticalAlignment="Top"></Label>
-        <ComboBox Name="cmbCountry" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"  DisplayMemberPath="Name" SelectedValue="{Binding Path=CitizenshipViewModel.id_country}" SelectedValuePath="id" SelectionChanged="CmbCountry_OnSelectionChanged"></ComboBox>
-        <Label Content="Country" Grid.Row="3" Grid.Column="2" VerticalAlignment="Top"></Label>
-        <ComboBox Name="cmbGender" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValue="{Binding Path=PersonsViewModel.id_gender}" SelectedValuePath="id" SelectionChanged="cmbGender_SelectionChanged"></ComboBox>
-        <Label Content="Start Date" Grid.Row="5" Grid.Column="3" VerticalAlignment="Top"></Label>
-        <DatePicker Name="dtpStart" Grid.Column="3" Grid.Row="5" VerticalAlignment="Center" SelectedDate="{Binding Path=PHDAssignmentViewModel.StartDate}" SelectedDateChanged="DtpStart_OnSelectedDateChanged"></DatePicker>
-        <Label Content="End Date" Grid.Row="6" Grid.Column="3" VerticalAlignment="Top"></Label>
-        <ComboBox Name="cmbUniversity" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" DisplayMemberPath="Name"  SelectedValuePath="id" SelectedValue="{Binding Path=id_uni}" SelectionChanged="CmbUniversity_OnSelectionChanged"></ComboBox>
-        <ComboBox Name="cmbFaculty" Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" IsEnabled="False" DisplayMemberPath="Name" SelectedValuePath="id" SelectedValue="{Binding Path=id_fac}" SelectionChanged="CmbFaculty_OnSelectionChanged"></ComboBox>
-        <DatePicker Name="dtpEnd" Grid.Column="3" Grid.Row="6" VerticalAlignment="Center" SelectedDate="{Binding Path=PHDAssignmentViewModel.EndDate}" SelectedDateChanged="DtpEnd_OnSelectedDateChanged"></DatePicker>
-        <ComboBox Name="cmbDepartment" Grid.Column="3" Grid.Row="3" VerticalAlignment="Center" IsEnabled="False" DisplayMemberPath="Name" SelectedValue="{Binding Path=PHDAssignmentViewModel.id_department}" SelectedValuePath="id" SelectionChanged="CmbDepartment_OnSelectionChanged"></ComboBox>
-        <Label Content="University" Grid.Row="1" Grid.Column="3" VerticalAlignment="Top"></Label>
-        <Label Content="Faculty" Grid.Row="2" Grid.Column="3" VerticalAlignment="Top"></Label>
-        <Label Content="Department" Grid.Row="3" Grid.Column="3" VerticalAlignment="Top"></Label>
-        <Label Content="EGN Type" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top"></Label>
-        <ComboBox Name="cmbEgnType" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValue="{Binding Path=PersonIDCardViewModel.id_egnType}" SelectedValuePath="id" SelectionChanged="CmbEgnType_OnSelectionChanged"></ComboBox>
-        <TextBox Name="txtEGN" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Text="{Binding Path=PersonIDCardViewModel.EGN}" TextChanged="TxtEGN_OnTextChanged"></TextBox>
-        <Label Content="EGN" Grid.Row="2" Grid.Column="2" VerticalAlignment="Top"></Label>
+        <TextBox Name="txtFirstName" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text ="{Binding Path = PersonsViewModel.FirstName, Mode=TwoWay}"></TextBox>
+        <Label Content="SirName" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top"></Label>
+        <TextBox Name="txtSirName" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text ="{Binding Path = PersonsViewModel.SirName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
+        <Label Content="LastName" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top"></Label>
+        <TextBox Name="txtLastName" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Text ="{Binding Path = PersonsViewModel.LastName, Mode=TwoWay}" ></TextBox>
+        <Label Content="Gender" Grid.Row="1" Grid.Column="3" VerticalAlignment="Top"></Label>
+        <ComboBox Name="cmbCountry" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"  DisplayMemberPath="Name" SelectedValue="{Binding Path=CitizenshipViewModel.id_country, Mode=TwoWay}" SelectedValuePath="id" ></ComboBox>
+        <Label Content="Country" Grid.Row="2" Grid.Column="0" VerticalAlignment="Top"></Label>
+        <ComboBox Name="cmbGender" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValue="{Binding Path=PersonsViewModel.id_gender, Mode=TwoWay}" SelectedValuePath="id" ></ComboBox>
+        <Label Content="Start Date" Grid.Row="4" Grid.Column="3" VerticalAlignment="Top"></Label>
+        <DatePicker Name="dtpStart" Grid.Column="3" Grid.Row="4" VerticalAlignment="Center" SelectedDate="{Binding Path=PHDAssignmentViewModel.StartDate, Mode=TwoWay}"></DatePicker>
+        <Label Content="End Date" Grid.Row="4" Grid.Column="4" VerticalAlignment="Top"></Label>
+        <ComboBox Name="cmbUniversity" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" DisplayMemberPath="Name"  SelectedValuePath="id" SelectedValue="{Binding Path=id_uni, Mode=TwoWay}" SelectionChanged="cmbUniversity_SelectionChanged"></ComboBox>
+        <ComboBox Name="cmbFaculty" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" IsEnabled="False" DisplayMemberPath="Name" SelectedValuePath="id" SelectedValue="{Binding Path=id_fac}" SelectionChanged="CmbFaculty_OnSelectionChanged"></ComboBox>
+        <DatePicker Name="dtpEnd" Grid.Column="4" Grid.Row="4" VerticalAlignment="Center" SelectedDate="{Binding Path=PHDAssignmentViewModel.EndDate}" ></DatePicker>
+        <ComboBox Name="cmbDepartment" Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" IsEnabled="False" DisplayMemberPath="Name" SelectedValue="{Binding Path=PHDAssignmentViewModel.id_department}" SelectedValuePath="id" SelectionChanged="cmbDepartment_SelectionChanged"></ComboBox>
+        <Label Content="University" Grid.Row="4" Grid.Column="0" VerticalAlignment="Top"></Label>
+        <Label Content="Faculty" Grid.Row="4" Grid.Column="1" VerticalAlignment="Top"></Label>
+        <Label Content="Department" Grid.Row="4" Grid.Column="2" VerticalAlignment="Top"></Label>
+        <Label Content="EGN Type" Grid.Row="3" Grid.Column="3" VerticalAlignment="Top"></Label>
+        <ComboBox Name="cmbEgnType" Grid.Column="3" Grid.Row="3" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValue="{Binding Path=PersonIDCardViewModel.id_egnType}" SelectedValuePath="id"></ComboBox>
+        <TextBox Name="txtEGN" Grid.Row="3" Grid.Column="4" VerticalAlignment="Center" Text="{Binding Path=PersonIDCardViewModel.EGN}"></TextBox>
+        <Label Content="EGN" Grid.Row="3" Grid.Column="4" VerticalAlignment="Top"></Label>
         <Button Name="Save" Grid.Row="14" Grid.Column="3"  VerticalAlignment="Center" Height="20" Content="SAVE" Click="Save_OnClick"></Button>
         <Button Name="Cancel" Grid.Row="14" Grid.Column="4"  VerticalAlignment="Center" Height="20" Content="CANCEL" Click="Cancel_OnClick"></Button>
-        <DatePicker Name="BirthDate" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" SelectedDate="{Binding Path = PersonIDCardViewModel.BirthDate}" SelectedDateChanged="BirthDate_OnSelectedDateChanged"></DatePicker>
-        <Label Content="Birth Date" Grid.Row="4" Grid.Column="1" VerticalAlignment="Top"></Label>
-        <Label Content="City of Birth" Grid.Row="5" Grid.Column="0" VerticalAlignment="Top"></Label>
-        <ComboBox Grid.Row="5" Name="cmbCity" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValuePath="id" SelectedValue="{Binding Path=PersonIDCardViewModel.id_cityBirth}" SelectionChanged="CmbCity_OnSelectionChanged"></ComboBox>
-        <Label Content="Region" Grid.Row="6" Grid.Column="0" VerticalAlignment="Top"></Label>
-        <ComboBox Grid.Row="6" Name="cmbRegion" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValuePath="id" SelectedValue="{Binding Path=PersonIDCardViewModel.RegionBirthIndex}" SelectionChanged="cmbRegion_SelectionChanged"></ComboBox>
-        <Label Content="Neighbourhood" Grid.Row="7" Grid.Column="0" VerticalAlignment="Top"></Label>
-        <!--<ComboBox Grid.Row="7" Name="cmbKvartal" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValuePath="id" SelectedValue="{Binding Path=}"></ComboBox>-->
-        <Label Content="Current City" Grid.Row="8" Grid.Column="0" VerticalAlignment="Top"></Label>
-        <ComboBox Grid.Row="8" Name="cmbCurrentCity" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValuePath="id" SelectedValue="{Binding Path=PersonIDCardViewModel.id_city}" SelectionChanged="cmbCurrentCity_SelectionChanged"></ComboBox>
-        <Label Content="Region" Grid.Row="9" Grid.Column="0" VerticalAlignment="Top"></Label>
-        <ComboBox Grid.Row="9" Name="cmbCurrentRegion" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValuePath="id" SelectedValue="{Binding Path=PersonIDCardViewModel.RegionIndex}" SelectionChanged="CmbCurrentRegion_OnSelectionChanged"></ComboBox>
-        <Label Content="Neighbourhood" Grid.Row="10" Grid.Column="0" VerticalAlignment="Top"></Label>
+        <DatePicker Name="BirthDate" Grid.Row="1" Grid.Column="4" VerticalAlignment="Center" SelectedDate="{Binding Path = PersonIDCardViewModel.BirthDate}" ></DatePicker>
+        <Label Content="Birth Date" Grid.Row="1" Grid.Column="4" VerticalAlignment="Top"></Label>
+        <Label Content="City of Birth" Grid.Row="2" Grid.Column="2" VerticalAlignment="Top"></Label>
+        <ComboBox Grid.Row="2" Grid.Column="2" Name="cmbCity" VerticalAlignment="Center" DisplayMemberPath="Name" IsEnabled="False" SelectedValuePath="id" SelectedValue="{Binding Path=PersonIDCardViewModel.id_cityBirth}" SelectionChanged="CmbCity_OnSelectionChanged"></ComboBox>
+        <Label Content="Region of Birth" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top"></Label>
+        <ComboBox Grid.Row="2" Grid.Column="1" Name="cmbMunicipality" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValuePath="id" SelectionChanged="CmbMunicipality_OnSelectionChanged"></ComboBox>
+        <!--<Label Content="Neighbourhood" Grid.Row="7" Grid.Column="0" VerticalAlignment="Top"></Label>-->
+        <!--<ComboBox Grid.Row="7" Name="cmbMunicipality" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValuePath="id" SelectedValue="{Binding Path= }"></ComboBox>-->
+        <Label Content="Current City" Grid.Row="2" Grid.Column="4" VerticalAlignment="Top"></Label>
+        <ComboBox Grid.Row="2" Grid.Column="4" Name="cmbCurrentCity" VerticalAlignment="Center" DisplayMemberPath="Name" IsEnabled="False" SelectedValuePath="id" SelectedValue="{Binding Path=PersonIDCardViewModel.id_city}" SelectionChanged="CmbCurrentCity_OnSelectionChanged"></ComboBox>
+        <Label Content="Current Region" Grid.Row="2" Grid.Column="3" VerticalAlignment="Top"></Label>
+        <ComboBox Grid.Row="2" Grid.Column="3" Name="cmbCurrentMunicipality" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValuePath="id"  SelectionChanged="CmbCurrentMunicipality_OnSelectionChanged"></ComboBox>
+        <!--<Label Content="Neighbourhood" Grid.Row="10" Grid.Column="0" VerticalAlignment="Top"></Label>-->
         <!--<ComboBox Grid.Row="10" Name="cmbCurrentKvartal" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValuePath="id" SelectedValue="{Binding Path=CitiesViewModel.Municipality}"></ComboBox>-->
-        <Label Content="Address" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top"></Label>
-        <TextBox Name="txtAddress" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Path=PersonIDCardViewModel.Address}" TextChanged="TxtAddress_OnTextChanged"></TextBox>
-        <Label Content="Email" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top"></Label>
-        <TextBox Name="txtEmail" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Path=ContactDataViewModel.Email}" TextChanged="TxtEmail_OnTextChanged"></TextBox>
-        <Label Content="Phone" Grid.Row="3" Grid.Column="1" VerticalAlignment="Top"></Label>
-        <TextBox Name="txtPhone" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Path=ContactDataViewModel.Phone}" TextChanged="TxtPhone_OnTextChanged"></TextBox>
-        <ComboBox Name="cmbSpecialty" Grid.Row="1" Grid.Column="4" VerticalAlignment="Center" SelectedValuePath="id" DisplayMemberPath="Name" SelectedValue="{Binding Path=PHDDiplomDataViewModel.Phone}" SelectionChanged="CmbSpecialty_OnSelectionChanged"></ComboBox>
-        <Label Content="Specialty" Grid.Row="1" Grid.Column="4" VerticalAlignment="Top"></Label>
-        <ComboBox Name="cmbLastEdu" Grid.Row="2" Grid.Column="4" VerticalAlignment="Center" SelectedValuePath="id" DisplayMemberPath="Name" SelectedValue="{Binding Path=PHDDiplomDataViewModel.id_countryLastEducation}" SelectionChanged="CmbLastEdu_OnSelectionChanged"></ComboBox>
-        <Label Content="Last Education Place" Grid.Row="2" Grid.Column="4" VerticalAlignment="Top"></Label>
-        <ComboBox Name="cmbLastLevel" Grid.Row="3" Grid.Column="4" VerticalAlignment="Center" SelectedValuePath="id" DisplayMemberPath="Name" SelectedValue="{Binding Path=PHDDiplomDataViewModel.id_educationLast}" SelectionChanged="CmbLastLevel_OnSelectionChanged"></ComboBox>
-        <Label Content="Last Education Level" Grid.Row="3" Grid.Column="4" VerticalAlignment="Top"></Label>
-        <ComboBox Name="cmbAccReason" Grid.Row="4" Grid.Column="4" VerticalAlignment="Center" SelectedValuePath="id" DisplayMemberPath="Name" SelectedValue="{Binding Path=PHDAssignmentViewModel.id_acceptanceReason}" SelectionChanged="CmbAccReason_OnSelectionChanged"></ComboBox>
-        <Label Content="Acceptance Reason" Grid.Row="4" Grid.Column="4" VerticalAlignment="Top"></Label>
-        <ComboBox Name="cmbFormEdu" Grid.Row="5" Grid.Column="4" VerticalAlignment="Center" SelectedValuePath="id" DisplayMemberPath="Name" SelectedValue="{Binding Path=PHDAssignmentViewModel.id_educationForm}" SelectionChanged="CmbFormEdu_OnSelectionChanged"></ComboBox>
+        <Label Content="Address" Grid.Row="3" Grid.Column="0" VerticalAlignment="Top"></Label>
+        <TextBox Name="txtAddress" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Text="{Binding Path=PersonIDCardViewModel.Address}"></TextBox>
+        <Label Content="Email" Grid.Row="3" Grid.Column="1" VerticalAlignment="Top"></Label>
+        <TextBox Name="txtEmail" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Path=ContactDataViewModel.Email}" ></TextBox>
+        <Label Content="Phone" Grid.Row="3" Grid.Column="2" VerticalAlignment="Top"></Label>
+        <TextBox Name="txtPhone" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Text="{Binding Path=ContactDataViewModel.Phone}" ></TextBox>
+        <ComboBox Name="cmbSpecialty" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" SelectedValuePath="id" DisplayMemberPath="Name" SelectedValue="{Binding Path=PHDAssignmentViewModel.id_speciality}" ></ComboBox>
+        <Label Content="Specialty" Grid.Row="5" Grid.Column="0" VerticalAlignment="Top"></Label>
+        <ComboBox Name="cmbLastEdu" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" SelectedValuePath="id" DisplayMemberPath="Name" SelectedValue="{Binding Path=PHDDiplomDataViewModel.id_countryLastEducation}" ></ComboBox>
+        <Label Content="Last Education Place" Grid.Row="5" Grid.Column="1" VerticalAlignment="Top"></Label>
+        <ComboBox Name="cmbLastLevel" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" SelectedValuePath="id" DisplayMemberPath="Name" SelectedValue="{Binding Path=PHDDiplomDataViewModel.id_educationLast}" ></ComboBox>
+        <Label Content="Last Education Level" Grid.Row="5" Grid.Column="2" VerticalAlignment="Top"></Label>
+        <ComboBox Name="cmbAccReason" Grid.Row="5" Grid.Column="3" VerticalAlignment="Center" SelectedValuePath="id" DisplayMemberPath="Name" SelectedValue="{Binding Path=PHDAssignmentViewModel.id_acceptanceReason}" ></ComboBox>
+        <Label Content="Acceptance Reason" Grid.Row="5" Grid.Column="3" VerticalAlignment="Top"></Label>
+        <ComboBox Name="cmbFormEdu" Grid.Row="5" Grid.Column="4" VerticalAlignment="Center" SelectedValuePath="id" DisplayMemberPath="Name" SelectedValue="{Binding Path=PHDAssignmentViewModel.id_educationForm}" ></ComboBox>
         <Label Content="Education Form" Grid.Row="5" Grid.Column="4" VerticalAlignment="Top"></Label>
-        <ComboBox Name="cmbStatus" Grid.Row="6" Grid.Column="4" VerticalAlignment="Center" SelectedValuePath="id" DisplayMemberPath="Name" SelectedValue="{Binding Path=PHDAssignmentViewModel.id_status}" SelectionChanged="cmbStatus_SelectionChanged"></ComboBox>
-        <Label Content="Status of Education" Grid.Row="6" Grid.Column="4" VerticalAlignment="Top"></Label>
-        <ComboBox Name="cmbTypeEdu" Grid.Row="7" Grid.Column="4" VerticalAlignment="Center" SelectedValuePath="id" DisplayMemberPath="Name" SelectedValue="{Binding Path=PHDAssignmentViewModel.id_studyType}" SelectionChanged="CmbTypeEdu_OnSelectionChanged"></ComboBox>
-        <Label Content="Type of Education" Grid.Row="7" Grid.Column="4" VerticalAlignment="Top"></Label>
-        <Label Content="PH Tutor" Grid.Row="8" Grid.Column="1" VerticalAlignment="Top"></Label>
-        <TextBox Name="txtPhTutor" Grid.Row="8" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Path=Name}" TextChanged="TxtPhTutor_OnTextChanged"></TextBox>
-        <Label Content="Assigment Topic" Grid.Row="8" Grid.Column="2" VerticalAlignment="Top"></Label>
-        <TextBox Name="txtTopic" Grid.Row="8" Grid.Column="2" VerticalAlignment="Center" Text="{Binding Path=Name}" TextChanged="TxtTopic_OnTextChanged"></TextBox>
-        <Label Content="Use Dormitory" Grid.Row="9" Grid.Column="1" VerticalAlignment="Top"></Label>
-        <CheckBox Grid.Row="9" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"></CheckBox>
+        <ComboBox Name="cmbStatus" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" SelectedValuePath="id" DisplayMemberPath="Name" SelectedValue="{Binding Path=PHDAssignmentViewModel.id_status}" ></ComboBox>
+        <Label Content="Status of Education" Grid.Row="6" Grid.Column="0" VerticalAlignment="Top"></Label>
+        <ComboBox Name="cmbTypeEdu" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" SelectedValuePath="id" DisplayMemberPath="Name" SelectedValue="{Binding Path=PHDAssignmentViewModel.id_studyType}" ></ComboBox>
+        <Label Content="Type of Education" Grid.Row="6" Grid.Column="1" VerticalAlignment="Top"></Label>
+        <!--<Label Content="PH Tutor" Grid.Row="6" Grid.Column="2" VerticalAlignment="Top"></Label>
+        <TextBox Name="txtPhTutor" Grid.Row="6" Grid.Column="2" VerticalAlignment="Center" Text="{Binding Path=Name}"></TextBox>-->
+        <Label Content="Assigment Topic" Grid.Row="6" Grid.Column="2" VerticalAlignment="Top"></Label>
+        <TextBox Name="txtTopic" Grid.Row="6" Grid.Column="2" VerticalAlignment="Center" Text="{Binding Path=Name}"></TextBox>
+        <!--<Label Content="Use Dormitory" Grid.Row="9" Grid.Column="1" VerticalAlignment="Top"></Label>-->
+        <!--<CheckBox Grid.Row="9" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"></CheckBox>
         <Label Content="Use Facilities" Grid.Row="9" Grid.Column="2" VerticalAlignment="Top"></Label>
         <CheckBox Grid.Row="9" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></CheckBox>
         <Label Content="Uses Scholarship" Grid.Row="9" Grid.Column="3" VerticalAlignment="Top"></Label>
         <CheckBox Grid.Row="9" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"></CheckBox>
         <Label Content="TU Provides Health Insurance" Grid.Row="9" Grid.Column="4" VerticalAlignment="Top"></Label>
-        <CheckBox Grid.Row="9" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center"></CheckBox>
-
+        <CheckBox Grid.Row="9" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center"></CheckBox>-->
+        <DataGrid Name="dtgrdTutor"  Grid.Row="6" Grid.Column="3" ItemsSource="{Binding}" Grid.RowSpan="2" Grid.ColumnSpan="2" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+            <DataGridTextColumn Header="Номер Задача" Binding="{Binding Path=id_phdAssignment}"></DataGridTextColumn>
+            <!--<DataGridTextColumn Header="Тема" Binding="{Binding ph_assigments.ph_topics.Name}"></DataGridTextColumn>-->
+            <DataGridTextColumn Header="Научен Ръководител" Binding="{Binding ph_tutornames.Name}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
 
 
 
